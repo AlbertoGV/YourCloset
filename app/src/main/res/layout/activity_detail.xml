@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:divider="?android:dividerHorizontal"
+    android:showDividers="middle"
+    tools:context=".DetailActivity">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabdetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|start"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTintMode="src_over"
+        app:backgroundTintMode="multiply"
+        android:tint="@color/colorPrimary"
+        app:backgroundTint="@color/colorAccent"
+        android:theme="@style/Widget.AppCompat.Button.Borderless"
+
+        android:src="@mipmap/chat"
+        app:layout_anchor="@+id/contenedordetalle"
+        app:layout_anchorGravity="top|end">
+
+    </android.support.design.widget.FloatingActionButton>
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:id="@+id/collapse"
+            android:layout_height="match_parent"
+            app:layout_collapseMode="parallax"
+            app:title="YourCloset"
+            app:layout_collapseParallaxMultiplier="0.9"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+            <ImageView
+                android:id="@+id/imageViewImagen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:scaleType="centerCrop" />
+
+
+            <android.support.v7.widget.Toolbar
+
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+
+
+                />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:id="@+id/contenedordetalle"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:showDividers="none"
+            android:divider="@color/colorAccent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/descripcion_del_articulo"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/colorAccent"
+
+                android:textSize="20dp"/>
+
+            <View style="@style/Divider"/>
+
+
+            <TextView
+                android:id="@+id/textViewPrecio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9 Euros"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:textColor="#009688"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="20dp" />
+
+             <!--   <TextView
+                    android:id="@+id/textView_titulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Titulo"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="16dp" />-->
+
+            <TextView
+                android:id="@+id/textViewDEscripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/appbar_padding_top"
+                android:layout_marginBottom="16dp"
+                android:text="Descripción"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="16dp" />
+            <TextView
+                android:id="@+id/textViewFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="#9E9E9E"
+                android:layout_marginBottom="8dp"
+                android:text="Fecha"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ubicacion_articulo"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:layout_marginBottom="8dp"
+                android:textSize="20dp"/>
+
+            <View style="@style/Divider"/>
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/cardmapdetail"
+                android:layout_marginTop="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp">
+
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:id="@+id/fragment_subiranuncio"
+
+                tools:layout="@layout/activity_maps"
+                class="com.google.android.gms.maps.SupportMapFragment" />
+
+            </android.support.v7.widget.CardView>
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="match_parent"
+                android:id="@+id/ampliarmapa"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_height="40dp"
+                android:background="@drawable/imageredonda"
+                android:text="Ampliar mapa"
+                android:elevation="16dp"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:orientation="horizontal"
+                android:outlineAmbientShadowColor="@color/colorPrimary">
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Vendedor"
+                    android:layout_marginTop="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="20dp"/>
+
+                <View style="@style/Divider"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/fotoPerfil"
+                        android:layout_width="55sp"
+                        android:layout_height="55sp"
+                        android:layout_marginTop="8dp"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nombre_user"
+                        android:layout_marginTop="8dp"
+                        android:layout_toRightOf="@+id/fotoPerfil"
+                        android:text="Usuario U."
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="43dp"
+                        android:layout_below="@+id/nombre_user"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="-3dp"
+                        android:layout_marginRight="-25dp"
+                        android:scaleX="0.55"
+                        android:scaleY="0.55" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Comparte"
+                        android:layout_marginTop="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccent"
+                        android:layout_marginBottom="8dp"
+                        android:textSize="20dp"/>
+
+
+
+                </LinearLayout>
+                <View style="@style/Divider"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:background="@mipmap/whats"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@mipmap/tumblr"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@mipmap/insta"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@mipmap/twitter"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@mipmap/facebook"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@mipmap/google"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@mipmap/linkid"/>
+
+
+                </LinearLayout>
+                <View style="@style/Divider"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

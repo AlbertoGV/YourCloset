@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    android:elevation="16dp"
+    android:contextClickable="true"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/image_perfil"/>
+
+        <ImageView
+
+            android:id="@+id/ivMainImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/ic_launcher">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/like"
+            app:srcCompat="@drawable/heart_off"
+            android:adjustViewBounds="true"
+            android:layout_width="25dp"
+            android:pointerIcon="crosshair"
+            android:layout_margin="8dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:id="@+id/tvPrecio"
+            android:padding="4dp"
+            android:layout_marginLeft="@dimen/appbar_padding_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="8 Euros"
+            android:textColor="@color/colorAccent" />
+            <TextView
+                android:id="@+id/tvArticulo"
+                android:padding="4dp"
+                android:layout_below="@+id/tvPrecio"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jersey"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="@dimen/appbar_padding_top"
+            android:text="01/01/2019"
+            android:textSize="10dp"
+            android:id="@+id/anuncio_fecha"
+            android:layout_alignParentRight="true"
+
+            android:layout_toRightOf="@id/tvPrecio"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/anuncioautormain"
+            android:visibility="invisible"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvDescriptionArt"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/appbar_padding_top"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/appbar_padding_top"
+            android:text="Descripcion anuncio"
+            android:padding="4dp"
+            android:layout_below="@id/tvArticulo"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDescriptionArt"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/button_chat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/imageredonda"
+                android:text="Chat"
+                android:textColor="#00796B"
+                android:textSize="12dp"
+                android:theme="@style/Widget.AppCompat.Button.Borderless.Colored" />
+
+        </FrameLayout>
+    </RelativeLayout>
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_subiranuncio"
+            
+            android:icon="@mipmap/anyadir"
+            android:title="@string/Subir_anuncio" />
+        <item
+            android:id="@+id/nav_favorites"
+            android:icon="@mipmap/listas"
+            android:title="@string/listas_de_anuncios" />
+
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@mipmap/cerrarsesion"
+            android:title="@string/cerrar_sesion" />
+    </group>
+
+    <item android:title="@string/communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@mipmap/chat"
+                android:title="@string/Chat" />
+
+
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@mipmap/apagar"
+                android:title="@string/salir" />
+
+        </menu>
+    </item>
+
+</menu>

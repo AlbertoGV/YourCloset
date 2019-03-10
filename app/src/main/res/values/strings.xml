@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">YourCloset</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">Iniciar Sesion</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_favorites">Favorites</string>
+    <string name="title_home">Home</string>
+    <string name="title_anun_fav">Anuncios Favoritos</string>
+    <string name="title_vende_fav">Vendedores Favoritos</string>
+    <string name="title_recyclerview">title_recyclerview</string>
+    <string name="Favoritos">Favoritos</string>
+    <string name="Subir_anuncio">Subir anuncio</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="salir">Salir de la App</string>
+    <string name="subiranun_name">Articulo</string>
+    <string name="subiranun_last_name">Descripcion</string>
+    <string name="subiranun_precio">Precio</string>
+    <string name="subiranun_boton">Publicar Anuncio</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="tab_text_1">Lista Fecha</string>
+    <string name="tab_text_2">Lista Alfabeto</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hint_campo_1_articulo_anuncio">Articulo</string>
+    <string name="hint_campo_2_descripcion_anuncio">Descripción Artículo</string>
+    <string name="hint_campo_3_precio_anuncio">Precio</string>
+    <string name="ubicacion">Ubicación</string>
+    <string name="sube_imagen">Subir Imagen</string>
+    <string name="accion_cancelar">Cancelar</string>
+    <string name="accion_aceptar">Aceptar</string>
+    <string name="not_log_in">¡Ups! No se puede iniciar sesión</string>
+    <string name="not_close_sesion">No se ha podido cerrar sesion!</string>
+    <string name="not_revoke">No se pudo revocar la sesión</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="revoke_sesion">Olvidar sesión</string>
+    <string name="not_firebase_auth">No se pudo iniciar sesión con firebase</string>
+    <string name="log_in">Ya esta iniciada la sesión</string>
+    <string name="nav_cerrar_sesion">Cerrar Sesión</string>
+    <string name="close_sesion">Sesión cerrada</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="Chat">Chat</string>
+    <string name="Ajustes">Ajustes</string>
+    <string name="ubicacion_articulo">Ubicación</string>
+    <string name="Vendedor">Vendedor</string>
+    <string name="Comparte">Comparte</string>
+    <string name="descripcion_del_articulo">Descripción</string>
+    <string name="communicate">Comunícate</string>
+    <string name="publicar_anuncio">Publicar anuncio</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="ampliar_mapa">Ampliar mapa</string>
+    <string name="enviar">Enviar</string>
+    <string name="listas_de_anuncios">Listas de anuncios</string>
+    <string name="acerca_de">Acerca de</string>
+</resources>

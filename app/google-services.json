@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "711556199271",
+    "firebase_url": "https://yourcloset1-fd3b3.firebaseio.com",
+    "project_id": "yourcloset1-fd3b3",
+    "storage_bucket": "yourcloset1-fd3b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711556199271:android:83e5ae4e79d4204f",
+        "android_client_info": {
+          "package_name": "com.example.albertogv.yourcloset"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711556199271-7ti0qg6mesbc2tfdqqaaei5dlb0p2td8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.albertogv.yourcloset",
+            "certificate_hash": "ccdc63c9f7c041a5484634bd4af991738a717ce0"
+          }
+        },
+        {
+          "client_id": "711556199271-poafjnriergp7srttpua4703a324pg1c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7qNR5y15kxyQryFgfcfqQP2CJbc6Qefc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711556199271-poafjnriergp7srttpua4703a324pg1c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

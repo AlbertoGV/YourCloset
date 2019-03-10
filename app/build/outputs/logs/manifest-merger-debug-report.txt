@@ -1,0 +1,705 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-123:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-123:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-123:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-123:12
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a1f2496d024d0aca3be5a2f0b463b1b9\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.jd-alexander:LikeButton:0.2.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\LikeButton-0.2.3.aar\71f6a24261f189deec76b8cd786e1ce3\AndroidManifest.xml:2:1-14:12
+MERGED from [com.github.hajiyevelnur92:intentanimation:1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\intentanimation-1.0.aar\c99f30819f0e4cf7453188c0bcd541ad\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\cc9b8f8856cc029368e9b6b721134bd4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\1d1dd20f310011c1805fa7ae4d758bbc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.curioustechizen.android-ago:library:1.4.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\library-1.4.0.aar\d506aadb27b58954331ceaec6422aab4\AndroidManifest.xml:2:1-11:12
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\1702fce6ce06b23d16816348f03d5e0e\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\1a023a5f125f79fca12650df0ba61b2c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\95ea02b9afe818821905c07ba900db2b\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\2d155dcc18273afb2a4e9ec7ac59ae75\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\0238fa7a473a07b0470d3be561d8a33a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-places:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-places-16.0.0.aar\6e89565e93565b12ce78c3859bf96f0a\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.firebase:firebase-core:16.0.7] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.7.aar\7a5d7b31f79bc84637f1eaeb7d23f72a\AndroidManifest.xml:2:1-9:12
+MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:2:1-17:12
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:17:1-30:12
+MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3dbf3d1d94e3b4110746a95d949bdbbb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:17:1-42:12
+MERGED from [com.google.android.gms:play-services-drive:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-drive-16.0.0.aar\08db87046b17e52d855827af225800d4\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:17:1-39:12
+MERGED from [com.google.firebase:firebase-database:16.0.6] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-16.0.6.aar\552a4637eb1f4ae7eed97318bcdd4bc0\AndroidManifest.xml:15:1-27:12
+MERGED from [com.google.firebase:firebase-storage:16.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.0.5.aar\a0ae608e45a9b34db3450ee3a7f89e1a\AndroidManifest.xml:15:1-26:12
+MERGED from [com.google.android.gms:play-services-flags:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-flags-16.0.1.aar\9f6fdecc7aded3d6f1f57793bcd40094\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.1.aar\82c22e8996a9b5a47f6121ef39abd22f\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-16.0.0.aar\07dcd54f11231061c176eecb7dd924fd\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-16.0.0.aar\49ce5e9661d93e9500a141eeda0fb4ba\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:17:1-34:12
+MERGED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:17:1-55:12
+MERGED from [com.google.android.gms:play-services-measurement-api:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.3.0.aar\50814d85683ca90e3b0fb7a13e4415f9\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:17:1-59:12
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.1.aar\aa80cfffe5d77f3878c327d8f7487a2e\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\50daade63d436a09bdba29b4e3831f83\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-16.0.0.aar\4e368bbba24f2603aaa11fec59424352\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-common:16.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.4.aar\1029ec70eaafda7f3f524dd5a4ac0e44\AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\fda3f7be1737fed507acb1e34dd45589\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement-base:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.3.0.aar\fbb54e76f76134e970f6fadee3da10cb\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-stats-16.0.1.aar\5e61f7116b0f7748460525a438d63a6d\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-17.0.1.aar\cd0c9b5c73f02e31618c0c2e3bd5fd26\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-16.0.0.aar\7a6fc05fc50ceb7f908dbd611f0b8f9b\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.1.0.aar\f09a39307f21022f5a57afcc1ded7e43\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\f9c024d71bb6b9a4498da152ac0a7d00\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\cdfd93f5094eddc06e0751cec2a7df87\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\f59c49bfe1c7fe6dbeb2d3c032b9adb0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\6748378687a175ee8bc517c0994eed36\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\f9307d1ae9a6373c8f4b577feb56bfd3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\8f019f2f2be1ae17c57a3615951b75bf\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\aace0f3f935476bbc8d050280a45d104\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\c8f4655525e1e9b794a89221d537fde0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\ce0cdc3c5ff49a46ffd2e518de8ca0dd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\cb96ca4f8bf3c09f8d62f2746ad65089\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\3d71085b866b0d6fb9a186c3f45dfeee\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\b542f3a5fc5246f5c09fd3dd867ffe25\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\93e1f7010621935fe92ca7b8b26b1e4b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\74bac729417a0e4b3c1a6d43c8785efc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\ff9f78653d40ea85f6a06b586da81528\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\aca90000eab51ab3834162e88cdccebc\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\be6fb2bab164d0806f31f87c74ad44d0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\07665cb3e2e7e11a973d1450d56dd273\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\7d178d9e4274bfe36c4209cd8fd0d14f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\5def11e4c47f454516aae02ee13f4382\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\2702e889217858c6bbc4aeabb5bcd2ad\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\11c532e819eaca5a250a1398ea82e8d9\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\61ebd6883ef1f5db7e3fe6982299acdd\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\15d331dc8a099bdcd7def13cca789c0d\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\1ccf28146bd8a5cfbb9917d91e6d23fc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\a6b4c4370e0ef256a2b3937854db2e1a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\fa0f2519c8d22c754b14e177c89227c7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\e192576fb88346ff653fd2ddd2a78bba\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\ed4e5028ff813e761b07dd75d3c404ce\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\c8dfd7ffc695df5a1999486edf464c6f\AndroidManifest.xml:2:1-7:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-123:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-123:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-123:12
+	package
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:3:5-47
+		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-123:12
+		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-123:12
+		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:6:5-71
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:6:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:7:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:8:5-72
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:8:22-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:9:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-database:16.0.6] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-16.0.6.aar\552a4637eb1f4ae7eed97318bcdd4bc0\AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-database:16.0.6] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-16.0.6.aar\552a4637eb1f4ae7eed97318bcdd4bc0\AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-storage:16.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.0.5.aar\a0ae608e45a9b34db3450ee3a7f89e1a\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-storage:16.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.0.5.aar\a0ae608e45a9b34db3450ee3a7f89e1a\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:9:22-64
+uses-permission#com.company.contentprovider.READ_DATABASE
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:10:22-78
+uses-permission#com.company.contentprovider.WRITE_DATABASE
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:11:5-82
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:11:22-79
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:17:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-database:16.0.6] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-16.0.6.aar\552a4637eb1f4ae7eed97318bcdd4bc0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-database:16.0.6] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-16.0.6.aar\552a4637eb1f4ae7eed97318bcdd4bc0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-storage:16.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.0.5.aar\a0ae608e45a9b34db3450ee3a7f89e1a\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-storage:16.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.0.5.aar\a0ae608e45a9b34db3450ee3a7f89e1a\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:17:22-76
+uses-permission#com.google.android.apps.photos.permission.GOOGLE_PHOTOS
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:18:5-95
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:18:22-92
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:19:5-80
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:19:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:20:5-81
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:20:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:21:5-79
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:21:22-76
+application
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:23:5-121:19
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:10:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a1f2496d024d0aca3be5a2f0b463b1b9\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a1f2496d024d0aca3be5a2f0b463b1b9\AndroidManifest.xml:22:5-20
+MERGED from [com.github.jd-alexander:LikeButton:0.2.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\LikeButton-0.2.3.aar\71f6a24261f189deec76b8cd786e1ce3\AndroidManifest.xml:11:5-12:19
+MERGED from [com.github.jd-alexander:LikeButton:0.2.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\LikeButton-0.2.3.aar\71f6a24261f189deec76b8cd786e1ce3\AndroidManifest.xml:11:5-12:19
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\1702fce6ce06b23d16816348f03d5e0e\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\1702fce6ce06b23d16816348f03d5e0e\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\95ea02b9afe818821905c07ba900db2b\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\95ea02b9afe818821905c07ba900db2b\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-places:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-places-16.0.0.aar\6e89565e93565b12ce78c3859bf96f0a\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-places-16.0.0.aar\6e89565e93565b12ce78c3859bf96f0a\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:30:5-20
+MERGED from [com.google.firebase:firebase-core:16.0.7] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.7.aar\7a5d7b31f79bc84637f1eaeb7d23f72a\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-core:16.0.7] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.7.aar\7a5d7b31f79bc84637f1eaeb7d23f72a\AndroidManifest.xml:7:5-20
+MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:11:5-15:19
+MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:11:5-15:19
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:22:5-28:19
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:22:5-28:19
+MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.android.gms:play-services-drive:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-drive-16.0.0.aar\08db87046b17e52d855827af225800d4\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-drive:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-drive-16.0.0.aar\08db87046b17e52d855827af225800d4\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.1.aar\82c22e8996a9b5a47f6121ef39abd22f\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.1.aar\82c22e8996a9b5a47f6121ef39abd22f\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:26:5-32:19
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:26:5-32:19
+MERGED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:28:5-53:19
+MERGED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:28:5-53:19
+MERGED from [com.google.android.gms:play-services-measurement-api:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.3.0.aar\50814d85683ca90e3b0fb7a13e4415f9\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-api:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.3.0.aar\50814d85683ca90e3b0fb7a13e4415f9\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:28:5-57:19
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:28:5-57:19
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.1.aar\aa80cfffe5d77f3878c327d8f7487a2e\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.1.aar\aa80cfffe5d77f3878c327d8f7487a2e\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\50daade63d436a09bdba29b4e3831f83\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\50daade63d436a09bdba29b4e3831f83\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-16.0.0.aar\4e368bbba24f2603aaa11fec59424352\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-16.0.0.aar\4e368bbba24f2603aaa11fec59424352\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-common:16.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.4.aar\1029ec70eaafda7f3f524dd5a4ac0e44\AndroidManifest.xml:9:5-15:19
+MERGED from [com.google.firebase:firebase-common:16.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.4.aar\1029ec70eaafda7f3f524dd5a4ac0e44\AndroidManifest.xml:9:5-15:19
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\fda3f7be1737fed507acb1e34dd45589\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\fda3f7be1737fed507acb1e34dd45589\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.3.0.aar\fbb54e76f76134e970f6fadee3da10cb\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.3.0.aar\fbb54e76f76134e970f6fadee3da10cb\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-stats-16.0.1.aar\5e61f7116b0f7748460525a438d63a6d\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-stats-16.0.1.aar\5e61f7116b0f7748460525a438d63a6d\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-17.0.1.aar\cd0c9b5c73f02e31618c0c2e3bd5fd26\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-17.0.1.aar\cd0c9b5c73f02e31618c0c2e3bd5fd26\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-16.0.0.aar\7a6fc05fc50ceb7f908dbd611f0b8f9b\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-16.0.0.aar\7a6fc05fc50ceb7f908dbd611f0b8f9b\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.1.0.aar\f09a39307f21022f5a57afcc1ded7e43\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.1.0.aar\f09a39307f21022f5a57afcc1ded7e43\AndroidManifest.xml:22:5-26:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\cdfd93f5094eddc06e0751cec2a7df87\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\cdfd93f5094eddc06e0751cec2a7df87\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\aca90000eab51ab3834162e88cdccebc\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\aca90000eab51ab3834162e88cdccebc\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\be6fb2bab164d0806f31f87c74ad44d0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\be6fb2bab164d0806f31f87c74ad44d0\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\aca90000eab51ab3834162e88cdccebc\AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:28:9-41
+	android:exported
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:26:9-32
+	android:roundIcon
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:29:9-45
+	android:icon
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:27:9-40
+	android:allowBackup
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:25:9-35
+	android:theme
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:30:9-52
+activity#com.example.albertogv.yourcloset.SplashActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:31:9-41:20
+	android:screenOrientation
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:34:13-49
+	android:label
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:33:13-45
+	android:theme
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:35:13-56
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:32:13-43
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:36:13-40:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:37:17-69
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:37:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:39:17-77
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:39:27-74
+activity#com.example.albertogv.yourcloset.MainActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:42:9-55:20
+	android:screenOrientation
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:45:13-51
+	android:launchMode
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:44:13-44
+	android:theme
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:46:13-56
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:43:13-41
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:65:9-67:55
+	android:value
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:67:13-52
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:66:13-58
+activity#com.example.albertogv.yourcloset.SubirAnuncioActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:69:9-71:65
+	android:parentActivityName
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:71:13-62
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:70:13-49
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:73:9-75:47
+	android:value
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:75:13-44
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:74:13-59
+activity#com.example.albertogv.yourcloset.TabbedActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:77:9-84:20
+	android:parentActivityName
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:79:13-62
+	android:theme
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:80:13-56
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:78:13-43
+activity#com.example.albertogv.yourcloset.MapsActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:85:9-87:59
+	android:label
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:87:13-56
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:86:13-41
+activity#com.example.albertogv.yourcloset.LoginActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:88:9-91:51
+	android:screenOrientation
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:91:13-49
+	android:theme
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:90:13-56
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:89:13-42
+activity#com.example.albertogv.yourcloset.DetailActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:92:9-98:20
+	android:parentActivityName
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:94:13-55
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:93:13-43
+activity#com.example.albertogv.yourcloset.ChatActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:99:9-105:20
+	android:parentActivityName
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:101:13-55
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:100:13-41
+activity#com.example.albertogv.yourcloset.DetailActivityLists
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:106:9-112:20
+	android:parentActivityName
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:108:13-62
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:107:13-48
+activity#com.example.albertogv.yourcloset.MapsActivity2
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:113:9-115:60
+	android:label
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:115:13-57
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:114:13-42
+activity#com.example.albertogv.yourcloset.InfoActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:116:9-118:15
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:117:13-41
+uses-library#org.apache.http.legacy
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:119:9-88
+	android:required
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:119:61-85
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:119:23-60
+uses-sdk
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.support:design:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a1f2496d024d0aca3be5a2f0b463b1b9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a1f2496d024d0aca3be5a2f0b463b1b9\AndroidManifest.xml:20:5-44
+MERGED from [com.github.jd-alexander:LikeButton:0.2.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\LikeButton-0.2.3.aar\71f6a24261f189deec76b8cd786e1ce3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.jd-alexander:LikeButton:0.2.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\LikeButton-0.2.3.aar\71f6a24261f189deec76b8cd786e1ce3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.hajiyevelnur92:intentanimation:1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\intentanimation-1.0.aar\c99f30819f0e4cf7453188c0bcd541ad\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.hajiyevelnur92:intentanimation:1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\intentanimation-1.0.aar\c99f30819f0e4cf7453188c0bcd541ad\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\cc9b8f8856cc029368e9b6b721134bd4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\cc9b8f8856cc029368e9b6b721134bd4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\1d1dd20f310011c1805fa7ae4d758bbc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\1d1dd20f310011c1805fa7ae4d758bbc\AndroidManifest.xml:20:5-44
+MERGED from [com.github.curioustechizen.android-ago:library:1.4.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\library-1.4.0.aar\d506aadb27b58954331ceaec6422aab4\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.curioustechizen.android-ago:library:1.4.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\library-1.4.0.aar\d506aadb27b58954331ceaec6422aab4\AndroidManifest.xml:7:5-9:41
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\1702fce6ce06b23d16816348f03d5e0e\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\1702fce6ce06b23d16816348f03d5e0e\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\1a023a5f125f79fca12650df0ba61b2c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\1a023a5f125f79fca12650df0ba61b2c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\95ea02b9afe818821905c07ba900db2b\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\95ea02b9afe818821905c07ba900db2b\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\2d155dcc18273afb2a4e9ec7ac59ae75\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\2d155dcc18273afb2a4e9ec7ac59ae75\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\0238fa7a473a07b0470d3be561d8a33a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\0238fa7a473a07b0470d3be561d8a33a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-places-16.0.0.aar\6e89565e93565b12ce78c3859bf96f0a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-places-16.0.0.aar\6e89565e93565b12ce78c3859bf96f0a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-core:16.0.7] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.7.aar\7a5d7b31f79bc84637f1eaeb7d23f72a\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-core:16.0.7] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.7.aar\7a5d7b31f79bc84637f1eaeb7d23f72a\AndroidManifest.xml:5:5-44
+MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:7:5-9:41
+MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:7:5-9:41
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3dbf3d1d94e3b4110746a95d949bdbbb\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3dbf3d1d94e3b4110746a95d949bdbbb\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-drive:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-drive-16.0.0.aar\08db87046b17e52d855827af225800d4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-drive:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-drive-16.0.0.aar\08db87046b17e52d855827af225800d4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database:16.0.6] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-16.0.6.aar\552a4637eb1f4ae7eed97318bcdd4bc0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-database:16.0.6] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-16.0.6.aar\552a4637eb1f4ae7eed97318bcdd4bc0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-storage:16.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.0.5.aar\a0ae608e45a9b34db3450ee3a7f89e1a\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-storage:16.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.0.5.aar\a0ae608e45a9b34db3450ee3a7f89e1a\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.gms:play-services-flags:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-flags-16.0.1.aar\9f6fdecc7aded3d6f1f57793bcd40094\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-flags-16.0.1.aar\9f6fdecc7aded3d6f1f57793bcd40094\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.1.aar\82c22e8996a9b5a47f6121ef39abd22f\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.1.aar\82c22e8996a9b5a47f6121ef39abd22f\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-16.0.0.aar\07dcd54f11231061c176eecb7dd924fd\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-16.0.0.aar\07dcd54f11231061c176eecb7dd924fd\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-16.0.0.aar\49ce5e9661d93e9500a141eeda0fb4ba\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-16.0.0.aar\49ce5e9661d93e9500a141eeda0fb4ba\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.3.0.aar\50814d85683ca90e3b0fb7a13e4415f9\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.3.0.aar\50814d85683ca90e3b0fb7a13e4415f9\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.1.aar\aa80cfffe5d77f3878c327d8f7487a2e\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.1.aar\aa80cfffe5d77f3878c327d8f7487a2e\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\50daade63d436a09bdba29b4e3831f83\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\50daade63d436a09bdba29b4e3831f83\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-16.0.0.aar\4e368bbba24f2603aaa11fec59424352\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-16.0.0.aar\4e368bbba24f2603aaa11fec59424352\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:16.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.4.aar\1029ec70eaafda7f3f524dd5a4ac0e44\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-common:16.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.4.aar\1029ec70eaafda7f3f524dd5a4ac0e44\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\fda3f7be1737fed507acb1e34dd45589\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\fda3f7be1737fed507acb1e34dd45589\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.3.0.aar\fbb54e76f76134e970f6fadee3da10cb\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.3.0.aar\fbb54e76f76134e970f6fadee3da10cb\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-stats-16.0.1.aar\5e61f7116b0f7748460525a438d63a6d\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-stats-16.0.1.aar\5e61f7116b0f7748460525a438d63a6d\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-17.0.1.aar\cd0c9b5c73f02e31618c0c2e3bd5fd26\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-17.0.1.aar\cd0c9b5c73f02e31618c0c2e3bd5fd26\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-16.0.0.aar\7a6fc05fc50ceb7f908dbd611f0b8f9b\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-16.0.0.aar\7a6fc05fc50ceb7f908dbd611f0b8f9b\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.1.0.aar\f09a39307f21022f5a57afcc1ded7e43\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.1.0.aar\f09a39307f21022f5a57afcc1ded7e43\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\f9c024d71bb6b9a4498da152ac0a7d00\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\f9c024d71bb6b9a4498da152ac0a7d00\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\cdfd93f5094eddc06e0751cec2a7df87\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\cdfd93f5094eddc06e0751cec2a7df87\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\f59c49bfe1c7fe6dbeb2d3c032b9adb0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\f59c49bfe1c7fe6dbeb2d3c032b9adb0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\6748378687a175ee8bc517c0994eed36\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\6748378687a175ee8bc517c0994eed36\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\f9307d1ae9a6373c8f4b577feb56bfd3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\f9307d1ae9a6373c8f4b577feb56bfd3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\8f019f2f2be1ae17c57a3615951b75bf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\8f019f2f2be1ae17c57a3615951b75bf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\aace0f3f935476bbc8d050280a45d104\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\aace0f3f935476bbc8d050280a45d104\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\c8f4655525e1e9b794a89221d537fde0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\c8f4655525e1e9b794a89221d537fde0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\ce0cdc3c5ff49a46ffd2e518de8ca0dd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\ce0cdc3c5ff49a46ffd2e518de8ca0dd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\cb96ca4f8bf3c09f8d62f2746ad65089\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\cb96ca4f8bf3c09f8d62f2746ad65089\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\3d71085b866b0d6fb9a186c3f45dfeee\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\3d71085b866b0d6fb9a186c3f45dfeee\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\b542f3a5fc5246f5c09fd3dd867ffe25\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\b542f3a5fc5246f5c09fd3dd867ffe25\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\93e1f7010621935fe92ca7b8b26b1e4b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\93e1f7010621935fe92ca7b8b26b1e4b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\74bac729417a0e4b3c1a6d43c8785efc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\74bac729417a0e4b3c1a6d43c8785efc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\ff9f78653d40ea85f6a06b586da81528\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\ff9f78653d40ea85f6a06b586da81528\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\aca90000eab51ab3834162e88cdccebc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\aca90000eab51ab3834162e88cdccebc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\be6fb2bab164d0806f31f87c74ad44d0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\be6fb2bab164d0806f31f87c74ad44d0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\07665cb3e2e7e11a973d1450d56dd273\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\07665cb3e2e7e11a973d1450d56dd273\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\7d178d9e4274bfe36c4209cd8fd0d14f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\7d178d9e4274bfe36c4209cd8fd0d14f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\5def11e4c47f454516aae02ee13f4382\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\5def11e4c47f454516aae02ee13f4382\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\2702e889217858c6bbc4aeabb5bcd2ad\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\2702e889217858c6bbc4aeabb5bcd2ad\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\11c532e819eaca5a250a1398ea82e8d9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\11c532e819eaca5a250a1398ea82e8d9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\61ebd6883ef1f5db7e3fe6982299acdd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\61ebd6883ef1f5db7e3fe6982299acdd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\15d331dc8a099bdcd7def13cca789c0d\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\15d331dc8a099bdcd7def13cca789c0d\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\1ccf28146bd8a5cfbb9917d91e6d23fc\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\1ccf28146bd8a5cfbb9917d91e6d23fc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\a6b4c4370e0ef256a2b3937854db2e1a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\a6b4c4370e0ef256a2b3937854db2e1a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\fa0f2519c8d22c754b14e177c89227c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\fa0f2519c8d22c754b14e177c89227c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\e192576fb88346ff653fd2ddd2a78bba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\e192576fb88346ff653fd2ddd2a78bba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\ed4e5028ff813e761b07dd75d3c404ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\ed4e5028ff813e761b07dd75d3c404ce\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\c8dfd7ffc695df5a1999486edf464c6f\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\c8dfd7ffc695df5a1999486edf464c6f\AndroidManifest.xml:5:5-44
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\bceeb3ba108264aae958a5d0bc03fb0d\AndroidManifest.xml:28:9-32
+provider#android.arch.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:25:13-68
+	android:multiprocess
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:24:13-83
+activity#com.google.firebase.auth.internal.FederatedSignInActivity
+ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:24:9-31:50
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:26:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:28:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:27:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:29:13-102
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:30:13-72
+	tools:replace
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:31:13-47
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:25:13-85
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:33:9-39:19
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:27:9-31:19
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:27:9-31:19
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:29:9-35:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:34:13-84
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:36:13-38:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:38:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:37:17-109
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:33:9-36:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:35:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:34:13-89
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:24:22-65
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:28:13-30:85
+	android:value
+		ADDED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:30:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-measurement-connector-impl:17.0.5] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.5.aar\09439c513064d3b558fdf88c485a507d\AndroidManifest.xml:29:17-139
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:26:5-110
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:26:5-110
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:30:13-85
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:34:9-42:20
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:29:9-37:20
+MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.3.0.aar\1e09496084f752c6a232db0f534761a4\AndroidManifest.xml:29:9-37:20
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:36:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:37:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:38:13-69
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:35:13-100
+intent-filter#action:name:com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:39:13-41:29
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:40:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:40:25-76
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:44:9-47:40
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:46:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:45:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:48:9-52:72
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:50:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:51:13-37
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:52:13-69
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.3.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.3.0.aar\a5e7075583ca12cec09bd0c960b8e2d3\AndroidManifest.xml:49:13-87
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:26:22-79
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:33:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:37:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:39:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:40:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:38:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:41:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:42:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:42:25-78
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:50:9-56:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:52:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:51:13-77
+intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:53:13-55:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:53:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:54:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\20ae0f332f3188e7c45ed83b4ed8ef93\AndroidManifest.xml:54:25-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\50daade63d436a09bdba29b4e3831f83\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\50daade63d436a09bdba29b4e3831f83\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\50daade63d436a09bdba29b4e3831f83\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\50daade63d436a09bdba29b4e3831f83\AndroidManifest.xml:24:13-79
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:16.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.4.aar\1029ec70eaafda7f3f524dd5a4ac0e44\AndroidManifest.xml:10:9-14:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:16.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.4.aar\1029ec70eaafda7f3f524dd5a4ac0e44\AndroidManifest.xml:12:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:16.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.4.aar\1029ec70eaafda7f3f524dd5a4ac0e44\AndroidManifest.xml:13:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:16.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.4.aar\1029ec70eaafda7f3f524dd5a4ac0e44\AndroidManifest.xml:14:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:16.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.4.aar\1029ec70eaafda7f3f524dd5a4ac0e44\AndroidManifest.xml:11:13-77
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.1.0.aar\f09a39307f21022f5a57afcc1ded7e43\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.1.0.aar\f09a39307f21022f5a57afcc1ded7e43\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.1.0.aar\f09a39307f21022f5a57afcc1ded7e43\AndroidManifest.xml:24:13-58
