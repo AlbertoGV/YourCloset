@@ -12,19 +12,19 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int reference_time = 0x7f0301a7;
-        public static final int relative_time_prefix = 0x7f0301a8;
-        public static final int relative_time_suffix = 0x7f0301a9;
+        public static final int reference_time = 0x7f0301b4;
+        public static final int relative_time_prefix = 0x7f0301b5;
+        public static final int relative_time_suffix = 0x7f0301b6;
     }
     public static final class string {
         private string() {}
 
-        public static final int just_now = 0x7f0e0062;
+        public static final int just_now = 0x7f0f00c1;
     }
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] RelativeTimeTextView = { 0x7f0301a7, 0x7f0301a8, 0x7f0301a9 };
+        public static final int[] RelativeTimeTextView = { 0x7f0301b4, 0x7f0301b5, 0x7f0301b6 };
         public static final int RelativeTimeTextView_reference_time = 0;
         public static final int RelativeTimeTextView_relative_time_prefix = 1;
         public static final int RelativeTimeTextView_relative_time_suffix = 2;

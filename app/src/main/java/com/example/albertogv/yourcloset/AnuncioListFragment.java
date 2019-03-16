@@ -26,7 +26,7 @@ import java.util.List;
  */
 public abstract class AnuncioListFragment extends Fragment {
 
-    AnuncioViewModel anuncioViewModel;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -35,34 +35,13 @@ public abstract class AnuncioListFragment extends Fragment {
         final RecyclerView recyclerView = view.findViewById(R.id.anuncioList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        final AnunciosRecyclerAdapter anunciosRecyclerAdapter = new AnunciosRecyclerAdapter();
-        recyclerView.setAdapter(anunciosRecyclerAdapter);
+     /*   final AnunciosRecyclerAdapter anunciosRecyclerAdapter = new AnunciosRecyclerAdapter();
+        recyclerView.setAdapter(anunciosRecyclerAdapter);*/
 
-
-
-
-
-        anuncioViewModel = ViewModelProviders.of(this).get(AnuncioViewModel.class);
-
-        getAnuncios().observe(this, new Observer<List<Anuncio>>() {
-            @Override
-            public void onChanged(@Nullable List<Anuncio> anuncios) {
-                anunciosRecyclerAdapter.setList(anuncios);
-                anunciosRecyclerAdapter.notifyDataSetChanged();
-
-
-
-            }
-        });
 
         return view;
-
-
-
-
-
-
     }
+
 
 
 

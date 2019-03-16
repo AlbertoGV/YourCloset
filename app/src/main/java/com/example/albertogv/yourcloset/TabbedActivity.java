@@ -25,7 +25,7 @@ public class TabbedActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
-    private AnuncioViewModel anuncioViewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

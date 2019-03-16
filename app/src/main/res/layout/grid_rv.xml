@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            android:id="@+id/image_perfil"/>
+            android:id="@+id/image_perfilpass"/>
 
         <ImageView
 
@@ -31,22 +31,27 @@
 
         </ImageView>
 
-        <ImageView
-            android:id="@+id/like"
-            app:srcCompat="@drawable/heart_off"
-            android:adjustViewBounds="true"
-            android:layout_width="25dp"
-            android:pointerIcon="crosshair"
-            android:layout_margin="8dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"/>
+        <LinearLayout
+            android:id="@+id/like_layout"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_height="32dp">
 
+            <ImageView
+                android:id="@+id/like"
+                android:layout_width="41dp"
+                android:layout_marginLeft="8dp"
+                android:layout_height="29dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                app:srcCompat="@drawable/heart_off" />
 
+        </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <TextView
-
             android:id="@+id/tvPrecio"
             android:padding="4dp"
             android:layout_marginLeft="@dimen/appbar_padding_top"
@@ -66,14 +71,14 @@
                 android:text="Jersey"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="@dimen/appbar_padding_top"
             android:text="01/01/2019"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:textSize="10dp"
-            android:id="@+id/anuncio_fecha"
+            android:gravity="right"
+            android:id="@+id/anuncio_fechatime"
             android:layout_alignParentRight="true"
 
             android:layout_toRightOf="@id/tvPrecio"/>

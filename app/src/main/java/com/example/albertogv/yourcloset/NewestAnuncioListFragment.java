@@ -9,6 +9,6 @@ import java.util.List;
 public class NewestAnuncioListFragment extends AnuncioListFragment{
     @Override
     LiveData<List<Anuncio>> getAnuncios() {
-        return anuncioViewModel.getAllAnunciosOrderedByDate();
+        return null;
     }
 }

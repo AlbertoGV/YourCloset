@@ -9,6 +9,6 @@ import java.util.List;
 public class TopRatedAnuncioListFragment extends AnuncioListFragment{
     @Override
     LiveData<List<Anuncio>> getAnuncios() {
-        return anuncioViewModel.getAllAnunciosOrderedByRating();
+        return null;
     }
 }

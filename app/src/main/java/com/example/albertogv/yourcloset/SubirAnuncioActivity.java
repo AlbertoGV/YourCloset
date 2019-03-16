@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.media.MediaRecorder;
 import android.net.ParseException;
 import android.net.Uri;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.albertogv.yourcloset.model.Anuncio;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -36,16 +38,25 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 import maes.tech.intentanim.CustomIntent;
 
@@ -53,30 +64,48 @@ import static android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION;
 
 public class SubirAnuncioActivity extends AppCompatActivity implements OnMapReadyCallback {
     static final int RC_IMAGE_PICK = 9000;
+    static final int RC_IMAGE_TAKE = 8000;
+    static final int RC_VIDEO_TAKE = 8001;
 
-    private Button button_imagen;
-    private Button button_ubicacion;
+    static final int RC_VIDEO_PICK = 9001;
+    static final int RC_AUDIO_PICK = 9002;
+    private static final int SECOND_MILLIS = 1000;
+    private static final int MINUTE_MILLIS = 60 * SECOND_MILLIS;
+    private static final int HOUR_MILLIS = 60 * MINUTE_MILLIS;
+    private static final int DAY_MILLIS = 24 * HOUR_MILLIS;
     private Button buttonAceptar;
     private Button buttonCancelar;
+    Uri mFileUri;
+    Uri mediaUri;
+    String mediaType;
+    DatabaseReference mReference;
+
+    FirebaseUser mUser;
+    boolean recording = false;
+
+    private MediaRecorder mRecorder = null;
     EditText etNombre, etArticulo, etPrecio;
     ImageView imagePreview;
-    AnuncioViewModel anuncioViewModel;
     private GoogleApiClient googleApiClient;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
     private static final int PHOTO_SEND = 1;
+    static final int REQUEST_RECORD_AUDIO_PERMISSION = 1212;
 
-    Uri mediaUri;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anuncio);
-
+        mReference = FirebaseDatabase.getInstance().getReference();
         etNombre = findViewById(R.id.campo_nombre);
         etArticulo = findViewById(R.id.campo_articulo);
         etPrecio = findViewById(R.id.campo_precio);
-
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_RECORD_AUDIO_PERMISSION);
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
         imagePreview = findViewById(R.id.imagePreview);
+        mReference = FirebaseDatabase.getInstance().getReference();
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -87,28 +116,16 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             public void onClick(View v) {
                 Intent i = new Intent(SubirAnuncioActivity.this,MapsActivity2.class);
                 startActivity(i);
-             /*   CustomIntent.customType(SubirAnuncioActivity.this,"fadein-to-fadeout");*/
+            CustomIntent.customType(SubirAnuncioActivity.this,"fadein-to-fadeout");
             }
         });
-       /* button_ubicacion = findViewById(R.id.boton_ubicacion);
-        button_ubicacion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(SubirAnuncioActivity.this,MapsActivity.class);
-                startActivity(i);
-
-
-            }
-        });*/
 
 
         imagePreview = findViewById(R.id.imagePreview);
         imagePreview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-                intent.addFlags(FLAG_GRANT_READ_URI_PERMISSION);
-                startActivityForResult(intent, RC_IMAGE_PICK);
+                dispatchTakePictureIntent();
 
             }
         });
@@ -117,14 +134,15 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         buttonAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertarAnuncio();
-                if (anuncioViewModel != null) {
-                    finish();
+                try {
+                    submitPost();
+                } catch (java.text.ParseException e) {
+                    e.printStackTrace();
                 }
-
             }
 
         });
+
 
 
         if (firebaseAuthListener == null) {
@@ -145,22 +163,153 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         mapFragment2.getMapAsync(this);
 
     }
+    public void submitPost() throws  java.text.ParseException{
+        final String postText = etArticulo.getText().toString();
+        final String postName = etNombre.getText().toString();
+        final String postPrecio = etPrecio.getText().toString();
 
+        if (postText.isEmpty()) {
+            etArticulo.setError("Introduzca la descripcion");
+        } else if (postName.isEmpty()) {
+            etNombre.setError("Introduzca el nombre artículo ");
+        } else if (postPrecio.isEmpty()) {
+            etPrecio.setError("Introduzca el precio");
+        } if (mediaUri == null) {
+            Toast.makeText(this, "Seleccione una imagen para continuar", Toast.LENGTH_SHORT).show();
+
+            return;
+        }
+
+        buttonAceptar.setEnabled(false);
+
+        uploadAndWriteNewPost(postText,postName,postPrecio);
+
+
+    }
+
+    public void writeNewPost(String postText, String postName,String postPrecio, String mediaUri) {
+
+        String postKey = mReference.push().getKey();
+        Anuncio anuncio = new Anuncio(mUser.getUid(), mUser.getDisplayName(), mUser.getPhotoUrl().toString(), postText,postName,postPrecio, mediaUri, mediaType, ServerValue.TIMESTAMP);
+
+        Map<String, Object> postValues = anuncio.toMap();
+        Map<String, Object> childUpdates = new HashMap<>();
+        childUpdates.put("posts/data/" + postKey, postValues);
+        childUpdates.put("posts/all-posts/" + postKey, true);
+        childUpdates.put("posts/user-posts/" + mUser.getUid() + "/" + postKey, true);
+
+
+        mReference.updateChildren(childUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                finish();
+            }
+        });
+    }
+    private void uploadAndWriteNewPost(final String postText, final String postName, final String postPrecio ) {
+        if (mediaType != null) {
+            FirebaseStorage.getInstance().getReference(mediaType + "/" + UUID.randomUUID().toString() + mediaUri.getLastPathSegment()).putFile(mediaUri).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    return task.getResult().getStorage().getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        String downloadUri = task.getResult().toString();
+                        writeNewPost(postText,postName,postPrecio, downloadUri);
+                    }
+                }
+            });
+        }
+    }
 
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (data != null) {
-            if (requestCode == RC_IMAGE_PICK) {
-                mediaUri = data.getData();
-                GlideApp.with(SubirAnuncioActivity.this).asBitmap().centerInside().override(500,500).load(mediaUri).into(imagePreview);
-                /*imagePreview.setImageURI(mediaUri);*/
-            }
+        if (requestCode == RC_IMAGE_TAKE && resultCode == RESULT_OK) {
+            mediaUri = mFileUri;
+            mediaType = "image";
+            GlideApp.with(this).load(mediaUri).into(imagePreview);
+
+              }
+
+          }
+
+
+    private void dispatchTakePictureIntent() {
+
+        Uri fileUri = null;
+        try {
+            fileUri = MediaFiles.createFile(this, MediaFiles.Type.IMAGE).uri;
+        } catch (IOException ex) {
+            // No se pudo crear el fichero
         }
 
+        if (fileUri != null) {
+            mFileUri = fileUri;
+
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+            startActivityForResult(intent, RC_IMAGE_TAKE);
         }
+    }
+
+    private void dispatchTakeVideoIntent() {
+
+        Uri fileUri = null;
+        try {
+            fileUri = MediaFiles.createFile(this, MediaFiles.Type.VIDEO).uri;
+        } catch (IOException ex) {
+            // No se pudo crear el fichero
+        }
+
+        if (fileUri != null) {
+            mFileUri = fileUri;
+
+            Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+            startActivityForResult(intent, RC_VIDEO_TAKE);
+        }
+    }
+
+    void startRecording(){
+        MediaFiles.UriPathFile file = null;
+        try {
+            file = MediaFiles.createFile(this, MediaFiles.Type.AUDIO);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if(file != null) {
+            mRecorder = new MediaRecorder();
+            mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+            mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+            mRecorder.setOutputFile(file.path);
+            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+
+            try {
+                mRecorder.prepare();
+            } catch (IOException e) {
+
+            }
+
+            mediaType = "audio";
+            mediaUri = file.uri;
+            mRecorder.start();
+        }
+    }
+
+    void stopRecording(){
+        if(mRecorder != null) {
+            mRecorder.stop();
+            mRecorder.release();
+            mRecorder = null;
+        }
+    }
 
 
 
@@ -189,40 +338,9 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         }
 
 
-    /*    }  if (mediaUri2 == null || mediaUri2.toString().isEmpty()) {
-            Toast.makeText(this, "Seleccione una imagen para continuar", Toast.LENGTH_SHORT).show();
-            return;
-        } if (mediaUri3 == null || mediaUri3.toString().isEmpty()) {
-            Toast.makeText(this, "Seleccione una imagen para continuar", Toast.LENGTH_SHORT).show();
-            return;
-        } if (mediaUri4 == null || mediaUri4.toString().isEmpty()) {
-            Toast.makeText(this, "Seleccione una imagen para continuar", Toast.LENGTH_SHORT).show();
-            return;
-        }*/
-
-
         // Assume thisActivity is the current activity
-        int permissionCheck = ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.READ_EXTERNAL_STORAGE);
-        if (firebaseAuth != null) {
-            FirebaseUser user = firebaseAuth.getCurrentUser();
-
-            anuncioViewModel = ViewModelProviders.of(this).get(AnuncioViewModel.class);
-            Anuncio anuncio = new Anuncio();
-            anuncio.setImageperfil(String.valueOf(user.getPhotoUrl()));
-            anuncio.setAutor(user.getDisplayName());
-            anuncio.imageperfil=anuncio.getImageperfil();
-            anuncio.autor = anuncio.getAutor();
-            anuncio.tituloAnuncio = nombre;
-            anuncio.descripcion = articulo;
-            anuncio.precio = precio;
-            anuncio.imageUri = mediaUri.toString();
-            anuncio.fechapublicacion = new SimpleDateFormat("dd/MM/yyyy  HH:mm").format(Calendar.getInstance().getTime());
-
-            anuncioViewModel.insertAnuncio(anuncio);
-
         }
-    }
+
 
 
         GoogleMap gMap;
