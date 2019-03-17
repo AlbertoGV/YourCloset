@@ -100,7 +100,7 @@
             android:layout_marginBottom="@dimen/appbar_padding_top"
             android:text="Descripcion anuncio"
             android:padding="4dp"
-            android:layout_below="@id/tvArticulo"/>
+            android:layout_below="@id/tvArticulo" />
 
 
     </RelativeLayout>

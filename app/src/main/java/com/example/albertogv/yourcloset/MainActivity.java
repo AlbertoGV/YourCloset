@@ -72,8 +72,6 @@ public class MainActivity extends AppCompatActivity
     ImageView imagegoogle;
     Context context;
 
-    private boolean permissionToRecordAccepted = false;
-
     List<Anuncio> list;
     private GoogleApiClient googleApiClient;
     private FirebaseAuth firebaseAuth;
@@ -385,6 +383,7 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+
         dialogo.show();
 
     }

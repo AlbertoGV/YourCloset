@@ -31,8 +31,8 @@ public final class R {
         public static final int layout_dodgeInsetEdges = 0x7f03015f;
         public static final int layout_insetEdge = 0x7f030168;
         public static final int layout_keyline = 0x7f030169;
-        public static final int statusBarBackground = 0x7f0301da;
-        public static final int ttcIndex = 0x7f03023c;
+        public static final int statusBarBackground = 0x7f0301d7;
+        public static final int ttcIndex = 0x7f030239;
     }
     public static final class color {
         private color() {}
@@ -163,7 +163,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int status_bar_notification_info_overflow = 0x7f0f00df;
+        public static final int status_bar_notification_info_overflow = 0x7f0f00de;
     }
     public static final class style {
         private style() {}
@@ -189,7 +189,7 @@ public final class R {
         public static final int ColorStateListItem_android_color = 0;
         public static final int ColorStateListItem_android_alpha = 1;
         public static final int ColorStateListItem_alpha = 2;
-        public static final int[] CoordinatorLayout = { 0x7f030128, 0x7f0301da };
+        public static final int[] CoordinatorLayout = { 0x7f030128, 0x7f0301d7 };
         public static final int CoordinatorLayout_keylines = 0;
         public static final int CoordinatorLayout_statusBarBackground = 1;
         public static final int[] CoordinatorLayout_Layout = { 0x10100b3, 0x7f030131, 0x7f030132, 0x7f030133, 0x7f03015f, 0x7f030168, 0x7f030169 };
@@ -207,7 +207,7 @@ public final class R {
         public static final int FontFamily_fontProviderFetchTimeout = 3;
         public static final int FontFamily_fontProviderPackage = 4;
         public static final int FontFamily_fontProviderQuery = 5;
-        public static final int[] FontFamilyFont = { 0x1010532, 0x1010533, 0x101053f, 0x101056f, 0x1010570, 0x7f0300f0, 0x7f0300f8, 0x7f0300f9, 0x7f0300fa, 0x7f03023c };
+        public static final int[] FontFamilyFont = { 0x1010532, 0x1010533, 0x101053f, 0x101056f, 0x1010570, 0x7f0300f0, 0x7f0300f8, 0x7f0300f9, 0x7f0300fa, 0x7f030239 };
         public static final int FontFamilyFont_android_font = 0;
         public static final int FontFamilyFont_android_fontWeight = 1;
         public static final int FontFamilyFont_android_fontStyle = 2;

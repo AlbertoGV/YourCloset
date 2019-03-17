@@ -12,7 +12,6 @@ MERGED from [com.github.hajiyevelnur92:intentanimation:1.0] C:\Users\koema\.grad
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\library-1.4.2.aar\b29529d4898f49c16ad917bedb80c533\AndroidManifest.xml:6:1-16:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\cc9b8f8856cc029368e9b6b721134bd4\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\1d1dd20f310011c1805fa7ae4d758bbc\AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.curioustechizen.android-ago:library:1.4.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\library-1.4.0.aar\d506aadb27b58954331ceaec6422aab4\AndroidManifest.xml:2:1-11:12
 MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\1702fce6ce06b23d16816348f03d5e0e\AndroidManifest.xml:2:1-11:12
 MERGED from [com.firebaseui:firebase-ui-database:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-database-4.3.1.aar\b965d701a985b6c7d757c00cce85f4db\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\1a023a5f125f79fca12650df0ba61b2c\AndroidManifest.xml:17:1-22:12
@@ -24,7 +23,6 @@ MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.g
 MERGED from [com.google.firebase:firebase-core:16.0.7] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.7.aar\7a5d7b31f79bc84637f1eaeb7d23f72a\AndroidManifest.xml:2:1-9:12
 MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:2:1-17:12
 MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:17:1-30:12
-MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3dbf3d1d94e3b4110746a95d949bdbbb\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.android.gms:play-services-drive:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-drive-16.0.0.aar\08db87046b17e52d855827af225800d4\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:17:1-39:12
@@ -74,8 +72,6 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\koema\.gradle\cache
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\2702e889217858c6bbc4aeabb5bcd2ad\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\11c532e819eaca5a250a1398ea82e8d9\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\61ebd6883ef1f5db7e3fe6982299acdd\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\15d331dc8a099bdcd7def13cca789c0d\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence:db:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\1ccf28146bd8a5cfbb9917d91e6d23fc\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:documentfile:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\a6b4c4370e0ef256a2b3937854db2e1a\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\fa0f2519c8d22c754b14e177c89227c7\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\e192576fb88346ff653fd2ddd2a78bba\AndroidManifest.xml:17:1-22:12
@@ -404,8 +400,6 @@ MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\koema\.gradle\cac
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\cc9b8f8856cc029368e9b6b721134bd4\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\1d1dd20f310011c1805fa7ae4d758bbc\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\1d1dd20f310011c1805fa7ae4d758bbc\AndroidManifest.xml:20:5-44
-MERGED from [com.github.curioustechizen.android-ago:library:1.4.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\library-1.4.0.aar\d506aadb27b58954331ceaec6422aab4\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.curioustechizen.android-ago:library:1.4.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\library-1.4.0.aar\d506aadb27b58954331ceaec6422aab4\AndroidManifest.xml:7:5-9:41
 MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\1702fce6ce06b23d16816348f03d5e0e\AndroidManifest.xml:5:5-7:41
 MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\1702fce6ce06b23d16816348f03d5e0e\AndroidManifest.xml:5:5-7:41
 MERGED from [com.firebaseui:firebase-ui-database:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-database-4.3.1.aar\b965d701a985b6c7d757c00cce85f4db\AndroidManifest.xml:7:5-9:41
@@ -428,8 +422,6 @@ MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms
 MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:7:5-9:41
 MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3dbf3d1d94e3b4110746a95d949bdbbb\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3dbf3d1d94e3b4110746a95d949bdbbb\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:21:5-44
 MERGED from [com.google.android.gms:play-services-drive:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-drive-16.0.0.aar\08db87046b17e52d855827af225800d4\AndroidManifest.xml:20:5-44
@@ -528,10 +520,6 @@ MERGED from [android.arch.core:runtime:1.1.1] C:\Users\koema\.gradle\caches\tran
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\11c532e819eaca5a250a1398ea82e8d9\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\61ebd6883ef1f5db7e3fe6982299acdd\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\61ebd6883ef1f5db7e3fe6982299acdd\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\15d331dc8a099bdcd7def13cca789c0d\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\15d331dc8a099bdcd7def13cca789c0d\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\1ccf28146bd8a5cfbb9917d91e6d23fc\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\1ccf28146bd8a5cfbb9917d91e6d23fc\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:documentfile:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\a6b4c4370e0ef256a2b3937854db2e1a\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:documentfile:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\a6b4c4370e0ef256a2b3937854db2e1a\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\fa0f2519c8d22c754b14e177c89227c7\AndroidManifest.xml:20:5-44

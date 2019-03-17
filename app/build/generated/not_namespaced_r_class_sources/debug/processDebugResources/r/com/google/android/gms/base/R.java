@@ -17,7 +17,7 @@ public final class R {
         public static final int colorScheme = 0x7f0300a2;
         public static final int imageAspectRatio = 0x7f030115;
         public static final int imageAspectRatioAdjust = 0x7f030116;
-        public static final int scopeUris = 0x7f0301b9;
+        public static final int scopeUris = 0x7f0301b6;
     }
     public static final class color {
         private color() {}
@@ -100,7 +100,7 @@ public final class R {
         public static final int LoadingImageView_circleCrop = 0;
         public static final int LoadingImageView_imageAspectRatio = 1;
         public static final int LoadingImageView_imageAspectRatioAdjust = 2;
-        public static final int[] SignInButton = { 0x7f030058, 0x7f0300a2, 0x7f0301b9 };
+        public static final int[] SignInButton = { 0x7f030058, 0x7f0300a2, 0x7f0301b6 };
         public static final int SignInButton_buttonSize = 0;
         public static final int SignInButton_colorScheme = 1;
         public static final int SignInButton_scopeUris = 2;

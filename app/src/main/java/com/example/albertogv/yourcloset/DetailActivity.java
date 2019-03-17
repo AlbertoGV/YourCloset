@@ -43,7 +43,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
         Bitmap bitmap;
         Bundle bundle = getIntent().getExtras();
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         intent.getExtras();
         TextView tvprecio = findViewById(R.id.textViewPrecio);
         ImageView ivimagen = findViewById(R.id.imageViewImagen);
@@ -108,7 +108,13 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
                     .asBitmap()
                     .load(imgperfil)
                     .into(ivimagenperfil);
-            /*ivimagen.setImageURI(Uri.parse(imagen));*/
+            ivimagenperfil.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(DetailActivity.this,ProfileActivity.class);
+                    startActivity(i);
+                }
+            });
             tvprecio.setText(precio);
             tvNombre.setText(nombre);
             tvfecha.setText(fecha);

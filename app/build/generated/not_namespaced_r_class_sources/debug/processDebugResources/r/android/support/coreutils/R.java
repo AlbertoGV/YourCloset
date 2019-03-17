@@ -23,7 +23,7 @@ public final class R {
         public static final int fontStyle = 0x7f0300f8;
         public static final int fontVariationSettings = 0x7f0300f9;
         public static final int fontWeight = 0x7f0300fa;
-        public static final int ttcIndex = 0x7f03023c;
+        public static final int ttcIndex = 0x7f030239;
     }
     public static final class color {
         private color() {}
@@ -125,7 +125,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int status_bar_notification_info_overflow = 0x7f0f00df;
+        public static final int status_bar_notification_info_overflow = 0x7f0f00de;
     }
     public static final class style {
         private style() {}
@@ -152,7 +152,7 @@ public final class R {
         public static final int FontFamily_fontProviderFetchTimeout = 3;
         public static final int FontFamily_fontProviderPackage = 4;
         public static final int FontFamily_fontProviderQuery = 5;
-        public static final int[] FontFamilyFont = { 0x1010532, 0x1010533, 0x101053f, 0x101056f, 0x1010570, 0x7f0300f0, 0x7f0300f8, 0x7f0300f9, 0x7f0300fa, 0x7f03023c };
+        public static final int[] FontFamilyFont = { 0x1010532, 0x1010533, 0x101053f, 0x101056f, 0x1010570, 0x7f0300f0, 0x7f0300f8, 0x7f0300f9, 0x7f0300fa, 0x7f030239 };
         public static final int FontFamilyFont_android_font = 0;
         public static final int FontFamilyFont_android_fontWeight = 1;
         public static final int FontFamilyFont_android_fontStyle = 2;
