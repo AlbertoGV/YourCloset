@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="arm64-v8a,armeabi-v7a,armeabi"
+    abi="x86"
     api-level="28"
     build-mode="COLD"
-    density="xxhdpi"
+    density="420dpi"
     format="10"
     plugin-version="3.2.1"
-    timestamp="1550784405899"
+    timestamp="1552825485463"
     token="5246706583482337596"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -23,45 +23,49 @@
         name="verifier"
         duration="0" />
 
+    <artifact
+        location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        type="SPLIT" />
+
     <build
         build-mode="FULL"
-        timestamp="1550783418168"
+        timestamp="1552817637781"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
         <artifact
             location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
@@ -69,7 +73,53 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1550784405899"
-        verifier="COLD_SWAP_REQUESTED" />
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1552819000368"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="METHOD_DELETED"
+        timestamp="1552821772437"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1552825485463"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\koema\Desktop\YourCloset3Dao\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            type="SPLIT" />
+    </build>
 
 </instant-run>

@@ -1140,6 +1140,7 @@ drawable background_color
 drawable beutiful
 drawable botonredondo
 drawable camara
+drawable chat
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1205,6 +1206,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_notifications_black_24dp
 drawable ic_star_rate_off
 drawable ic_star_rate_on
+drawable icons8
 drawable imageredonda
 drawable indexcam
 drawable indexcam2
@@ -1230,6 +1232,7 @@ drawable places_ic_search
 drawable powered_by_google_dark
 drawable powered_by_google_light
 drawable side_nav_bar
+drawable signout
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -1302,7 +1305,6 @@ id browser_actions_menu_view
 id btnEnviar
 id btn_holder
 id buttonPanel
-id button_chat
 id button_continue
 id button_create
 id button_done
@@ -1319,6 +1321,7 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id chat
 id checkbox
 id chronometer
 id circular
@@ -1349,6 +1352,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id display_name
 id drawer_layout
 id dynamic
 id edit_phone_number
@@ -1399,6 +1403,7 @@ id iconoarticulo
 id id_name
 id ifRoom
 id image
+id image3
 id imagePreview
 id imageView3
 id imageView4
@@ -1425,6 +1430,8 @@ id left
 id light
 id like
 id like_layout
+id linLayout
+id linLayout2
 id line1
 id line3
 id listMode
@@ -1446,8 +1453,8 @@ id mtrl_internal_children_alpha_tag
 id multiply
 id name
 id name_layout
+id nav_cerrar
 id nav_favorites
-id nav_manage
 id nav_send
 id nav_share
 id nav_subiranuncio
@@ -1470,6 +1477,7 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
+id partfollow
 id password
 id password_layout
 id percent
@@ -1485,11 +1493,13 @@ id place_autocomplete_progress
 id place_autocomplete_search_button
 id place_autocomplete_search_input
 id place_autocomplete_separator
+id profile_photo
 id progress
 id progressBar
 id progress_circular
 id progress_horizontal
 id radio
+id relLayout3
 id relative
 id resend_barrier
 id resend_code
@@ -1499,6 +1509,7 @@ id right_side
 id root
 id rvMain
 id rvMensajes
+id rvPosts1
 id satellite
 id save_image_matrix
 id save_non_transition_alpha
@@ -1561,6 +1572,10 @@ id tag_unhandled_key_listeners
 id terrain
 id text
 id text2
+id textEditProfile
+id textFollolwing
+id textFollowers
+id textPosts
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -1594,12 +1609,17 @@ id trouble_signing_in
 id trouble_signing_in_possible_fixes
 id tvArticulo
 id tvDescriptionArt
+id tvFollowers
+id tvFollowing
+id tvPosts
 id tvPrecio
+id tv_bio
 id tv_hora
 id tv_imagen
 id tv_nombre_mensaje
 id tv_sesion_direccion
 id tv_sesion_nombre
+id tv_web
 id txtMensaje
 id uniform
 id unlabeled
@@ -1672,6 +1692,7 @@ layout activity_login
 layout activity_main
 layout activity_maps
 layout activity_maps2
+layout activity_profile
 layout activity_splash
 layout activity_tabbed
 layout app_bar_main
@@ -1720,6 +1741,7 @@ layout fui_welcome_back_idp_prompt_layout
 layout fui_welcome_back_password_prompt_layout
 layout grid_rv
 layout item_anuncio
+layout item_profile_post
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout nav_header_main

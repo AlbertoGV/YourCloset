@@ -16,9 +16,9 @@
             android:title="@string/listas_de_anuncios" />
 
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@mipmap/cerrarsesion"
-            android:title="@string/cerrar_sesion" />
+            android:id="@+id/nav_cerrar"
+            android:icon="@drawable/icons8"
+            android:title="Cierra sesión" />
     </group>
 
     <item android:title="@string/communicate">

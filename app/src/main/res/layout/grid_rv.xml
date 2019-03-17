@@ -31,22 +31,37 @@
 
         </ImageView>
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/like_layout"
-            android:layout_width="match_parent"
-            android:layout_marginTop="8dp"
-            android:layout_height="32dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp">
 
             <ImageView
                 android:id="@+id/like"
-                android:layout_width="41dp"
-                android:layout_marginLeft="8dp"
-                android:layout_height="29dp"
-                android:layout_gravity="left"
-                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_width="25dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="4dp"
                 app:srcCompat="@drawable/heart_off" />
 
-        </LinearLayout>
+
+            <ImageView
+                android:id="@+id/chat"
+                android:layout_width="25dp"
+                android:layout_height="24dp"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="1dp"
+                android:layout_toRightOf="@id/like"
+                app:srcCompat="@drawable/chat" />
+
+        </RelativeLayout>
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,24 +79,14 @@
                 android:id="@+id/tvArticulo"
                 android:padding="4dp"
                 android:layout_below="@+id/tvPrecio"
+
                 android:layout_marginLeft="@dimen/appbar_padding_top"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Jersey"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="01/01/2019"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:textSize="10dp"
-            android:gravity="right"
-            android:id="@+id/anuncio_fechatime"
-            android:layout_alignParentRight="true"
 
-            android:layout_toRightOf="@id/tvPrecio"/>
         <TextView
             android:layout_width="wrap_content"
             android:id="@+id/anuncioautormain"
@@ -97,25 +102,18 @@
             android:padding="4dp"
             android:layout_below="@id/tvArticulo"/>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvDescriptionArt"
-            android:orientation="horizontal">
 
-
-            <Button
-                android:id="@+id/button_chat"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/imageredonda"
-                android:text="Chat"
-                android:textColor="#00796B"
-                android:textSize="12dp"
-                android:theme="@style/Widget.AppCompat.Button.Borderless.Colored" />
-
-        </FrameLayout>
     </RelativeLayout>
+
+        <TextView
+            android:id="@+id/anuncio_fechatime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_marginLeft="@dimen/appbar_padding_top"
+            android:text="01/01/2019"
+            android:textSize="10dp" />
+
 
 
     </LinearLayout>

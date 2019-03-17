@@ -38,6 +38,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.albertogv.yourcloset.model.Anuncio;
+import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.auth.api.Auth;
@@ -46,6 +47,8 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -153,7 +156,13 @@ public class MainActivity extends AppCompatActivity
                             .apply(ro)
                             .into(anuncioViewHolder.ivphoto);
 
-
+                    anuncioViewHolder.irChat.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent i = new Intent(MainActivity.this,ChatActivity.class);
+                            startActivity(i);
+                        }
+                    });
                     anuncioViewHolder.anunimagePerfil.setImageURI(Uri.parse(anuncio.authorPhotoUrl));
                     anuncioViewHolder.time.setText(DateUtils.getRelativeTimeSpanString(anuncio.time,
                             System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS));
@@ -254,6 +263,16 @@ public class MainActivity extends AppCompatActivity
         tvnombre =   header.findViewById(R.id.tv_sesion_nombre);
         tvdireccion= header.findViewById(R.id.tv_sesion_direccion);
         imagegoogle= header.findViewById(R.id.imageView_sesion);
+
+
+        imagegoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
         if (firebaseAuthListener == null) {
             firebaseAuth = FirebaseAuth.getInstance();
             firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -403,21 +422,14 @@ public class MainActivity extends AppCompatActivity
            Intent intent = new Intent(this, TabbedActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_manage) {
-             firebaseAuth.signOut();
-            Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
-                @Override
-                public void onResult(@NonNull Status status) {
-                    if (status.isSuccess()) {
-                        Toast.makeText(getApplicationContext(), R.string.close_sesion, Toast.LENGTH_SHORT).show();
-                        goLogInScreen();
-
-                    } else {
-                        Toast.makeText(getApplicationContext(), R.string.not_close_sesion, Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-
+        } else if (id == R.id.nav_cerrar) {
+            AuthUI.getInstance()
+                    .signOut(MainActivity.this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        public void onComplete(@NonNull Task<Void> task) {
+                            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                        }
+                    });
 
         } else if (id == R.id.nav_share) {
             Intent intent = new Intent(this, ChatActivity.class);
