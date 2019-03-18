@@ -36,8 +36,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     private GoogleApiClient googleApiClient;
     private SignInButton signInButton;
-    private Button button_cerrarsesion;
-    private Button button_revokesesion;
     public static  final int SIGN_IN_CODE = 777;
 
 
@@ -50,49 +48,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-        // Write a message to the database
-
-
-
-       /* button_cerrarsesion = findViewById(R.id.olvidar_sesion);
-        button_cerrarsesion.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                firebaseAuth.signOut();
-                Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(@NonNull Status status) {
-                        if(status.isSuccess()) {
-                            goLogInScreen();
-                        }else {
-                            Toast.makeText(getApplicationContext(),R.string.not_close_sesion,Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-            }
-        });*/
-
-      /* button_revokesesion = findViewById(R.id.revoke_sesion);
-        button_revokesesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(@NonNull Status status) {
-                        if(status.isSuccess()) {
-                            goLogInScreen();
-                        }else {
-                            Toast.makeText(getApplicationContext(),R.string.not_close_sesion,Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-            }
-        });
-*/
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -124,8 +79,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
                     myRef.setValue( "Nombre: "+user.getDisplayName());
                     myRef.setValue("Email: "+user.getEmail());
-                    myRef.setValue(
-                                    "Foto: "+ user.getPhotoUrl());
+                    myRef.setValue("Foto: "+ user.getPhotoUrl());
+
 
                    goMainScreen();
                 }

@@ -41,8 +41,8 @@
 
             <ImageView
                 android:id="@+id/like"
-                android:layout_width="25dp"
-                android:layout_height="24dp"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="4dp"
                 app:srcCompat="@drawable/heart_off" />
@@ -50,8 +50,8 @@
 
             <ImageView
                 android:id="@+id/chat"
-                android:layout_width="25dp"
-                android:layout_height="24dp"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
                 android:layout_alignParentTop="true"
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
@@ -97,6 +97,8 @@
             android:layout_width="match_parent"
             android:layout_marginLeft="@dimen/appbar_padding_top"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:layout_marginBottom="@dimen/appbar_padding_top"
             android:text="Descripcion anuncio"
             android:padding="4dp"
