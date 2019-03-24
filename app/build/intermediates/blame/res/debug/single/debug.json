@@ -596,6 +596,10 @@
         "source": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\src\\main\\res\\mipmap-xhdpi\\whats.png"
     },
     {
+        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_media.xml.flat",
+        "source": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\src\\main\\res\\layout\\activity_media.xml"
+    },
+    {
         "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view_list_item.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },

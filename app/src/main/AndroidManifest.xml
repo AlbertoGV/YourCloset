@@ -131,10 +131,11 @@
             android:required="false" />
 
         <activity android:name=".ProfileActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
+        <activity android:name=".MediaActivity"></activity>
     </application>
 
 </manifest>

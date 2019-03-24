@@ -19,6 +19,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.albertogv.yourcloset.model.Anuncio;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -41,7 +43,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
-        Bitmap bitmap;
+        final Anuncio anuncio = new Anuncio();
         Bundle bundle = getIntent().getExtras();
         final Intent intent = getIntent();
         intent.getExtras();
@@ -51,9 +53,9 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         TextView tvdescripcion = findViewById(R.id.textViewDEscripcion);
         TextView tvfecha = findViewById(R.id.textViewFecha);
         TextView tvNombre = findViewById(R.id.nombre_user);
-
         FloatingActionButton fab= findViewById(R.id.fabdetail);
         fab.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(DetailActivity.this,ChatActivity.class);
@@ -72,6 +74,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
 
         Button button = findViewById(R.id.ampliarmapa);
         button.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(DetailActivity.this,MapsActivity2.class);
@@ -94,15 +97,22 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
 
             String descripcion = bundle.getString("descripcion");
 
-            String imagen = intent.getStringExtra("imagen");
-
-            /* Glide.with(getApplicationContext()).load(imagen).into(ivimagen);*/
-
+            final String imagen = intent.getStringExtra("imagen");
 
             GlideApp.with(context)
                     .asBitmap()
                     .load(imagen)
                     .into(ivimagen);
+            ivimagen.setOnClickListener(new View.OnClickListener() {
+
+
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(DetailActivity.this,MediaActivity.class);
+                    i.putExtra("imagen", imagen);
+                    startActivity(i);
+                }
+            });
 
             GlideApp.with(context)
                     .asBitmap()
