@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity
                             String precio = anuncioViewHolder.tvPrecio.getText().toString();
                             String titulo = anuncioViewHolder.tvnombreArticulo.getText().toString();
                             String descripcion = anuncioViewHolder.tvdescArticulo.getText().toString();
-                            String autor = firebaseAuth.getCurrentUser().getDisplayName();
+                            String autor = anuncio.author;
                             String fecha = anuncioViewHolder.time.getText().toString();
                             String imagenperfil = anuncio.authorPhotoUrl;
                             String imagen = anuncio.mediaUrl;

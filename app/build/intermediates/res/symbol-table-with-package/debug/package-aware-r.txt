@@ -1497,6 +1497,7 @@ id progressBar
 id progress_circular
 id progress_horizontal
 id radio
+id ratingBar
 id relLayout3
 id relative
 id resend_barrier
@@ -1618,6 +1619,7 @@ id tv_nombre_mensaje
 id tv_sesion_direccion
 id tv_sesion_nombre
 id tv_web
+id tvrating
 id txtMensaje
 id uniform
 id unlabeled
@@ -1991,12 +1993,14 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_maps_key
 string google_storage_bucket
+string habla_con_los_dem_s
 string hide_bottom_view_on_scroll_behavior
 string hint_campo_1_articulo_anuncio
 string hint_campo_2_descripcion_anuncio
 string hint_campo_3_precio_anuncio
 string listas_de_anuncios
 string log_in
+string mensajes
 string mtrl_chip_close_icon_content_description
 string nav_cerrar_sesion
 string nav_header_desc

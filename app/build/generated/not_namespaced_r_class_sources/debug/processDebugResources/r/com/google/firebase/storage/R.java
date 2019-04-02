@@ -149,15 +149,15 @@ public final class R {
         public static final int notification_background = 0x7f0800ea;
         public static final int notification_main_column = 0x7f0800eb;
         public static final int notification_main_column_container = 0x7f0800ec;
-        public static final int right_icon = 0x7f08010e;
-        public static final int right_side = 0x7f08010f;
-        public static final int standard = 0x7f080140;
-        public static final int status_bar_latest_event_content = 0x7f080142;
-        public static final int text = 0x7f080150;
-        public static final int text2 = 0x7f080151;
-        public static final int time = 0x7f080164;
-        public static final int title = 0x7f080165;
-        public static final int wide = 0x7f08018d;
+        public static final int right_icon = 0x7f08010f;
+        public static final int right_side = 0x7f080110;
+        public static final int standard = 0x7f080141;
+        public static final int status_bar_latest_event_content = 0x7f080143;
+        public static final int text = 0x7f080151;
+        public static final int text2 = 0x7f080152;
+        public static final int time = 0x7f080165;
+        public static final int title = 0x7f080166;
+        public static final int wide = 0x7f08018f;
     }
     public static final class integer {
         private integer() {}
@@ -206,7 +206,7 @@ public final class R {
         public static final int common_open_on_phone = 0x7f0f004a;
         public static final int common_signin_button_text = 0x7f0f004b;
         public static final int common_signin_button_text_long = 0x7f0f004c;
-        public static final int status_bar_notification_info_overflow = 0x7f0f00de;
+        public static final int status_bar_notification_info_overflow = 0x7f0f00e0;
     }
     public static final class style {
         private style() {}

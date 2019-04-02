@@ -68,4 +68,6 @@
     <string name="enviar">Enviar</string>
     <string name="listas_de_anuncios">Listas de anuncios</string>
     <string name="acerca_de">Acerca de</string>
+    <string name="habla_con_los_dem_s">Habla con los demás</string>
+    <string name="mensajes">Mensajes</string>
 </resources>

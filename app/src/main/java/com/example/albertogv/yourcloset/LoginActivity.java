@@ -161,7 +161,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     protected void onStop() {
         super.onStop();
         if (firebaseAuthListener != null) {
-            firebaseAuth.removeAuthStateListener(firebaseAuthListener);
+           firebaseAuth.removeAuthStateListener(firebaseAuthListener);
         }
     }
 }

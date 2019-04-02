@@ -163,7 +163,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:id="@+id/fragment_subiranuncio"
-
                 tools:layout="@layout/activity_maps"
                 class="com.google.android.gms.maps.SupportMapFragment" />
 
@@ -234,13 +233,27 @@
 
                     <RatingBar
                         android:layout_width="wrap_content"
-                        android:layout_height="43dp"
+                        android:layout_height="41dp"
                         android:layout_below="@+id/nombre_user"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginTop="-3dp"
-                        android:layout_marginRight="-25dp"
-                        android:scaleX="0.55"
-                        android:scaleY="0.55" />
+                        android:layout_marginTop="8dp"
+                        android:id="@+id/ratingBar"
+                        android:layout_toRightOf="@+id/fotoPerfil"
+                        android:max="5"
+                        android:numStars="5"
+                        android:scaleX="0.5"
+                        android:scaleY="0.5"
+                        android:transformPivotX="0dp">
+
+                    </RatingBar>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="(0)"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/tvrating"
+                        android:layout_toRightOf="@+id/nombre_user"
+                        android:layout_height="wrap_content" />
                 </RelativeLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
