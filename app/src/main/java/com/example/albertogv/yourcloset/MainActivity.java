@@ -131,10 +131,11 @@ public class MainActivity extends AppCompatActivity
         rvMain = findViewById(R.id.rvMain);
         rvMain.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         rvMain.setAdapter(new FirebaseRecyclerAdapter<Anuncio, AnuncioViewHolder>(options){
+
             @Override
             protected void onBindViewHolder(@NonNull final AnuncioViewHolder anuncioViewHolder, int i, @NonNull final Anuncio anuncio) {
 
-                final String productKey = "product-"+getRef(i).getKey();
+                final String productKey = getRef(i).getKey();
 
                 RequestOptions ro = new RequestOptions()
                         .override(500, 500)
