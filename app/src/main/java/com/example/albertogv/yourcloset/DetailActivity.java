@@ -157,7 +157,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
     }
     private void testRatingBar() {
         Anuncio anuncio = new Anuncio();
-        final DatabaseReference ref = database.getReference("user/rating").child("");
+        final DatabaseReference ref = database.getReference("user/rating").child("rating");
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override

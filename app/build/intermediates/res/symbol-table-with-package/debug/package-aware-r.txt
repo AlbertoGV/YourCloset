@@ -1299,7 +1299,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
-id btnEnviar
+id btnSend
 id btn_holder
 id buttonPanel
 id button_continue
@@ -1364,6 +1364,7 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id etMessage
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1377,7 +1378,6 @@ id filled
 id fixed
 id forever
 id fotoPerfil
-id foto_enviar
 id fragment_phone
 id fragment_register_email
 id fragment_subiranuncio
@@ -1422,6 +1422,8 @@ id invisible_frame
 id italic
 id item_touch_helper_previous_elevation
 id ivMainImage
+id ivPhoto
+id ivProductPhoto
 id labeled
 id largeLabel
 id left
@@ -1463,7 +1465,6 @@ id navigation_home
 id navigation_vendefavoritos
 id never
 id nombre_user
-id nombrechat
 id none
 id normal
 id notification_background
@@ -1507,7 +1508,8 @@ id right_icon
 id right_side
 id root
 id rvMain
-id rvMensajes
+id rvMessages
+id rvMyChats
 id rvPosts1
 id satellite
 id save_image_matrix
@@ -1610,8 +1612,12 @@ id tvArticulo
 id tvDescriptionArt
 id tvFollowers
 id tvFollowing
+id tvLastMessage
+id tvMessage
+id tvOtherDisplayName
 id tvPosts
 id tvPrecio
+id tvProductDescription
 id tv_bio
 id tv_hora
 id tv_imagen
@@ -1620,7 +1626,6 @@ id tv_sesion_direccion
 id tv_sesion_nombre
 id tv_web
 id tvrating
-id txtMensaje
 id uniform
 id unlabeled
 id up
@@ -1693,6 +1698,7 @@ layout activity_main
 layout activity_maps
 layout activity_maps2
 layout activity_media
+layout activity_my_chats
 layout activity_profile
 layout activity_splash
 layout activity_tabbed
@@ -1700,6 +1706,7 @@ layout app_bar_main
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout card_view_mensajes
+layout chat_viewholder
 layout content_main
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1743,6 +1750,7 @@ layout fui_welcome_back_password_prompt_layout
 layout grid_rv
 layout item_anuncio
 layout item_profile_post
+layout message_viewholder
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout nav_header_main

@@ -36,12 +36,12 @@
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\color-v21_abc_btn_colored_borderless_text_material.xml.flat",
-        "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\color-v21\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
         "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\color-v21_abc_btn_colored_borderless_text_material.xml.flat",
+        "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\color-v21\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\layout-v26_abc_screen_toolbar.xml.flat",
@@ -64,20 +64,20 @@
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\layout\\abc_search_view.xml"
     },
     {
-        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\layout_fui_provider_button_phone.xml.flat",
-        "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-ui-auth-4.3.1.aar\\d53a783184a104ef38f35d3b8c3488a0\\res\\layout\\fui_provider_button_phone.xml"
-    },
-    {
-        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_transformation_sheet_collapse_spec.xml.flat",
-        "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\a1f2496d024d0aca3be5a2f0b463b1b9\\res\\animator\\mtrl_fab_transformation_sheet_collapse_spec.xml"
+        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_transformation_sheet_collapse_spec.xml.flat",
+        "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\a1f2496d024d0aca3be5a2f0b463b1b9\\res\\animator\\mtrl_fab_transformation_sheet_collapse_spec.xml"
+    },
+    {
+        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\layout_fui_provider_button_phone.xml.flat",
+        "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-ui-auth-4.3.1.aar\\d53a783184a104ef38f35d3b8c3488a0\\res\\layout\\fui_provider_button_phone.xml"
     },
     {
         "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -130,6 +130,10 @@
     {
         "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\drawable_fui_idp_button_background_email.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-ui-auth-4.3.1.aar\\d53a783184a104ef38f35d3b8c3488a0\\res\\drawable\\fui_idp_button_background_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\layout_message_viewholder.xml.flat",
+        "source": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\src\\main\\res\\layout\\message_viewholder.xml"
     },
     {
         "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
@@ -1580,6 +1584,10 @@
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
+        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\layout_chat_viewholder.xml.flat",
+        "source": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\src\\main\\res\\layout\\chat_viewholder.xml"
+    },
+    {
         "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\50daade63d436a09bdba29b4e3831f83\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
@@ -2762,6 +2770,10 @@
     {
         "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable-ldrtl-xhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_my_chats.xml.flat",
+        "source": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\src\\main\\res\\layout\\activity_my_chats.xml"
     },
     {
         "merged": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_up_container.xml.flat",

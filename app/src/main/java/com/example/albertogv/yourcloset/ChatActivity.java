@@ -1,276 +1,192 @@
 package com.example.albertogv.yourcloset;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.albertogv.yourcloset.model.MensajeEnviar;
-import com.example.albertogv.yourcloset.model.MensajeRecibir;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
+import com.example.albertogv.yourcloset.model.Anuncio;
+import com.example.albertogv.yourcloset.model.Chat;
+import com.example.albertogv.yourcloset.model.Mensaje;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ServerValue;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-
-import de.hdodenhof.circleimageview.CircleImageView;
+import com.google.firebase.database.ValueEventListener;
 
 public class ChatActivity extends AppCompatActivity {
-    private CircleImageView fotoPerfil;
-    private TextView nombre;
-    private RecyclerView rvMensajes;
-    private EditText txtMensaje;
-    private Button btnEnviar;
-    private AdapterMensajes adapter;
-    private FirebaseDatabase database;
-    private DatabaseReference databaseReference;
-    private FirebaseStorage firebaseStorage;
-    private StorageReference storageReference;
-    private ImageButton btnEnviarFoto;
-    private String fotoPerfilCadena;
-    FirebaseUser user;
-    private FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
-    private static  final int PHOTO_SEND = 1;
-    private  static  final  int PHOTO_PERFIL=2;
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        firebaseAuth.addAuthStateListener(firebaseAuthListener);
-    }
+    DatabaseReference mRef;
+    String uid;
+    String chatKey;
+    String productKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        fotoPerfil = findViewById(R.id.fotoPerfil);
-        nombre = findViewById(R.id.nombrechat);
-        if (user != null) {
-            nombre.setText(user.getDisplayName());
-        }
-        rvMensajes = findViewById(R.id.rvMensajes);
-        txtMensaje = findViewById(R.id.txtMensaje);
-        btnEnviar = findViewById(R.id.btnEnviar);
-        btnEnviarFoto = findViewById(R.id.foto_enviar);
-        fotoPerfilCadena = "";
-        database = FirebaseDatabase.getInstance();
-        databaseReference = database.getReference("chat");// sala del chat (nombre)
-        firebaseStorage = FirebaseStorage.getInstance();
+        mRef = FirebaseDatabase.getInstance().getReference();
+        uid = "uid-" + FirebaseAuth.getInstance().getUid();
 
-        android.support.v7.widget.Toolbar toolbar =  findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
+        chatKey = getIntent().getStringExtra("CHAT_KEY");
 
-        adapter = new AdapterMensajes(this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        rvMensajes.setLayoutManager(linearLayoutManager);
-        rvMensajes.setAdapter(adapter);
-        btnEnviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                databaseReference.push().setValue((new MensajeEnviar(txtMensaje.getText().toString(), nombre.getText().toString(), fotoPerfilCadena, "1", ServerValue.TIMESTAMP)));
-                txtMensaje.setText("");
-            }
-        });
-
-        btnEnviarFoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/jpeg");
-                intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-                startActivityForResult(Intent.createChooser(intent, "Selecciona una foto"), PHOTO_SEND);
-
-            }
-        });
-        fotoPerfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/jpeg");
-                intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-                startActivityForResult(Intent.createChooser(intent, "Selecciona una foto"), PHOTO_PERFIL);
+        if(chatKey != null) {
+            // se ha entrado desde "MyChats", el chat ya existe, cargo los mensajes
+            loadChatInfo(chatKey);
+            loadMessages(chatKey);
+        } else {
+            // se ha entrado desde "Products"
+            productKey = getIntent().getStringExtra("PRODUCT_KEY");
 
 
-            }
-        });
-        adapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
-            @Override
-            public void onItemRangeInserted(int positionStart, int itemCount) {
-                super.onItemRangeInserted(positionStart, itemCount);
-                setScrollBar();
-            }
-        });
-        firebaseAuth = FirebaseAuth.getInstance();
-        firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    setUserData(user);
-                }
-
-            }
-        };
-
-
-
-
-
-        databaseReference.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                MensajeRecibir m = dataSnapshot.getValue(MensajeRecibir.class);
-                adapter.addMensaje(m);
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    private void setUserData(FirebaseUser user) {
-        if (user != null) {
-            //  setContentView(R.layout.nav_header_main);
-
-            nombre.setText(user.getDisplayName());
-
-            Glide.with(this).load(user.getPhotoUrl()).into(fotoPerfil);
-
-        }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (firebaseAuthListener != null) {
-            firebaseAuth.removeAuthStateListener(firebaseAuthListener);
-
-        }
-    }
-
-    private void setScrollBar(){
-        rvMensajes.scrollToPosition(adapter.getItemCount()-1);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == PHOTO_SEND && resultCode == RESULT_OK){
-             final Uri u = data.getData();
-            storageReference = firebaseStorage.getReference("Imagenes chat");//imagenes del chat
-            final StorageReference fotoReferencia= storageReference.child(u.getLastPathSegment());
-            final UploadTask uploadTask =fotoReferencia.putFile(u);
-            fotoReferencia.putFile(u).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            // consulto si existe un chat para ese producto
+            mRef.child("products/product-chats").child(productKey).child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    chatKey = dataSnapshot.getValue(String.class);
 
-                    Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                        @Override
-                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                            if (!task.isSuccessful()) {
-                                throw task.getException();
+                    if (chatKey != null) {
+                        // si ya existe un chat para ese producto cargo los mensajes
+                        loadChatInfo(chatKey);
+                        loadMessages(chatKey);
+                    } else {
+                        mRef.child("products/data").child(productKey).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                Anuncio anuncio = dataSnapshot.getValue(Anuncio.class);
+                                if (anuncio != null) {
+                                    showChatInfo(anuncio.photoUrl, anuncio.description, anuncio.displayName);
+                                }else{
+                                    System.out.println("no rula");
+                                }
                             }
 
-                            // Continue with the task to get the download URL
-                            return fotoReferencia.getDownloadUrl();
-                        }
-                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Uri> task) {
-                            if (task.isSuccessful()) {
-                                Uri u = task.getResult();
-                            } else {
-                                // Handle failures
-                                // ...
-                            }
-                        }
-                    });
-
-                    MensajeEnviar m = new MensajeEnviar(nombre.getText().toString()+" te ha enviado una foto",nombre.getText().toString(),fotoPerfil.toString(),"", u.toString(),ServerValue.TIMESTAMP);
-                    databaseReference.push().setValue(m);
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {}
+                        });
+                    }
                 }
-            });
 
-        }else if (requestCode == PHOTO_PERFIL && resultCode == RESULT_OK){
-
-             final Uri u = data.getData();
-            storageReference = firebaseStorage.getReference("Imagenes perfil");//imagenes de perfil
-            final StorageReference fotoReferencia= storageReference.child(u.getLastPathSegment());
-            final UploadTask uploadTask =fotoReferencia.putFile(u);
-            fotoReferencia.putFile(u).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                        @Override
-                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                            if (!task.isSuccessful()) {
-                                throw task.getException();
-                            }
-
-                            // Continue with the task to get the download URL
-                            return fotoReferencia.getDownloadUrl();
-                        }
-                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Uri> task) {
-                            if (task.isSuccessful()) {
-                                Uri u = task.getResult();
-                            } else {
-                                // Handle failures
-                                // ...
-                            }
-                        }
-                    });
-                    MensajeEnviar m = new MensajeEnviar(nombre.getText().toString() + " ha actualizado la foto de su perfil ",u.toString(),nombre.getText().toString(),"",fotoPerfil.toString(),ServerValue.TIMESTAMP);
-                    databaseReference.push().setValue(m);
-                    Glide.with(ChatActivity.this).load(user.getPhotoUrl()).into(fotoPerfil);
-
-                }
+                public void onCancelled(@NonNull DatabaseError databaseError) {}
             });
         }
 
+        findViewById(R.id.btnSend).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String message = ((EditText) findViewById(R.id.etMessage)).getText().toString();
+                final String messageKey = "message-" + mRef.push().getKey();
 
-}}
+                if (chatKey == null) {
+                    mRef.child("products/data").child(productKey).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            Anuncio anuncio= dataSnapshot.getValue(Anuncio.class);
+
+                            if(anuncio == null) return;
+
+                            chatKey = "chat-" + mRef.push().getKey();
+
+                            Chat chat = new Chat();
+                            chat.productPhotoUrl = anuncio.photoUrl;
+                            chat.productDescription = anuncio.description;
+                            chat.lastMessage = message;
+
+                            mRef.child("products/product-chats").child(productKey).child(uid).setValue(chatKey);
+                            mRef.child("chats/data").child(chatKey).setValue(chat);
+                            mRef.child("chats/user-chats").child(uid).child(chatKey).setValue(true);
+                            mRef.child("chats/user-chats").child(anuncio.uid).child(chatKey).setValue(true);
+
+                            mRef.child("chats/chat-messages").child(chatKey).child(messageKey).setValue(new Mensaje(uid, message));
+
+                            loadChatInfo(chatKey);
+                            loadMessages(chatKey);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {}
+                    });
+                } else {
+                    mRef.child("chats/chat-messages").child(chatKey).child(messageKey).setValue(new Mensaje(uid, message));
+                }
+            }
+        });
+    }
+
+    void loadChatInfo(final String chatKey){
+        mRef.child("chats/data").child(chatKey).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Chat chat = dataSnapshot.getValue(Chat.class);
+                if(chat.buyerUid == uid){
+                    showChatInfo(chat.productPhotoUrl, chat.productDescription, chat.sellerDispalyName);
+                } else {
+                    showChatInfo(chat.productPhotoUrl, chat.productDescription, chat.buyerDisplayName);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {}
+        });
+    }
+
+    void showChatInfo(String productPhotoUrl, String productDescription, String otherDisplayName){
+        ((TextView) findViewById(R.id.tvProductDescription)).setText(productDescription);
+        Glide.with(ChatActivity.this).load(productPhotoUrl).into((ImageView) findViewById(R.id.ivProductPhoto));
+        ((TextView) findViewById(R.id.tvOtherDisplayName)).setText(otherDisplayName);
+    }
+
+    void loadMessages(String chatId) {
+        FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Mensaje>()
+                .setQuery(mRef.child("chats/chat-messages").child(chatId), Mensaje.class)
+                .setLifecycleOwner(this)
+                .build();
+
+        MessagesAdapter adapter = new MessagesAdapter(options);
+
+        RecyclerView recyclerView = findViewById(R.id.rvMessages);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+    }
+
+    class MessagesAdapter extends FirebaseRecyclerAdapter<Mensaje, MessagesAdapter.MessageViewHolder> {
+
+        class MessageViewHolder extends RecyclerView.ViewHolder {
+            TextView message;
+
+            public MessageViewHolder(@NonNull View itemView) {
+                super(itemView);
+                message = itemView.findViewById(R.id.tvMessage);
+            }
+        }
+
+        public MessagesAdapter(@NonNull FirebaseRecyclerOptions<Mensaje> options) {
+            super(options);
+        }
+
+        @NonNull
+        @Override
+        public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+            LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+            return new MessageViewHolder(inflater.inflate(R.layout.message_viewholder, viewGroup, false));
+        }
+
+        @Override
+        protected void onBindViewHolder(@NonNull MessageViewHolder holder, final int position, @NonNull final Mensaje mensaje) {
+            holder.message.setText(mensaje.message);
+        }
+    }
+}

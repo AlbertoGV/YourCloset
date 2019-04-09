@@ -194,9 +194,9 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
 
         Map<String, Object> postValues = anuncio.toMap();
         Map<String, Object> childUpdates = new HashMap<>();
-        childUpdates.put("posts/data/" + postKey, postValues);
-        childUpdates.put("posts/all-posts/" + postKey, true);
-        childUpdates.put("posts/user-posts/" + mUser.getUid() + "/" + postKey, true);
+        childUpdates.put("products/data/" + postKey, postValues);
+        childUpdates.put("products/all-products/" + postKey, true);
+        childUpdates.put("products/user-products/" + mUser.getUid() + "/" + postKey, true);
 
 
         mReference.updateChildren(childUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {

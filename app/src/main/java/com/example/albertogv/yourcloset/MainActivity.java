@@ -27,9 +27,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,8 +43,6 @@ import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -58,8 +54,6 @@ import com.google.firebase.database.Query;
 import java.util.List;
 
 import maes.tech.intentanim.CustomIntent;
-
-import static com.example.albertogv.yourcloset.SubirAnuncioActivity.REQUEST_RECORD_AUDIO_PERMISSION;
 
 
 public class MainActivity extends AppCompatActivity
@@ -130,7 +124,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemBackground(null);
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Anuncio>()
-                .setIndexedQuery(setQuery(), mReference.child("posts/data"), Anuncio.class)
+                .setIndexedQuery(setQuery(), mReference.child("products/data"), Anuncio.class)
                 .setLifecycleOwner(this)
                 .build();
 
@@ -140,7 +134,8 @@ public class MainActivity extends AppCompatActivity
             @Override
             protected void onBindViewHolder(@NonNull final AnuncioViewHolder anuncioViewHolder, int i, @NonNull final Anuncio anuncio) {
 
-                final String postKey = getRef(i).getKey();
+                final String productKey = getRef(i).getKey();
+
                 RequestOptions ro = new RequestOptions()
                         .override(500, 500)
                         .optionalFitCenter()
@@ -158,16 +153,17 @@ public class MainActivity extends AppCompatActivity
                         @Override
                         public void onClick(View v) {
                             Intent i = new Intent(MainActivity.this,ChatActivity.class);
+                            i.putExtra("PRODUCT_KEY", productKey);
                             startActivity(i);
                         }
                     });
-                    anuncioViewHolder.anunimagePerfil.setImageURI(Uri.parse(anuncio.authorPhotoUrl));
+                    anuncioViewHolder.anunimagePerfil.setImageURI(Uri.parse(anuncio.getAuthorPhotoUrl()));
                     anuncioViewHolder.time.setText(DateUtils.getRelativeTimeSpanString(anuncio.time,
                             System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS));
                     anuncioViewHolder.tvPrecio.setText(anuncio.getPrecioAnuncio()+" Euros");
 
                     anuncioViewHolder.tvnombreArticulo.setText(anuncio.getTituloAnuncio());
-                    anuncioViewHolder.tvdescArticulo.setText(anuncio.descripcion);
+                    anuncioViewHolder.tvdescArticulo.setText(anuncio.description);
 
                     if (anuncio.likes.containsKey(mUser.getUid())) {
                         anuncioViewHolder.like.setImageResource(R.drawable.heart_on);
@@ -179,11 +175,11 @@ public class MainActivity extends AppCompatActivity
                         @Override
                         public void onClick(View view) {
                             if (anuncio.likes.containsKey(mUser.getUid())) {
-                                mReference.child("posts/data").child(postKey).child("likes").child(mUser.getUid()).setValue(null);
-                                mReference.child("posts/user-likes").child(mUser.getUid()).child(postKey).setValue(null);
+                                mReference.child("products/data").child(productKey).child("likes").child(mUser.getUid()).setValue(null);
+                                mReference.child("products/user-likes").child(mUser.getUid()).child(productKey).setValue(null);
                             } else {
-                                mReference.child("posts/data").child(postKey).child("likes").child(mUser.getUid()).setValue(true);
-                                mReference.child("posts/user-likes").child(mUser.getUid()).child(postKey).setValue(true);
+                                mReference.child("products/data").child(productKey).child("likes").child(mUser.getUid()).setValue(true);
+                                mReference.child("products/user-likes").child(mUser.getUid()).child(productKey).setValue(true);
                             }
                         }
                     });
@@ -200,9 +196,9 @@ public class MainActivity extends AppCompatActivity
                             String precio = anuncioViewHolder.tvPrecio.getText().toString();
                             String titulo = anuncioViewHolder.tvnombreArticulo.getText().toString();
                             String descripcion = anuncioViewHolder.tvdescArticulo.getText().toString();
-                            String autor = anuncio.author;
+                            String autor = anuncio.displayName;
                             String fecha = anuncioViewHolder.time.getText().toString();
-                            String imagenperfil = anuncio.authorPhotoUrl;
+                            String imagenperfil = anuncio.getAuthorPhotoUrl();
                             String imagen = anuncio.mediaUrl;
 
                           intent.putExtra("nombre", autor);
@@ -470,7 +466,7 @@ public class MainActivity extends AppCompatActivity
 
     }
     Query setQuery(){
-        return  mReference.child("posts/all-posts").limitToFirst(100);
+        return  mReference.child("products/all-products").limitToFirst(100);
     }
 
 

@@ -1,7 +1,6 @@
 package com.example.albertogv.yourcloset.model;
 
 import com.google.firebase.database.Exclude;
-import com.google.firebase.database.ServerValue;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -18,28 +17,28 @@ public class Anuncio {
                 this.uid = uid;
         }
 
-        public String getAuthor() {
-                return author;
+        public String getDisplayName() {
+                return displayName;
         }
 
-        public void setAuthor(String author) {
-                this.author = author;
+        public void setDisplayName(String displayName) {
+                this.displayName = displayName;
         }
 
         public String getAuthorPhotoUrl() {
-                return authorPhotoUrl;
+                return photoUrl;
         }
 
         public void setAuthorPhotoUrl(String authorPhotoUrl) {
-                this.authorPhotoUrl = authorPhotoUrl;
+                this.photoUrl = authorPhotoUrl;
         }
 
         public String getDescripcion() {
-                return descripcion;
+                return description;
         }
 
         public void setDescripcion(String descripcion) {
-                this.descripcion = descripcion;
+                this.description = descripcion;
         }
 
         public String getMediaUrl() {
@@ -91,9 +90,9 @@ public class Anuncio {
         }
 
         public String uid;
-        public String author;
-        public String authorPhotoUrl;
-        public String descripcion;
+        public String displayName;
+        public String photoUrl;
+        public String description;
         public String mediaUrl;
         public String tituloAnuncio;
         public String precioAnuncio;
@@ -108,9 +107,9 @@ public class Anuncio {
 
         public Anuncio(String uid, String author, String authorPhotoUrl, String descripcion,String tituloAnuncio,String precioAnuncio,String mediaUrl, String mediaType,Map timestamp) {
                 this.uid = uid;
-                this.author = author;
-                this.authorPhotoUrl = authorPhotoUrl;
-                this.descripcion = descripcion;
+                this.displayName = author;
+                this.photoUrl = authorPhotoUrl;
+                this.description = descripcion;
                 this.mediaUrl = mediaUrl;
                 this.precioAnuncio = precioAnuncio;
                 this.tituloAnuncio = tituloAnuncio;
@@ -122,9 +121,9 @@ public class Anuncio {
         public Map<String, Object> toMap() {
                 HashMap<String, Object> result = new HashMap<>();
                 result.put("uid", uid);
-                result.put("author", author);
-                result.put("authorPhotoUrl", authorPhotoUrl);
-                result.put("descripcion", descripcion);
+                result.put("displayName", displayName);
+                result.put("authorPhotoUrl", photoUrl);
+                result.put("descripcion", description);
                 result.put("mediaUrl", mediaUrl);
                 result.put("precioAnuncio",precioAnuncio);
                 result.put("tituloAnuncio",tituloAnuncio);
