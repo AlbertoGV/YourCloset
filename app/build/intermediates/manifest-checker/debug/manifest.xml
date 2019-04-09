@@ -153,6 +153,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name="com.example.albertogv.yourcloset.MyChatsActivity" />
         <activity android:name="com.example.albertogv.yourcloset.MediaActivity" />
 
         <meta-data

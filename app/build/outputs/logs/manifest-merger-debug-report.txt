@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-141:12
-INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-141:12
-INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-141:12
-INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-141:12
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-142:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-142:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-142:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-142:12
 MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-4.3.1.aar\0e2d405c01a0d5ed74fb03bc354a093f\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:2:1-12:12
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-auth-4.3.1.aar\d53a783184a104ef38f35d3b8c3488a0\AndroidManifest.xml:2:1-109:12
@@ -77,20 +77,20 @@ MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\koema\.g
 MERGED from [com.android.support:print:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\e192576fb88346ff653fd2ddd2a78bba\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\ed4e5028ff813e761b07dd75d3c404ce\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\c8dfd7ffc695df5a1999486edf464c6f\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-141:12
-INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-141:12
-INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-142:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-142:12
+INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-142:12
 	package
 		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:3:5-47
 		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-141:12
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-142:12
 		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-141:12
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:1-142:12
 		INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:2:11-69
@@ -173,7 +173,7 @@ ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xm
 	android:name
 		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:21:22-76
 application
-ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:23:5-139:19
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:23:5-140:19
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:10:5-20
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-auth-4.3.1.aar\d53a783184a104ef38f35d3b8c3488a0\AndroidManifest.xml:15:5-107:19
@@ -380,10 +380,14 @@ activity#com.example.albertogv.yourcloset.ProfileActivity
 ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:133:9-137:20
 	android:name
 		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:133:19-50
-activity#com.example.albertogv.yourcloset.MediaActivity
-ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:138:9-60
+activity#com.example.albertogv.yourcloset.MyChatsActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:138:9-62
 	android:name
-		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:138:19-48
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:138:19-50
+activity#com.example.albertogv.yourcloset.MediaActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:139:9-60
+	android:name
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:139:19-48
 uses-sdk
 INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml

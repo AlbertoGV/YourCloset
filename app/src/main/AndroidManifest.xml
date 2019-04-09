@@ -135,6 +135,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name=".MyChatsActivity"></activity>
         <activity android:name=".MediaActivity"></activity>
     </application>
 
