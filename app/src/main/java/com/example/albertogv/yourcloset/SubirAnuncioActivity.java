@@ -81,6 +81,8 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     DatabaseReference mReference;
 
     FirebaseUser mUser;
+    String uid;
+
     boolean recording = false;
 
     private MediaRecorder mRecorder = null;
@@ -106,6 +108,8 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         imagePreview = findViewById(R.id.imagePreview);
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
+        uid = "uid-" + mUser.getUid();
+
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -187,16 +191,16 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
 
     }
 
-    public void writeNewPost(String postText, String postName,String postPrecio, String mediaUri) {
+    public void writeNewPost(String description, String name, String price, String mediaUri) {
 
-        String postKey = mReference.push().getKey();
-        Anuncio anuncio = new Anuncio(mUser.getUid(), mUser.getDisplayName(), mUser.getPhotoUrl().toString(), postText,postName,postPrecio, mediaUri, mediaType, ServerValue.TIMESTAMP);
+        String productKey = "product-" + mReference.push().getKey();
+        Anuncio anuncio = new Anuncio(uid, mUser.getDisplayName(), mUser.getPhotoUrl().toString(), description,name,price, mediaUri, mediaType, ServerValue.TIMESTAMP);
 
         Map<String, Object> postValues = anuncio.toMap();
         Map<String, Object> childUpdates = new HashMap<>();
-        childUpdates.put("products/data/" + postKey, postValues);
-        childUpdates.put("products/all-products/" + postKey, true);
-        childUpdates.put("products/user-products/" + mUser.getUid() + "/" + postKey, true);
+        childUpdates.put("products/data/" + productKey, postValues);
+        childUpdates.put("products/all-products/" + productKey, true);
+        childUpdates.put("products/user-products/" + uid + "/" + productKey, true);
 
 
         mReference.updateChildren(childUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {

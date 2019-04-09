@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             protected void onBindViewHolder(@NonNull final AnuncioViewHolder anuncioViewHolder, int i, @NonNull final Anuncio anuncio) {
 
-                final String productKey = getRef(i).getKey();
+                final String productKey = "product-"+getRef(i).getKey();
 
                 RequestOptions ro = new RequestOptions()
                         .override(500, 500)

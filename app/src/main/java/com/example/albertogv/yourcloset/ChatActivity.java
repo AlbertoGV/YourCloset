@@ -131,11 +131,12 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Chat chat = dataSnapshot.getValue(Chat.class);
-                if(chat.buyerUid == uid){
-                    showChatInfo(chat.productPhotoUrl, chat.productDescription, chat.sellerDispalyName);
-                } else {
-                    showChatInfo(chat.productPhotoUrl, chat.productDescription, chat.buyerDisplayName);
-                }
+
+                    if (chat.buyerUid == uid) {
+                        showChatInfo(chat.productPhotoUrl, chat.productDescription, chat.sellerDispalyName);
+                    } else {
+                        showChatInfo(chat.productPhotoUrl, chat.productDescription, chat.buyerDisplayName);
+                    }
             }
 
             @Override
