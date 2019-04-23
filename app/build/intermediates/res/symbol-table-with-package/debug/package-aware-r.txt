@@ -743,6 +743,7 @@ color fui_bgTwitter
 color fui_buttonShadow
 color fui_linkColor
 color fui_transparent
+color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -1659,6 +1660,7 @@ id tvPosts
 id tvPrecio
 id tvProductName
 id tvTimeMessage
+id tvUserName
 id tv_bio
 id tv_imagen
 id tv_sesion_direccion

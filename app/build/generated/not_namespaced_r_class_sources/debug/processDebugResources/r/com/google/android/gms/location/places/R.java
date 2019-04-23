@@ -12,12 +12,12 @@ public final class R {
     public static final class color {
         private color() {}
 
-        public static final int place_autocomplete_prediction_primary_text = 0x7f050088;
-        public static final int place_autocomplete_prediction_primary_text_highlight = 0x7f050089;
-        public static final int place_autocomplete_prediction_secondary_text = 0x7f05008a;
-        public static final int place_autocomplete_search_hint = 0x7f05008b;
-        public static final int place_autocomplete_search_text = 0x7f05008c;
-        public static final int place_autocomplete_separator = 0x7f05008d;
+        public static final int place_autocomplete_prediction_primary_text = 0x7f050089;
+        public static final int place_autocomplete_prediction_primary_text_highlight = 0x7f05008a;
+        public static final int place_autocomplete_prediction_secondary_text = 0x7f05008b;
+        public static final int place_autocomplete_search_hint = 0x7f05008c;
+        public static final int place_autocomplete_search_text = 0x7f05008d;
+        public static final int place_autocomplete_separator = 0x7f05008e;
     }
     public static final class dimen {
         private dimen() {}
