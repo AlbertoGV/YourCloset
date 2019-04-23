@@ -15,6 +15,7 @@ MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\koema\.gradle\cach
 MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\1702fce6ce06b23d16816348f03d5e0e\AndroidManifest.xml:2:1-11:12
 MERGED from [com.firebaseui:firebase-ui-database:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-database-4.3.1.aar\b965d701a985b6c7d757c00cce85f4db\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\1a023a5f125f79fca12650df0ba61b2c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.shimmer:shimmer:0.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\shimmer-0.1.0.aar\bd1be5dedd294c4af15267a76e053d33\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\95ea02b9afe818821905c07ba900db2b\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\2d155dcc18273afb2a4e9ec7ac59ae75\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\0238fa7a473a07b0470d3be561d8a33a\AndroidManifest.xml:17:1-22:12
@@ -330,12 +331,12 @@ ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xm
 		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:93:13-55
 	android:name
 		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:92:13-43
-activity#com.example.albertogv.yourcloset.ChatActivity
+activity#com.example.albertogv.yourcloset.chat.ChatActivity
 ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:98:9-104:20
 	android:parentActivityName
 		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:100:13-55
 	android:name
-		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:99:13-41
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:99:13-46
 activity#com.example.albertogv.yourcloset.DetailActivityLists
 ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:105:9-111:20
 	android:parentActivityName
@@ -380,10 +381,10 @@ activity#com.example.albertogv.yourcloset.ProfileActivity
 ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:133:9-137:20
 	android:name
 		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:133:19-50
-activity#com.example.albertogv.yourcloset.MyChatsActivity
-ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:138:9-62
+activity#com.example.albertogv.yourcloset.chat.MyChatsActivity
+ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:138:9-67
 	android:name
-		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:138:19-50
+		ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:138:19-55
 activity#com.example.albertogv.yourcloset.MediaActivity
 ADDED from C:\Users\koema\Desktop\YourCloset3Dao\app\src\main\AndroidManifest.xml:139:9-60
 	android:name
@@ -414,6 +415,8 @@ MERGED from [com.firebaseui:firebase-ui-database:4.3.1] C:\Users\koema\.gradle\c
 MERGED from [com.firebaseui:firebase-ui-database:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-database-4.3.1.aar\b965d701a985b6c7d757c00cce85f4db\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\1a023a5f125f79fca12650df0ba61b2c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\1a023a5f125f79fca12650df0ba61b2c\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.shimmer:shimmer:0.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\shimmer-0.1.0.aar\bd1be5dedd294c4af15267a76e053d33\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.shimmer:shimmer:0.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\shimmer-0.1.0.aar\bd1be5dedd294c4af15267a76e053d33\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\95ea02b9afe818821905c07ba900db2b\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\95ea02b9afe818821905c07ba900db2b\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\2d155dcc18273afb2a4e9ec7ac59ae75\AndroidManifest.xml:20:5-44

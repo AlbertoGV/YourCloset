@@ -7,15 +7,18 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.format.DateUtils;
+import android.transition.Explode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -27,7 +30,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.Interpolator;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +41,10 @@ import com.bumptech.glide.Glide;
 
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.albertogv.yourcloset.chat.ChatActivity;
+import com.example.albertogv.yourcloset.chat.MyChatsActivity;
 import com.example.albertogv.yourcloset.model.Anuncio;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -55,7 +64,6 @@ import java.util.List;
 
 import maes.tech.intentanim.CustomIntent;
 
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
     public DatabaseReference mReference;
@@ -63,20 +71,28 @@ public class MainActivity extends AppCompatActivity
     RecyclerView rvMain;
     TextView tvnombre;
     TextView tvdireccion;
+    ProgressBar progressBar;
+    boolean click= false;
     ImageView imagegoogle;
     Context context;
-
+    Anuncio anuncio;
+    private ShimmerFrameLayout mShimmerViewContainer;
     List<Anuncio> list;
     private GoogleApiClient googleApiClient;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
+        mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
+        progressBar = findViewById(R.id.progressBar);
+        mShimmerViewContainer.startShimmerAnimation();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -99,16 +115,26 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SubirAnuncioActivity.class);
-                startActivity(intent);
-                CustomIntent.customType(MainActivity.this, "bottom-to-up");
+                click = !click;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    Interpolator interpolador = AnimationUtils.loadInterpolator(getBaseContext(),
+                            android.R.interpolator.overshoot);
 
-                /**left-to-right
-                 *right-to-left
-                 *bottom-to-up
-                 *up-to-bottom
-                 *fadein-to-fadeout
-                 *rotateout-to-rotatein*/
+                    view.animate()
+                            .rotation(click ? 90f : 0)
+                            .setInterpolator(interpolador)
+                            .start();
+                    Intent intent = new Intent(MainActivity.this, SubirAnuncioActivity.class);
+
+                    startActivity(intent);
+                    /*CustomIntent.customType(MainActivity.this, "bottom-to-up");*/
+                    /**left-to-right
+                     *right-to-left
+                     *bottom-to-up
+                     *up-to-bottom
+                     *fadein-to-fadeout
+                     *rotateout-to-rotatein*/
+                }
             }
         });
 
@@ -132,11 +158,11 @@ public class MainActivity extends AppCompatActivity
         rvMain.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         rvMain.setAdapter(new FirebaseRecyclerAdapter<Anuncio, AnuncioViewHolder>(options){
 
+
             @Override
             protected void onBindViewHolder(@NonNull final AnuncioViewHolder anuncioViewHolder, int i, @NonNull final Anuncio anuncio) {
-
                 final String productKey = getRef(i).getKey();
-
+                final String messageKey = getRef(i).getKey();
                 RequestOptions ro = new RequestOptions()
                         .override(500, 500)
                         .optionalFitCenter()
@@ -149,12 +175,24 @@ public class MainActivity extends AppCompatActivity
                             .load(Uri.parse(anuncio.getMediaUrl()))
                             .apply(ro)
                             .into(anuncioViewHolder.ivphoto);
+                  if(mUser != null) {
+                      if (mUser.getDisplayName().equals(anuncio.displayName)) {
+                          anuncioViewHolder.irChat.setVisibility(View.INVISIBLE);
+                          anuncioViewHolder.settings.setVisibility(View.VISIBLE);
+                      } else {
+                          anuncioViewHolder.irChat.setVisibility(View.VISIBLE);
+                          anuncioViewHolder.settings.setVisibility(View.INVISIBLE);
+                      }
+                  }
+
 
                     anuncioViewHolder.irChat.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent i = new Intent(MainActivity.this,ChatActivity.class);
                             i.putExtra("PRODUCT_KEY", productKey);
+
+                            i.putExtra("MESSAGE_KEY",messageKey);
                             startActivity(i);
                         }
                     });
@@ -166,11 +204,13 @@ public class MainActivity extends AppCompatActivity
                     anuncioViewHolder.tvnombreArticulo.setText(anuncio.getTituloAnuncio());
                     anuncioViewHolder.tvdescArticulo.setText(anuncio.description);
 
-                    if (anuncio.likes.containsKey(mUser.getUid())) {
-                        anuncioViewHolder.like.setImageResource(R.drawable.heart_on);
+                    if(mUser!= null) {
 
-                    } else {
-                        anuncioViewHolder.like.setImageResource(R.drawable.heart_off);
+                        if (anuncio.likes.containsKey(mUser.getUid())) {
+                            anuncioViewHolder.like.setImageResource(R.drawable.heart_on);
+                        } else {
+                            anuncioViewHolder.like.setImageResource(R.drawable.heart_off);
+                        }
                     }
                     anuncioViewHolder.likeLayout.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -184,8 +224,14 @@ public class MainActivity extends AppCompatActivity
                             }
                         }
                     });
-                }
 
+                    mShimmerViewContainer.setVisibility(View.GONE);
+
+
+
+
+
+                }
 
 
                     anuncioViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -233,8 +279,6 @@ public class MainActivity extends AppCompatActivity
                 };
             }
         });
-
-
 
 
 
@@ -311,24 +355,35 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-
-
   @Override
     protected void onStart() {
       super.onStart();
       if (firebaseAuth != null) {
           firebaseAuth.addAuthStateListener(firebaseAuthListener);
+          mShimmerViewContainer.startShimmerAnimation();
       }
 
   }
 
+    @Override
+    protected void onPause() {
+        mShimmerViewContainer.stopShimmerAnimation();
+        super.onPause();
+    }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        mShimmerViewContainer.stopShimmerAnimation();
+    }
 
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+            mShimmerViewContainer.startShimmerAnimation();
+
         } else {
             super.onBackPressed();
         }
@@ -343,11 +398,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_salir) {
             shutdown();
@@ -452,6 +503,11 @@ public class MainActivity extends AppCompatActivity
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        mShimmerViewContainer.startShimmerAnimation();
+    }
 
 
 
@@ -468,6 +524,7 @@ public class MainActivity extends AppCompatActivity
     }
     Query setQuery(){
         return  mReference.child("products/all-products").limitToFirst(100);
+
     }
 
 

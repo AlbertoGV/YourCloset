@@ -1,5 +1,7 @@
 package com.example.albertogv.yourcloset.model;
 
+import android.net.Uri;
+
 import com.google.firebase.database.Exclude;
 
 import java.util.Date;
@@ -26,11 +28,11 @@ public class Anuncio {
         }
 
         public String getAuthorPhotoUrl() {
-                return photoUrl;
+                return authorPhotoUrl;
         }
 
         public void setAuthorPhotoUrl(String authorPhotoUrl) {
-                this.photoUrl = authorPhotoUrl;
+                this.authorPhotoUrl = authorPhotoUrl;
         }
 
         public String getDescripcion() {
@@ -91,7 +93,7 @@ public class Anuncio {
 
         public String uid;
         public String displayName;
-        public String photoUrl;
+        public String authorPhotoUrl;
         public String description;
         public String mediaUrl;
         public String tituloAnuncio;
@@ -108,7 +110,7 @@ public class Anuncio {
         public Anuncio(String uid, String author, String authorPhotoUrl, String descripcion,String tituloAnuncio,String precioAnuncio,String mediaUrl, String mediaType,Map timestamp) {
                 this.uid = uid;
                 this.displayName = author;
-                this.photoUrl = authorPhotoUrl;
+                this.authorPhotoUrl = authorPhotoUrl;
                 this.description = descripcion;
                 this.mediaUrl = mediaUrl;
                 this.precioAnuncio = precioAnuncio;
@@ -122,7 +124,7 @@ public class Anuncio {
                 HashMap<String, Object> result = new HashMap<>();
                 result.put("uid", uid);
                 result.put("displayName", displayName);
-                result.put("authorPhotoUrl", photoUrl);
+                result.put("authorPhotoUrl", authorPhotoUrl);
                 result.put("descripcion", description);
                 result.put("mediaUrl", mediaUrl);
                 result.put("precioAnuncio",precioAnuncio);

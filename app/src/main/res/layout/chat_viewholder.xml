@@ -4,27 +4,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:fitsSystemWindows="false"
     app:cardUseCompatPadding="true">
-
-    <LinearLayout
-        android:orientation="vertical"
+       <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivPhoto"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content" />
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
 
         <TextView
-            android:id="@+id/tvProductDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@id/ivPhoto"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Vihaan"/>
 
         <TextView
             android:id="@+id/tvLastMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ivPhoto"
+            android:layout_below="@id/tvProductName"
+            android:layout_marginLeft="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="this is a very very very very very very very very very very very"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FECHA"
+            android:layout_alignParentRight="true"/>
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_height="1dp"
+            android:background="@drawable/botonredondo"
+            android:layout_below="@id/ivPhoto"
+            android:layout_toRightOf="@id/ivPhoto"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+
+    </RelativeLayout>
+
+
+
 
 </android.support.v7.widget.CardView>

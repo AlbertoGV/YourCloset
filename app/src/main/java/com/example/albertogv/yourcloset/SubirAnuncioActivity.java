@@ -21,6 +21,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.ContentLoadingProgressBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -140,6 +141,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             public void onClick(View v) {
                 try {
                     submitPost();
+                    progressLoading();
                 } catch (java.text.ParseException e) {
                     e.printStackTrace();
                 }
@@ -180,14 +182,13 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             etPrecio.setError("Introduzca el precio");
         } if (mediaUri == null) {
             Toast.makeText(this, "Seleccione una imagen para continuar", Toast.LENGTH_SHORT).show();
-
             return;
         }
 
-        buttonAceptar.setEnabled(false);
 
         uploadAndWriteNewPost(postText,postName,postPrecio);
 
+        buttonAceptar.setEnabled(false);
 
     }
 
@@ -203,6 +204,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         childUpdates.put("products/user-products/" + uid + "/" + productKey, true);
 
 
+
         mReference.updateChildren(childUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -210,6 +212,12 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             }
         });
     }
+    public void progressLoading(){
+        final ContentLoadingProgressBar pd = new ContentLoadingProgressBar(getApplicationContext());
+        pd.show();
+    }
+
+
     private void uploadAndWriteNewPost(final String postText, final String postName, final String postPrecio ) {
         if (mediaType != null) {
             FirebaseStorage.getInstance().getReference(mediaType + "/" + UUID.randomUUID().toString() + mediaUri.getLastPathSegment()).putFile(mediaUri).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
@@ -223,6 +231,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
                     if (task.isSuccessful()) {
                         String downloadUri = task.getResult().toString();
                         writeNewPost(postText,postName,postPrecio, downloadUri);
+
                     }
                 }
             });

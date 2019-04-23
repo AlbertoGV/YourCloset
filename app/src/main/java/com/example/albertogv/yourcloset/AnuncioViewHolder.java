@@ -18,12 +18,13 @@ public class AnuncioViewHolder extends RecyclerView.ViewHolder {
     public TextView tvnombreArticulo;
     public ImageView anunimagePerfil;
     public ImageView irChat;
+    public ImageView settings;
     public TextView tvdescArticulo;
     public RelativeLayout likeLayout;
 
     public AnuncioViewHolder(View itemView) {
         super(itemView);
-
+        settings = itemView.findViewById(R.id.settings_pr);
         ivphoto = itemView.findViewById(R.id.ivMainImage);
         time = itemView.findViewById(R.id.anuncio_fechatime);
         like = itemView.findViewById(R.id.like);

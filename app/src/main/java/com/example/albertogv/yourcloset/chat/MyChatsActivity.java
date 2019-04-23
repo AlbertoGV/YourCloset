@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset;
+package com.example.albertogv.yourcloset.chat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
+import com.example.albertogv.yourcloset.R;
 import com.example.albertogv.yourcloset.model.Chat;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -28,9 +28,9 @@ public class MyChatsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_chats);
-
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Mensajes");
         mRef = FirebaseDatabase.getInstance().getReference();
-
         String uid = "uid-"+ FirebaseAuth.getInstance().getUid();
 
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Chat>()
@@ -53,8 +53,9 @@ public class MyChatsActivity extends AppCompatActivity {
             public ChatViewHolder(@NonNull View itemView) {
                 super(itemView);
                 lastMessage = itemView.findViewById(R.id.tvLastMessage);
-                title = itemView.findViewById(R.id.tvProductDescription);
+                title = itemView.findViewById(R.id.tvProductName);
                 photo = itemView.findViewById(R.id.ivPhoto);
+
             }
         }
 
@@ -73,10 +74,9 @@ public class MyChatsActivity extends AppCompatActivity {
         protected void onBindViewHolder(@NonNull ChatViewHolder holder, final int position, @NonNull final Chat chat) {
             final String chatKey = getRef(position).getKey();
 
-            holder.title.setText(chat.productDescription);
+            holder.title.setText(chat.productName);
             holder.lastMessage.setText(chat.lastMessage);
             Glide.with(holder.itemView.getContext()).load(chat.productPhotoUrl).into(holder.photo);
-
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -85,6 +85,8 @@ public class MyChatsActivity extends AppCompatActivity {
                     view.getContext().startActivity(intent);
                 }
             });
+
         }
+
     }
 }

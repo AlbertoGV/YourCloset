@@ -5,36 +5,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ChatActivity">
+    tools:context=".chat.ChatActivity">
 
-    <TextView
-        android:id="@+id/tvProductDescription"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.NoActionBar">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProductPhoto"
+                android:layout_width="48sp"
 
-    <ImageView
-        android:id="@+id/ivProductPhoto"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content" />
+                android:layout_marginRight="8dp"
+                android:layout_height="48sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/tvProductName"/>
 
-    <TextView
-        android:id="@+id/tvOtherDisplayName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        </android.support.v7.widget.Toolbar>
 
+    </android.support.design.widget.AppBarLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvMessages"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/etMessage"
+    </android.support.v7.widget.RecyclerView>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <ImageButton
+            android:id="@+id/foto_enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:background="@drawable/ic_menu_gallery"
+            android:layout_gravity="center"/>
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Escribe un mensaje"
+            android:layout_weight="1"/>
 
-    <Button
-        android:id="@+id/btnSend"
-        android:text="SEND"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnSend"
+            android:src="@drawable/send"
+            android:tint="@color/colorPrimary"
+            app:rippleColor="@color/colorPrimary"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enviar"/>
+    </LinearLayout>
+
 </LinearLayout>

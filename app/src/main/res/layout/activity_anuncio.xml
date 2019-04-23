@@ -240,28 +240,30 @@
 
                     </android.support.v7.widget.CardView>
 
-
-                    <LinearLayout
+                    <RelativeLayout
                         android:id="@+id/bottom_bar"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
                         android:layout_marginTop="16dp"
+                        android:gravity="bottom"
                         android:layout_marginBottom="16dp"
                         android:orientation="horizontal">
 
                         <Button
                             android:id="@+id/aceptarAnuncio"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
                             android:layout_marginTop="16dp"
-
                             android:layout_weight="1"
-
+                            android:layout_centerHorizontal="true"
+                            android:outlineAmbientShadowColor="@color/colorPrimaryDark"
                             android:background="@drawable/botonredondo"
                             android:elevation="8dp"
                             android:text="@string/publicar_anuncio"
                             android:textColor="@android:color/white" />
-                    </LinearLayout>
+                    </RelativeLayout>
+
                 </LinearLayout>
 
             </android.support.v4.widget.NestedScrollView>

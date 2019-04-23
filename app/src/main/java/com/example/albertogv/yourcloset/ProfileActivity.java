@@ -1,8 +1,8 @@
 package com.example.albertogv.yourcloset;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -43,7 +43,7 @@ public class ProfileActivity extends AppCompatActivity {
     TextView tvweb;
     TextView tvbio;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
-    ImageView salirsesion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,9 +64,9 @@ public class ProfileActivity extends AppCompatActivity {
         RecyclerView recycler = findViewById(R.id.rvPosts1);
         GlideApp.with(ProfileActivity.this).load(mUser.getPhotoUrl()).into(imageView);
 
-        getPostsCount();
+        getProductCount();
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Anuncio>()
-                .setIndexedQuery(setQuery(), mReference.child("posts/data"), Anuncio.class)
+                .setIndexedQuery(setQuery(), mReference.child("products/data"), Anuncio.class)
                 .setLifecycleOwner(this)
                 .build();
 
@@ -125,19 +125,19 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     Query setQuery () {
-        return mReference.child("posts/user-posts").child(mUser.getUid()).limitToFirst(100);
+        return mReference.child("products/user-products").child("uid-"+mUser.getUid()).limitToFirst(100);
     }
-    private void getPostsCount(){
+    private void getProductCount(){
         mPostsCount = 0;
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        Query query = reference.child("posts/user-posts")
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Query query = reference.child("products/user-products")
+                .child("uid-"+mUser.getUid());
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot singleSnapshot :  dataSnapshot.getChildren()){
-                    Log.d(TAG, "onDataChange: found post:" + singleSnapshot.getValue());
+                    Log.d(TAG, "onDataChange: found product:" + singleSnapshot.getValue());
                     mPostsCount++;
                 }
                 tvPosts.setText(String.valueOf(mPostsCount));

@@ -96,7 +96,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".ChatActivity"
+            android:name=".chat.ChatActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -135,7 +135,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".MyChatsActivity"></activity>
+        <activity android:name=".chat.MyChatsActivity"></activity>
         <activity android:name=".MediaActivity"></activity>
     </application>
 

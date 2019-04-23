@@ -1,28 +1,28 @@
 
 package com.example.albertogv.yourcloset;
         import android.Manifest;
+        import android.annotation.SuppressLint;
         import android.content.Context;
         import android.content.Intent;
         import android.content.pm.PackageManager;
         import android.graphics.Bitmap;
-        import android.graphics.BitmapFactory;
         import android.graphics.Color;
         import android.location.Criteria;
         import android.location.Location;
         import android.location.LocationManager;
-        import android.net.Uri;
         import android.os.Build;
-        import android.support.annotation.Nullable;
+        import android.support.annotation.RequiresApi;
         import android.support.design.widget.CollapsingToolbarLayout;
         import android.support.design.widget.FloatingActionButton;
         import android.support.v4.app.ActivityCompat;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
+        import android.transition.Transition;
         import android.view.View;
         import android.widget.ImageView;
         import android.widget.TextView;
 
-        import com.bumptech.glide.Glide;
+        import com.example.albertogv.yourcloset.chat.ChatActivity;
         import com.google.android.gms.maps.CameraUpdateFactory;
         import com.google.android.gms.maps.GoogleMap;
         import com.google.android.gms.maps.OnMapReadyCallback;
@@ -37,8 +37,9 @@ public class DetailActivityLists extends AppCompatActivity implements OnMapReady
 
 
     Context context;
+    FloatingActionButton fab;
 
-
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +63,7 @@ public class DetailActivityLists extends AppCompatActivity implements OnMapReady
         context = this;
         int permissionCheck = ActivityCompat.checkSelfPermission(DetailActivityLists.this,
                 Manifest.permission.READ_EXTERNAL_STORAGE);
-        FloatingActionButton fab= findViewById(R.id.fabdetail);
+        fab= findViewById(R.id.fabdetail);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,6 +109,40 @@ public class DetailActivityLists extends AppCompatActivity implements OnMapReady
             collapsingToolbarLayout.setCollapsedTitleTextColor(Color.DKGRAY);
             tvdescripcion.setText(descripcion);
 
+            Transition fade = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                fade = getWindow().getEnterTransition();
+            }
+            final Transition finalFade = fade;
+            ((Transition) fade).addListener(new Transition.TransitionListener() {
+                @Override
+                public void onTransitionStart(Transition transition) {
+
+                }
+
+                @SuppressLint("RestrictedApi")
+                @Override
+                public void onTransitionEnd(Transition transition) {
+                    fab.setVisibility(View.VISIBLE);
+                    finalFade.removeListener(this);
+                }
+
+                @Override
+                public void onTransitionCancel(Transition transition) {
+
+                }
+
+                @Override
+                public void onTransitionPause(Transition transition) {
+
+                }
+
+                @Override
+                public void onTransitionResume(Transition transition) {
+
+                }
+            });
+
         }
         SupportMapFragment mapFragment2 = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_subiranuncio);
         mapFragment2.getMapAsync(this);
@@ -115,7 +150,13 @@ public class DetailActivityLists extends AppCompatActivity implements OnMapReady
 
     }
 
-
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @SuppressLint("RestrictedApi")
+    @Override
+    public void onBackPressed() {
+        fab.setVisibility(View.VISIBLE);
+        finishAfterTransition();
+    }
 
     GoogleMap gMap;
 

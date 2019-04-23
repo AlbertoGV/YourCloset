@@ -5,6 +5,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
+    android:id="@+id/rowView"
+    android:transitionName="rowName"
     android:elevation="16dp"
     app:cardCornerRadius="8dp">
 
@@ -55,8 +57,20 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="1dp"
+                android:visibility="gone"
                 android:layout_toRightOf="@id/like"
-                app:srcCompat="@drawable/chat" />
+                app:srcCompat="@drawable/chat_good" />
+            <ImageView
+                android:id="@+id/settings_pr"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="1dp"
+                android:visibility="gone"
+                android:layout_toRightOf="@id/like"
+                app:srcCompat="@drawable/settings_good" />
 
         </RelativeLayout>
 
