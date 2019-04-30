@@ -7,7 +7,7 @@
     android:layout_gravity="center_vertical"
     android:layout_height="match_parent"
     android:foregroundGravity="center_vertical"
-    tools:context=".MediaActivity">
+    tools:context=".view.MediaActivity">
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"

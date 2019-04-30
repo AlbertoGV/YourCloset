@@ -46,7 +46,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme.NoActionBar" >
         <activity
-            android:name="com.example.albertogv.yourcloset.SplashActivity"
+            android:name="com.example.albertogv.yourcloset.view.SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" >
@@ -57,7 +57,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.albertogv.yourcloset.MainActivity"
+            android:name="com.example.albertogv.yourcloset.view.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.NoActionBar" >
@@ -84,48 +84,48 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.example.albertogv.yourcloset.SubirAnuncioActivity"
-            android:parentActivityName="com.example.albertogv.yourcloset.DetailActivityLists" />
+            android:name="com.example.albertogv.yourcloset.view.SubirAnuncioActivity"
+            android:parentActivityName="com.example.albertogv.yourcloset.view.DetailActivityLists" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".TabbedActivity" />
+            android:value=".view.TabbedActivity" />
 
         <activity
-            android:name="com.example.albertogv.yourcloset.TabbedActivity"
-            android:parentActivityName="com.example.albertogv.yourcloset.DetailActivityLists"
+            android:name="com.example.albertogv.yourcloset.view.TabbedActivity"
+            android:parentActivityName="com.example.albertogv.yourcloset.view.DetailActivityLists"
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DetailActivityLists" />
+                android:value=".view.DetailActivityLists" />
         </activity>
         <activity
-            android:name="com.example.albertogv.yourcloset.MapsActivity"
+            android:name="com.example.albertogv.yourcloset.view.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name="com.example.albertogv.yourcloset.LoginActivity"
+            android:name="com.example.albertogv.yourcloset.view.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.albertogv.yourcloset.DetailActivity"
-            android:parentActivityName="com.example.albertogv.yourcloset.MainActivity" >
+            android:name="com.example.albertogv.yourcloset.view.DetailActivity"
+            android:parentActivityName="com.example.albertogv.yourcloset.view.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".view.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.albertogv.yourcloset.chat.ChatActivity"
-            android:parentActivityName="com.example.albertogv.yourcloset.MainActivity" >
+            android:name="com.example.albertogv.yourcloset.view.chat.ChatActivity"
+            android:parentActivityName="com.example.albertogv.yourcloset.view.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".view.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.albertogv.yourcloset.DetailActivityLists"
-            android:parentActivityName="com.example.albertogv.yourcloset.DetailActivityLists" >
+            android:name="com.example.albertogv.yourcloset.view.DetailActivityLists"
+            android:parentActivityName="com.example.albertogv.yourcloset.view.DetailActivityLists" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DetailActivityLists" />
+                android:value=".view.DetailActivityLists" />
         </activity>
 
         <provider
@@ -140,21 +140,21 @@
         </provider>
 
         <activity
-            android:name="com.example.albertogv.yourcloset.MapsActivity2"
+            android:name="com.example.albertogv.yourcloset.view.MapsActivity2"
             android:label="@string/title_activity_maps2" />
-        <activity android:name="com.example.albertogv.yourcloset.InfoActivity" />
+        <activity android:name="com.example.albertogv.yourcloset.view.InfoActivity" />
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name="com.example.albertogv.yourcloset.ProfileActivity" >
+        <activity android:name="com.example.albertogv.yourcloset.view.ProfileActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".view.MainActivity" />
         </activity>
-        <activity android:name="com.example.albertogv.yourcloset.chat.MyChatsActivity" />
-        <activity android:name="com.example.albertogv.yourcloset.MediaActivity" />
+        <activity android:name="com.example.albertogv.yourcloset.view.chat.MyChatsActivity" />
+        <activity android:name="com.example.albertogv.yourcloset.view.MediaActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"
