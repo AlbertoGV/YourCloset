@@ -1189,6 +1189,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable fondowhats
 drawable fragment_redondo
 drawable fui_ic_anonymous_white_24dp
 drawable fui_ic_check_circle_black_128dp

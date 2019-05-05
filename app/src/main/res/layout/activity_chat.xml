@@ -20,7 +20,6 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/ivProductPhoto"
                 android:layout_width="48sp"
-
                 android:layout_marginRight="8dp"
                 android:layout_height="48sp" />
         <TextView
