@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
+            "outputFile": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
             "map": [
                 {
                     "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-auth-16.0.1.aar\\76dcf1962dec0b7fe4554d36c1d1cd5d\\res\\values-watch-v20\\values.xml",

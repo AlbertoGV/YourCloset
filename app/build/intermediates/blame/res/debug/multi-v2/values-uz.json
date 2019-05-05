@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+            "outputFile": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
             "map": [
                 {
                     "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\6e89565e93565b12ce78c3859bf96f0a\\res\\values-uz\\values.xml",

@@ -175,7 +175,6 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             return;
         }
 
-
         uploadAndWriteNewPost(postText,postName,postPrecio);
 
         buttonAceptar.setEnabled(false);

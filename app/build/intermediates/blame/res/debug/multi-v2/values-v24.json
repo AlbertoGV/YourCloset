@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
                     "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\aace0f3f935476bbc8d050280a45d104\\res\\values-v24\\values-v24.xml",

@@ -70,6 +70,7 @@ public class MyChatsActivity extends AppCompatActivity {
         });
 
     }
+
     class ChatsAdapter extends FirebaseRecyclerAdapter<Chat, ChatsAdapter.ChatViewHolder> {
         class ChatViewHolder extends RecyclerView.ViewHolder {
             TextView lastMessage, title;

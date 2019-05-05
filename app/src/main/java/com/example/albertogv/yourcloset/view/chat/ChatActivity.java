@@ -49,15 +49,20 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-        final Chat chat= new Chat();
+
         mRef = FirebaseDatabase.getInstance().getReference();
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
+
         uid = "uid-" + FirebaseAuth.getInstance().getUid();
+
+        final Chat chat= new Chat();
+
         android.support.v7.widget.Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setTitle(chat.productName);
         chatKey = getIntent().getStringExtra("CHAT_KEY");
-        mUser = FirebaseAuth.getInstance().getCurrentUser();
+
         if (chatKey != null) {
             // se ha entrado desde "MyChats", el chat ya existe, cargo los mensajes
             loadChatInfo(chatKey);
@@ -167,7 +172,7 @@ public class ChatActivity extends AppCompatActivity {
                 if (chat != null) {
                         showChatInfo(chat.productPhotoUrl, chat.productName);
                     } else {
-                    showChatInfo(chat.productPhotoUrl, chat.productName);
+                        showChatInfo(chat.productPhotoUrl, chat.productName);
                     }
                 }
 
@@ -213,6 +218,10 @@ public class ChatActivity extends AppCompatActivity {
 
     class MessagesAdapter extends FirebaseRecyclerAdapter<Mensaje, MessagesAdapter.MessageViewHolder> {
 
+        public MessagesAdapter(@NonNull FirebaseRecyclerOptions<Mensaje> options) {
+            super(options);
+        }
+
         class MessageViewHolder extends RecyclerView.ViewHolder {
             TextView message;
             CircleImageView ivphotoBuyer;
@@ -228,27 +237,39 @@ public class ChatActivity extends AppCompatActivity {
             }
         }
 
-        public MessagesAdapter(@NonNull FirebaseRecyclerOptions<Mensaje> options) {
-            super(options);
-        }
 
-            @NonNull
-        @Override
-        public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-            LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-            return new MessageViewHolder(inflater.inflate(R.layout.message_viewholder, viewGroup, false));
-        }
+
+         @Override
+         public int getItemViewType(int position){
+            Mensaje mensaje = getItem(position);
+            if(mensaje.uid.equals(uid)){
+                return 0;
+            }
+
+            return 1;
+         }
+
+         @NonNull
+         public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+             View view = null;
+             switch (viewType) {
+                 case 0:
+                     view = inflater.inflate(R.layout.message_viewholder2, viewGroup, false);
+                     break;
+                 case 1:
+                     view =  inflater.inflate(R.layout.message_viewholder, viewGroup, false);
+                     break;
+             }
+             return new MessageViewHolder(view);
+         }
 
         @Override
         protected void onBindViewHolder(@NonNull MessageViewHolder holder, final int position, @NonNull final Mensaje mensaje) {
             holder.message.setText(mensaje.message);
             Glide.with(getApplicationContext()).load(mensaje.getPhotoUser()).into(holder.ivphotoBuyer);
-            holder.tvHourMessage.setText(DateFormat.format("HH:mm ",mensaje.getCreatedTimestampLong()));
+            holder.tvHourMessage.setText(DateFormat.format("HH:mm ", mensaje.getCreatedTimestampLong()));
 
-            }
-
-        //  setContentView(R.layout.nav_header_main);
-        // nameUser.setText(user.getDisplayName());
-
+        }
     }
 }

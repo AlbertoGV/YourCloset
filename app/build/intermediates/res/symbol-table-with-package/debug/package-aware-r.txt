@@ -1152,6 +1152,8 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable arrow_bg1
+drawable arrow_bg2
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_color
@@ -1203,7 +1205,6 @@ drawable fui_idp_button_background_github
 drawable fui_idp_button_background_google
 drawable fui_idp_button_background_phone
 drawable fui_idp_button_background_twitter
-drawable fumar
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable heart_off
@@ -1441,6 +1442,7 @@ id imageView
 id imageView3
 id imageView4
 id imageView5
+id imageView7
 id imageViewImagen
 id imageView_sesion
 id image_perfil
@@ -1792,6 +1794,7 @@ layout grid_rv
 layout item_anuncio
 layout item_profile_post
 layout message_viewholder
+layout message_viewholder2
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout nav_header_main

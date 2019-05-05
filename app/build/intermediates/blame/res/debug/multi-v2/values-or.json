@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\koema\\Desktop\\YourCloset3Dao\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-or\\values-or.xml",
+            "outputFile": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-or\\values-or.xml",
             "map": [
                 {
                     "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\aca90000eab51ab3834162e88cdccebc\\res\\values-or\\values-or.xml",

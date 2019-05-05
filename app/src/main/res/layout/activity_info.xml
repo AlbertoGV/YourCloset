@@ -58,13 +58,14 @@
             android:textStyle="bold"
 
             android:text="Publica tu anuncio"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="12dp"
+            android:text=" Publica tu anuncio para que lo pueda ver el mundo y consigue una venta rapida de los articulos que ya no te pones o no necesitas. "
             android:textColor="@color/black"
-            android:text=" Publica tu anuncio para que lo pueda ver el mundo y consigue una venta rapida de los articulos que ya no te pones o no necesitas. "/>
+            android:textSize="12dp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="8dp"
+    android:layout_margin="6dp"
+    android:gravity="right"
+    android:clipToPadding="false">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="30dp"
+            android:id="@+id/ivPhotoUserChat"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/tvMessage"
+            android:layout_toRightOf="@id/tvMessage" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_toEndOf="@id/tvMessage"
+        android:layout_marginTop="9.00dp"
+        android:layout_marginLeft="-19dp"
+        android:layout_weight="1"
+        android:src="@drawable/arrow_bg1"
+        android:layout_toRightOf="@id/tvMessage" />
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:maxWidth="250dp"
+        android:textColor="#000"
+        android:background="@drawable/background_messages"
+        android:text="Hello my friend"
+        android:padding="16dp"
+        android:layout_marginTop="8dp">
+
+    </TextView>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hora"
+            android:id="@+id/tvTimeMessage"
+            android:textSize="11dp"
+            android:layout_margin="2dp"
+            android:gravity="bottom"
+            android:layout_below="@id/tvMessage"
+            android:layout_toStartOf="@id/tvMessage"
+            android:layout_toLeftOf="@id/tvMessage" />
+
+    </RelativeLayout>
+
+
+
+
+
+
+
