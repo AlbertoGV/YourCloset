@@ -2,6 +2,8 @@ package com.example.albertogv.yourcloset.model;
 
 import android.net.Uri;
 
+import java.util.Date;
+
 public class Chat {
     public String productPhotoUrl;
     public String productName;
@@ -9,6 +11,7 @@ public class Chat {
     public String sellerPhotoUrl;
     public String sellerDispalyName;
     public String sellerUid;
+    public String dateCreation;
     public String buyerUid;
     public String getPhotoBuyer() {
         return photoBuyer;

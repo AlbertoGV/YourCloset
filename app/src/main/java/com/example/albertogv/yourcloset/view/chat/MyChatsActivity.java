@@ -73,15 +73,17 @@ public class MyChatsActivity extends AppCompatActivity {
 
     class ChatsAdapter extends FirebaseRecyclerAdapter<Chat, ChatsAdapter.ChatViewHolder> {
         class ChatViewHolder extends RecyclerView.ViewHolder {
-            TextView lastMessage, title;
+            TextView lastMessage, title, name, date;
             ImageView photo;
+
 
             public ChatViewHolder(@NonNull View itemView) {
                 super(itemView);
                 lastMessage = itemView.findViewById(R.id.tvLastMessage);
                 title = itemView.findViewById(R.id.tvProductName);
                 photo = itemView.findViewById(R.id.ivPhoto);
-
+                name = itemView.findViewById(R.id.tvUserName);
+                date = itemView.findViewById(R.id.tvFechaChats);
             }
         }
 
@@ -101,7 +103,9 @@ public class MyChatsActivity extends AppCompatActivity {
             final String chatKey = getRef(position).getKey();
 
             holder.title.setText(chat.productName);
+            holder.name.setText(chat.sellerDispalyName);
             holder.lastMessage.setText(chat.lastMessage);
+            holder.date.setText(chat.dateCreation);
             Glide.with(holder.itemView.getContext()).load(chat.productPhotoUrl).into(holder.photo);
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

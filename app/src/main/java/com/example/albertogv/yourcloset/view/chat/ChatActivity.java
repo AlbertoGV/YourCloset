@@ -1,6 +1,8 @@
 package com.example.albertogv.yourcloset.view.chat;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,7 +29,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
+
 import de.hdodenhof.circleimageview.CircleImageView;
+
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -42,9 +52,12 @@ public class ChatActivity extends AppCompatActivity {
     Anuncio anuncio = new Anuncio();
     String nameBuyer;
     String productKey;
+    Date date = new Date();
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
     Object timeStamp;
+    Calendar calendar = Calendar.getInstance();
+    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,6 +143,8 @@ public class ChatActivity extends AppCompatActivity {
                             chat.lastMessage = message;
                             chat.buyerUid = uid;
                             chat.sellerUid = anuncio.uid;
+                            chat.sellerDispalyName = anuncio.getDisplayName();
+                            chat.dateCreation = formatter.format(calendar.getTime());
 
 
 
