@@ -48,6 +48,7 @@ public class MyChatsActivity extends AppCompatActivity {
         recyclerView.setAdapter(chatsAdapter);
 
     }
+
     private void lastMessage( ){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Chats");
 
@@ -106,6 +107,7 @@ public class MyChatsActivity extends AppCompatActivity {
             holder.name.setText(chat.sellerDispalyName);
             holder.lastMessage.setText(chat.lastMessage);
             holder.date.setText(chat.dateCreation);
+
             Glide.with(holder.itemView.getContext()).load(chat.productPhotoUrl).into(holder.photo);
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -113,6 +115,7 @@ public class MyChatsActivity extends AppCompatActivity {
                     Intent intent = new Intent(view.getContext(), ChatActivity.class);
                     intent.putExtra("CHAT_KEY", chatKey);
                     view.getContext().startActivity(intent);
+
                 }
             });
 

@@ -5,51 +5,26 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
-    ir-eligibility="R_CLASS_CHANGE"
     plugin-version="3.2.1"
-    timestamp="1557162285207"
+    timestamp="1557242874911"
     token="3560653114362411214"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="METHOD_ADDED" >
 
     <task
         name="javac"
-        duration="3115" />
+        duration="3882" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="140" />
+        duration="73" />
     <task
         name="verifier"
-        duration="102" />
+        duration="6" />
 
     <artifact
-        location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
         location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
 
     <build
@@ -108,9 +83,6 @@
             location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
@@ -127,6 +99,14 @@
             type="SPLIT" />
         <artifact
             location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1557242874911"
+        verifier="METHOD_ADDED" >
+        <artifact
+            location="C:\Users\koema\AndroidStudioProjects\YourClosetG\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
     </build>
 

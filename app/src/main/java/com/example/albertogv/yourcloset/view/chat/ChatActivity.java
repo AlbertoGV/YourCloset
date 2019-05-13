@@ -56,6 +56,7 @@ public class ChatActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
     Object timeStamp;
+    Calendar rightNow = Calendar.getInstance();
     Calendar calendar = Calendar.getInstance();
     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
     @Override
@@ -144,7 +145,7 @@ public class ChatActivity extends AppCompatActivity {
                             chat.buyerUid = uid;
                             chat.sellerUid = anuncio.uid;
                             chat.sellerDispalyName = anuncio.getDisplayName();
-                            chat.dateCreation = formatter.format(calendar.getTime());
+                            chat.dateCreation = String.valueOf(rightNow.get(Calendar.DATE));
 
 
 

@@ -6,7 +6,7 @@
     android:background="@drawable/background_color"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.InfoActivity">
+    tools:context=".view.activities.InfoActivity">
 
 <LinearLayout
     android:layout_width="match_parent"
