@@ -1189,6 +1189,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable filter
 drawable fondowhats
 drawable fragment_redondo
 drawable fui_ic_anonymous_white_24dp
@@ -1236,6 +1237,7 @@ drawable imageredonda2
 drawable indexcam
 drawable indexcam2
 drawable layout_buttons
+drawable listadesplegable
 drawable mosaic
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
@@ -1313,9 +1315,14 @@ id anuncio_precioList
 id anuncioautorlist
 id anuncioautormain
 id appbar
+id area
+id area_
+id area_calzado
+id area_foto
 id area_fotos
 id area_nombre
 id area_precio
+id area_selector
 id area_telefono
 id area_ubicacion
 id async
@@ -1340,6 +1347,7 @@ id button_done
 id button_next
 id button_resend_email
 id button_sign_in
+id calzado
 id campo_articulo
 id campo_nombre
 id campo_precio
@@ -1450,6 +1458,7 @@ id image_perfil
 id image_perfilpass
 id img_cliente
 id img_correo
+id img_fotos
 id img_fotos_cam
 id img_telefono
 id img_ubicacion
@@ -1536,6 +1545,9 @@ id progress_circular
 id progress_horizontal
 id radial
 id radio
+id radioarriba
+id radiobajo
+id radiocomplemento
 id ratingBar
 id relLayout3
 id relative
@@ -1666,6 +1678,7 @@ id tvProductName
 id tvTimeMessage
 id tvUserName
 id tv_bio
+id tv_imag
 id tv_imagen
 id tv_sesion_direccion
 id tv_sesion_nombre
