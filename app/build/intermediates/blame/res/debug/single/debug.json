@@ -376,6 +376,10 @@
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
+        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\menu_my_nav_items.xml.flat",
+        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\menu\\my_nav_items.xml"
+    },
+    {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_light.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\color\\abc_secondary_text_material_light.xml"
     },

@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

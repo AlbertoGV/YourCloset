@@ -42,6 +42,7 @@
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>
 
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -51,5 +52,23 @@
         android:layout_margin="@dimen/fab_margin"
         android:tint="#FAFAFAFA"
         app:srcCompat="@android:drawable/ic_input_add" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom">
 
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:itemHorizontalTranslationEnabled="true"
+            app:labelVisibilityMode="unlabeled"
+            android:background="?android:attr/windowBackground"
+            android:elevation="@dimen/activity_horizontal_margin"
+            app:itemIconTint="@color/black"
+            app:menu="@menu/my_nav_items">
+
+        </android.support.design.widget.BottomNavigationView>
+    </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
