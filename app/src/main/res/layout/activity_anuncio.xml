@@ -156,83 +156,68 @@
 
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/area_selector"
-                        android:layout_width="220dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
                         android:layout_below="@+id/area_telefono"
                         android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="12dp"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/hombre"
+                                android:text="Hombre">
+                            </RadioButton>
+                            <RadioButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/mujer"
+                                android:text="Mujer">
+                            </RadioButton>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:orientation="vertical">
 
                         <RadioButton
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/radioarriba"
-                            android:text="Parte de arriba"
-                            >
-
+                            android:text="Parte de arriba">
                         </RadioButton>
-
-
-
-
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/area"
-                        android:layout_width="220dp"
-                        android:layout_height="wrap_content"
-
-                        android:layout_below="@+id/area_telefono"
-                        android:orientation="horizontal">
-
                         <RadioButton
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/radiobajo"
-                            android:text="Parte de abajo"
-                            >
-
+                            android:text="Parte de abajo">
                         </RadioButton>
-
-
-
-
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/area_"
-                        android:layout_width="220dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/area_telefono"
-                        android:orientation="horizontal">
-
                         <RadioButton
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/radiocomplemento"
-                            android:text="Complemento"
-                            >
-
+                            android:text="Complemento">
                         </RadioButton>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/area_calzado"
-                        android:layout_width="220dp"
-                        android:layout_height="wrap_content"
-
-                        android:layout_below="@+id/area_telefono"
-                        android:orientation="horizontal">
-
                         <RadioButton
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/calzado"
-                            android:text="Calzado"
-                            >
+                            android:text="Calzado">
 
                         </RadioButton>
+                        </LinearLayout>
                     </LinearLayout>
-
 
 
                     <LinearLayout

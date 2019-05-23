@@ -12,6 +12,7 @@ import android.os.Bundle;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
@@ -64,13 +65,14 @@ import com.google.firebase.database.Query;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener, BottomNavigationView.OnNavigationItemSelectedListener {
     public DatabaseReference mReference;
     public FirebaseUser mUser;
     RecyclerView rvMain;
     TextView tvnombre;
     TextView tvdireccion;
     ProgressBar progressBar;
+    Toolbar toolbar;
     boolean click= false;
     ImageView imagegoogle;
     Context context;
@@ -80,6 +82,8 @@ public class MainActivity extends AppCompatActivity
     private GoogleApiClient googleApiClient;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
+    private Query query;
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 
@@ -87,13 +91,20 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
+
         context = this;
         mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
+        toolbar = findViewById(R.id.toolbar);
+        rvMain = findViewById(R.id.rvMain);
+
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         progressBar = findViewById(R.id.progressBar);
+
         mShimmerViewContainer.startShimmerAnimation();
-        Toolbar toolbar = findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
@@ -103,7 +114,6 @@ public class MainActivity extends AppCompatActivity
                 .build();
 
         if (googleApiClient == null) {
-
             googleApiClient = new GoogleApiClient.Builder(this)
                     .enableAutoManage(this, this)
                     .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
@@ -111,12 +121,69 @@ public class MainActivity extends AppCompatActivity
         }
 
 
+        FloatingActionButton fab = configurarFAB();
+
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
+        bottomNavigationView.setItemBackground(null);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemBackground(null);
+
+        realizarConsulta();
+        
+        rvMain.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+
+
+        View header = navigationView.getHeaderView(0);
+        tvnombre =   header.findViewById(R.id.tv_sesion_nombre);
+        tvdireccion= header.findViewById(R.id.tv_sesion_direccion);
+        imagegoogle= header.findViewById(R.id.imageView_sesion);
+
+
+        imagegoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        if (firebaseAuthListener == null) {
+            firebaseAuth = FirebaseAuth.getInstance();
+            firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
+
+                @Override
+                public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                    FirebaseUser user = firebaseAuth.getCurrentUser();
+                    if (user != null) {
+                        setUserData(user);
+                    } else {
+                        goLogInScreen();
+                    }
+                }
+            };
+        }
+    }
+
+    @NonNull
+    private FloatingActionButton configurarFAB() {
         final FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 click = !click;
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     Interpolator interpolador = AnimationUtils.loadInterpolator(getBaseContext(),
                             android.R.interpolator.overshoot);
 
@@ -137,27 +204,36 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
+        fab.setRippleColor(Color.DKGRAY);
+        rvMain.setOnFlingListener(new RecyclerView.OnFlingListener() {
+            @Override
+            public boolean onFling(int velocityX, int velocityY) {
+                if (velocityY < 0)
+                    fab.show();
+                    //Code to hide the UI, I have  a custom one that slides down the nav  bar and the fab
+                else if (velocityY > 0)
+                    fab.hide();
+                //Code to show the UI
+
+                return false;
+            }
+        });
+
+        return fab;
+    }
 
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+    void realizarConsulta(){
+        if(query == null){
+            query = mReference.child("products/all-products").limitToFirst(100);
+        }
 
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setItemBackground(null);
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Anuncio>()
-                .setIndexedQuery(setQuery(), mReference.child("products/data"), Anuncio.class)
+                .setIndexedQuery(query, mReference.child("products/data"), Anuncio.class)
                 .setLifecycleOwner(this)
                 .build();
 
-        rvMain = findViewById(R.id.rvMain);
-        rvMain.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         rvMain.setAdapter(new FirebaseRecyclerAdapter<Anuncio, AnuncioViewHolder>(options){
-
 
             @Override
             protected void onBindViewHolder(@NonNull final AnuncioViewHolder anuncioViewHolder, int i, @NonNull final Anuncio anuncio) {
@@ -169,22 +245,23 @@ public class MainActivity extends AppCompatActivity
                         .centerCrop()
                         .fallback(R.drawable.ic_launcher_background)
                         .transform(new RoundedCorners(30));
+
                 if (anuncio.mediaUrl!= null) {
-                  Glide.with(anuncioViewHolder.itemView.getContext())
+                    Glide.with(anuncioViewHolder.itemView.getContext())
                             .asBitmap()
                             .load(Uri.parse(anuncio.getMediaUrl()))
                             .apply(ro)
                             .into(anuncioViewHolder.ivphoto);
-                  if(mUser != null) {
-                      if (mUser.getDisplayName().equals(anuncio.displayName)) {
-                          anuncioViewHolder.irChat.setVisibility(View.INVISIBLE);
-                          anuncioViewHolder.settings.setVisibility(View.VISIBLE);
-                      } else {
-                          anuncioViewHolder.irChat.setVisibility(View.VISIBLE);
-                          anuncioViewHolder.settings.setVisibility(View.INVISIBLE);
-                      }
-                  }
 
+                    if(mUser != null) {
+                        if (mUser.getDisplayName().equals(anuncio.displayName)) {
+                            anuncioViewHolder.irChat.setVisibility(View.INVISIBLE);
+                            anuncioViewHolder.settings.setVisibility(View.VISIBLE);
+                        } else {
+                            anuncioViewHolder.irChat.setVisibility(View.VISIBLE);
+                            anuncioViewHolder.settings.setVisibility(View.INVISIBLE);
+                        }
+                    }
 
                     anuncioViewHolder.irChat.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -196,6 +273,7 @@ public class MainActivity extends AppCompatActivity
                             startActivity(i);
                         }
                     });
+
                     anuncioViewHolder.anunimagePerfil.setImageURI(Uri.parse(anuncio.getAuthorPhotoUrl()));
                     anuncioViewHolder.time.setText(DateUtils.getRelativeTimeSpanString(anuncio.time,
                             System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS));
@@ -227,48 +305,42 @@ public class MainActivity extends AppCompatActivity
 
                     mShimmerViewContainer.setVisibility(View.GONE);
 
-
-
-
-
                 }
 
+                anuncioViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
-                    anuncioViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
 
-                            Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                        String precio = anuncioViewHolder.tvPrecio.getText().toString();
+                        String titulo = anuncioViewHolder.tvnombreArticulo.getText().toString();
+                        String descripcion = anuncioViewHolder.tvdescArticulo.getText().toString();
+                        String autor = anuncio.displayName;
+                        String fecha = anuncioViewHolder.time.getText().toString();
+                        String imagenperfil = anuncio.getAuthorPhotoUrl();
+                        String imagen = anuncio.mediaUrl;
 
-                            String precio = anuncioViewHolder.tvPrecio.getText().toString();
-                            String titulo = anuncioViewHolder.tvnombreArticulo.getText().toString();
-                            String descripcion = anuncioViewHolder.tvdescArticulo.getText().toString();
-                            String autor = anuncio.displayName;
-                            String fecha = anuncioViewHolder.time.getText().toString();
-                            String imagenperfil = anuncio.getAuthorPhotoUrl();
-                            String imagen = anuncio.mediaUrl;
-
-                          intent.putExtra("nombre", autor);
-                            intent.putExtra("fecha", fecha);
-                            intent.putExtra("imgperfil", imagenperfil);
-                            intent.putExtra("precio", precio);
-                            intent.putExtra("Titulo", titulo);
-                            intent.putExtra("descripcion", descripcion);
-                            intent.putExtra("imagen", imagen);
-                            startActivityForResult(intent, 1);
-                        }
-                    });
-                    anuncioViewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                        @Override
-                        public boolean onLongClick(View v) {
-                            descartar();
-                            return false;
-                        }
-                    });
+                        intent.putExtra("nombre", autor);
+                        intent.putExtra("fecha", fecha);
+                        intent.putExtra("imgperfil", imagenperfil);
+                        intent.putExtra("precio", precio);
+                        intent.putExtra("Titulo", titulo);
+                        intent.putExtra("descripcion", descripcion);
+                        intent.putExtra("imagen", imagen);
+                        startActivityForResult(intent, 1);
+                    }
+                });
+                anuncioViewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        descartar();
+                        return false;
+                    }
+                });
 
 
-                }
-
+            }
 
 
             @NonNull
@@ -279,59 +351,7 @@ public class MainActivity extends AppCompatActivity
                 };
             }
         });
-
-
-
-            fab.setRippleColor(Color.DKGRAY);
-        rvMain.setOnFlingListener(new RecyclerView.OnFlingListener() {
-            @Override
-            public boolean onFling(int velocityX, int velocityY) {
-                if (velocityY < 0)
-                    fab.show();
-                    //Code to hide the UI, I have  a custom one that slides down the nav  bar and the fab
-                else if (velocityY > 0)
-                    fab.hide();
-                //Code to show the UI
-
-                return false;
-            }
-        });
-        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
-
-        View header = navigationView.getHeaderView(0);
-        tvnombre =   header.findViewById(R.id.tv_sesion_nombre);
-        tvdireccion= header.findViewById(R.id.tv_sesion_direccion);
-        imagegoogle= header.findViewById(R.id.imageView_sesion);
-
-
-        imagegoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        if (firebaseAuthListener == null) {
-            firebaseAuth = FirebaseAuth.getInstance();
-            firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
-
-                @Override
-                public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                    FirebaseUser user = firebaseAuth.getCurrentUser();
-                    if (user != null) {
-                        setUserData(user);
-                    } else {
-                        goLogInScreen();
-                    }
-
-                }
-            };
-
-        }
     }
-
-
 
 
 
@@ -341,7 +361,7 @@ public class MainActivity extends AppCompatActivity
         if (user != null) {
             tvnombre.setText(user.getDisplayName());
             tvdireccion.setText(user.getEmail());
-        Glide.with(this).load(user.getPhotoUrl()).into(imagegoogle);
+            Glide.with(this).load(user.getPhotoUrl()).into(imagegoogle);
         }
     }
 
@@ -350,20 +370,20 @@ public class MainActivity extends AppCompatActivity
 
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-            } return; } // add other cases for more permissions } }
-        }
+        } return; } // add other cases for more permissions } }
+    }
 
     }
 
-  @Override
+    @Override
     protected void onStart() {
-      super.onStart();
-      if (firebaseAuth != null) {
-          firebaseAuth.addAuthStateListener(firebaseAuthListener);
-          mShimmerViewContainer.startShimmerAnimation();
-      }
+        super.onStart();
+        if (firebaseAuth != null) {
+            firebaseAuth.addAuthStateListener(firebaseAuthListener);
+            mShimmerViewContainer.startShimmerAnimation();
+        }
 
-  }
+    }
 
     @Override
     protected void onPause() {
@@ -403,7 +423,6 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_salir) {
             shutdown();
             return true;
-
         }
 
         if (id == R.id.acercade){
@@ -414,9 +433,8 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+
     public void shutdown(){
-
-
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
         dialogo.setTitle("Vas a salir de Yourcloset");
         dialogo.setMessage("¿Estas seguro?");
@@ -433,8 +451,9 @@ public class MainActivity extends AppCompatActivity
         });
 
         dialogo.show();
-
     }
+
+
     public void descartar(){
 
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
@@ -443,7 +462,7 @@ public class MainActivity extends AppCompatActivity
         dialogo.setMessage("¿Estas seguro?");
         dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogo1, int id) {
-               Toast.makeText(context,"Anuncio descartado",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"Anuncio descartado",Toast.LENGTH_SHORT).show();
             }
         });
         dialogo.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -462,11 +481,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_subiranuncio) {
-          Intent intent = new Intent(this, SubirAnuncioActivity.class);
+            Intent intent = new Intent(this, SubirAnuncioActivity.class);
             startActivity(intent);
+
             // Handle the camera action
         } else if (id == R.id.nav_favorites) {
-           Intent intent = new Intent(this, TabbedActivity.class);
+            Intent intent = new Intent(this, TabbedActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_cerrar) {
@@ -483,9 +503,26 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_send) {
-           shutdown();
+            shutdown();
 
+        } else if (id == R.id.action_settings) {
+            Toast.makeText(context, "parte de arriba", Toast.LENGTH_SHORT).show();
+
+            query = mReference.child("products/all-products").limitToFirst(100);
+
+
+            // Handle the camera action
+        } else if (id == R.id.action_navigation) {
+            Toast.makeText(context, "parte de abajo", Toast.LENGTH_SHORT).show();
+            query = mReference.child("products/all-products").limitToFirst(100);
+
+        }else if(id == R.id.action_as){
+            Toast.makeText(context, "zpatos", Toast.LENGTH_SHORT).show();
+            query = mReference.child("products/all-products").limitToFirst(100);
         }
+
+        // TODO; comprobar que no estemos en el mismo (con el id)
+        realizarConsulta();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -510,9 +547,6 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
-
-
     @Override
     protected void onStop() {
         super.onStop();
@@ -520,12 +554,9 @@ public class MainActivity extends AppCompatActivity
             firebaseAuth.removeAuthStateListener(firebaseAuthListener);
 
         }
-
     }
-    Query setQuery(){
-        return  mReference.child("products/all-products").limitToFirst(100);
 
-    }
+
 
 
 

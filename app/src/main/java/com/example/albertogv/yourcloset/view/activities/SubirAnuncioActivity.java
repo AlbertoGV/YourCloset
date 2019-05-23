@@ -86,7 +86,6 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     static final int REQUEST_RECORD_AUDIO_PERMISSION = 1212;
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anuncio);
@@ -190,6 +189,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("products/data/" + productKey, postValues);
         childUpdates.put("products/all-products/" + productKey, true);
+
         childUpdates.put("products/user-products/" + uid + "/" + productKey, true);
 
 

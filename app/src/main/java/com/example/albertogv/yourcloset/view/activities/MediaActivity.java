@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.ZoomControls;
 
 import com.example.albertogv.yourcloset.GlideApp;
 import com.example.albertogv.yourcloset.R;
