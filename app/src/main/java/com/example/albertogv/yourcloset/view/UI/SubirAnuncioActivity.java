@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset.view.activities;
+package com.example.albertogv.yourcloset.view.UI;
 
 
 import android.Manifest;
@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.albertogv.yourcloset.GlideApp;
@@ -84,7 +85,13 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
     private static final int PHOTO_SEND = 1;
     static final int REQUEST_RECORD_AUDIO_PERMISSION = 1212;
-
+    public RadioButton hombreRb;
+    public RadioButton mujerRb;
+    public RadioButton parteSuperior;
+    public RadioButton parteInferior;
+    public RadioButton parteCalzado;
+    public RadioButton parteComplemento;
+    boolean hombrePrenda;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,7 +106,12 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         uid = "uid-" + mUser.getUid();
-
+        hombreRb = findViewById(R.id.hombre);
+        mujerRb = findViewById(R.id.mujer);
+        parteSuperior = findViewById(R.id.radioarriba);
+        parteInferior = findViewById(R.id.radiobajo);
+        parteCalzado = findViewById(R.id.calzado);
+        parteComplemento = findViewById(R.id.radiocomplemento);
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -191,7 +203,23 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         childUpdates.put("products/all-products/" + productKey, true);
 
         childUpdates.put("products/user-products/" + uid + "/" + productKey, true);
-
+        if (hombreRb.isChecked() && parteSuperior.isChecked()){
+            childUpdates.put("products/hombresSup/" + productKey, true);
+        }else if(hombreRb.isChecked() && parteInferior.isChecked()){
+            childUpdates.put("products/hombresInf/" + productKey, true);
+        }else if(hombreRb.isChecked() && parteCalzado.isChecked()){
+            childUpdates.put("products/hombresCalz/" + productKey, true);
+        }else if (hombreRb.isChecked() && parteComplemento.isChecked()){
+            childUpdates.put("products/hombresCompl/" + productKey, true);
+        }else if (mujerRb.isChecked() && parteSuperior.isChecked()){
+            childUpdates.put("products/mujeresSup/" + productKey, true);
+        }else if(mujerRb.isChecked() && parteInferior.isChecked()){
+            childUpdates.put("products/mujeresInf/" + productKey, true);
+        }else if(mujerRb.isChecked() && parteCalzado.isChecked()){
+            childUpdates.put("products/mujeresCalz/" + productKey, true);
+        }else if (mujerRb.isChecked() && parteComplemento.isChecked()){
+            childUpdates.put("products/mujeresCompl/" + productKey, true);
+        }
 
 
         mReference.updateChildren(childUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {

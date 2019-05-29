@@ -170,18 +170,22 @@
                             android:layout_margin="12dp"
                             android:orientation="vertical">
 
-                            <RadioButton
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/hombre"
-                                android:text="Hombre">
-                            </RadioButton>
-                            <RadioButton
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/mujer"
-                                android:text="Mujer">
-                            </RadioButton>
+                            <RadioGroup
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <RadioButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/hombre"
+                                    android:text="Hombre">
+                                </RadioButton>
+                                <RadioButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/mujer"
+                                    android:text="Mujer">
+                                </RadioButton>
+                            </RadioGroup>
 
                         </LinearLayout>
                         <LinearLayout
@@ -190,32 +194,35 @@
                             android:layout_margin="12dp"
                             android:layout_marginLeft="12dp"
                             android:orientation="vertical">
+                            <RadioGroup
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <RadioButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/radioarriba"
+                                    android:text="Parte de arriba">
+                                </RadioButton>
+                                <RadioButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/radiobajo"
+                                    android:text="Parte de abajo">
+                                </RadioButton>
+                                <RadioButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/radiocomplemento"
+                                    android:text="Complemento">
+                                </RadioButton>
+                                <RadioButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/calzado"
+                                    android:text="Calzado">
 
-                        <RadioButton
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/radioarriba"
-                            android:text="Parte de arriba">
-                        </RadioButton>
-                        <RadioButton
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/radiobajo"
-                            android:text="Parte de abajo">
-                        </RadioButton>
-                        <RadioButton
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/radiocomplemento"
-                            android:text="Complemento">
-                        </RadioButton>
-                        <RadioButton
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/calzado"
-                            android:text="Calzado">
-
-                        </RadioButton>
+                                </RadioButton>
+                            </RadioGroup>
                         </LinearLayout>
                     </LinearLayout>
 

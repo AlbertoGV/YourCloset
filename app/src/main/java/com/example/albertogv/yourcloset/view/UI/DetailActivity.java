@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset.view.activities;
+package com.example.albertogv.yourcloset.view.UI;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
@@ -64,15 +65,8 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         TextView tvfecha = findViewById(R.id.textViewFecha);
         TextView tvNombre = findViewById(R.id.nombre_user);
         FloatingActionButton fab= findViewById(R.id.fabdetail);
-        fab.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(DetailActivity.this,ChatActivity.class);
-                startActivity(i);
-            }
-        });
         database = FirebaseDatabase.getInstance();
+
 
         ratingBar = findViewById(R.id.ratingBar);
 
@@ -112,7 +106,23 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
 
             String descripcion = bundle.getString("descripcion");
 
+            final String productKey = bundle.getString("PRODUCT_KEY");
+
+            final String messageKey = bundle.getString("MESSAGE_KEY");
+
             final String imagen = intent.getStringExtra("imagen");
+
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(DetailActivity.this,ChatActivity.class);
+                    i.putExtra("PRODUCT_KEY", productKey);
+
+                    i.putExtra("MESSAGE_KEY",messageKey);
+                    startActivity(i);
+                }
+            });
+
 
             Glide.with(context)
                     .asBitmap()

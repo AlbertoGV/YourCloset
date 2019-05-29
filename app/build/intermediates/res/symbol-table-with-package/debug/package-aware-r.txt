@@ -1319,9 +1319,6 @@ id anuncio_precioList
 id anuncioautorlist
 id anuncioautormain
 id appbar
-id area
-id area_
-id area_calzado
 id area_foto
 id area_fotos
 id area_nombre
@@ -1438,6 +1435,7 @@ id groups
 id header
 id header_text
 id heading
+id hombre
 id home
 id homeAsUp
 id horizontal
@@ -1500,6 +1498,7 @@ id middle
 id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
+id mujer
 id multiply
 id name
 id name_layout

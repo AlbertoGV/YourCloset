@@ -45,20 +45,13 @@ public class ChatActivity extends AppCompatActivity {
     String uid;
     String chatKey;
     EditText txtMensaje;
-    String photoBuyer;
     public FirebaseUser mUser;
-    String photoSeller;
-    Mensaje mensaje = new Mensaje();
     Anuncio anuncio = new Anuncio();
     String nameBuyer;
     String productKey;
-    Date date = new Date();
-    private FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener firebaseAuthListener;
     Object timeStamp;
     Calendar rightNow = Calendar.getInstance();
-    Calendar calendar = Calendar.getInstance();
-    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,8 +139,6 @@ public class ChatActivity extends AppCompatActivity {
                             chat.sellerUid = anuncio.uid;
                             chat.sellerDispalyName = anuncio.getDisplayName();
                             chat.dateCreation = String.valueOf(rightNow.get(Calendar.DATE));
-
-
 
                             mRef.child("products/product-chats").child(productKey).child(uid).setValue(chatKey);
                             mRef.child("chats/data").child(chatKey).setValue(chat);

@@ -28,7 +28,7 @@
         android:roundIcon="@mipmap/youricon"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".view.activities.SplashActivity"
+            android:name=".view.UI.SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -39,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activities.MainActivity"
+            android:name=".view.UI.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.NoActionBar">
@@ -66,48 +66,48 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".view.activities.SubirAnuncioActivity"
-            android:parentActivityName=".view.activities.DetailActivityLists" />
+            android:name=".view.UI.SubirAnuncioActivity"
+            android:parentActivityName=".view.UI.DetailActivityLists" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".view.activities.TabbedActivity" />
+            android:value=".view.UI.TabbedActivity" />
 
         <activity
-            android:name=".view.activities.TabbedActivity"
-            android:parentActivityName=".view.activities.DetailActivityLists"
+            android:name=".view.UI.TabbedActivity"
+            android:parentActivityName=".view.UI.DetailActivityLists"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.activities.DetailActivityLists" />
+                android:value=".view.UI.DetailActivityLists" />
         </activity>
         <activity
-            android:name=".view.activities.MapsActivity"
+            android:name=".view.UI.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".view.activities.LoginActivity"
+            android:name=".view.UI.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".view.activities.DetailActivity"
-            android:parentActivityName=".view.activities.MainActivity">
+            android:name=".view.UI.DetailActivity"
+            android:parentActivityName=".view.UI.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.activities.MainActivity" />
+                android:value=".view.UI.MainActivity" />
         </activity>
         <activity
             android:name=".view.chat.ChatActivity"
-            android:parentActivityName=".view.activities.MainActivity">
+            android:parentActivityName=".view.UI.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.activities.MainActivity" />
+                android:value=".view.UI.MainActivity" />
         </activity>
         <activity
-            android:name=".view.activities.DetailActivityLists"
-            android:parentActivityName=".view.activities.DetailActivityLists">
+            android:name=".view.UI.DetailActivityLists"
+            android:parentActivityName=".view.UI.DetailActivityLists">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.activities.DetailActivityLists" />
+                android:value=".view.UI.DetailActivityLists" />
         </activity>
 
         <provider
@@ -122,21 +122,21 @@
         </provider>
 
         <activity
-            android:name=".view.activities.MapsActivity2"
+            android:name=".view.UI.MapsActivity2"
             android:label="@string/title_activity_maps2" />
-        <activity android:name=".view.activities.InfoActivity" />
+        <activity android:name=".view.UI.InfoActivity" />
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".view.activities.ProfileActivity">
+        <activity android:name=".view.UI.ProfileActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.activities.MainActivity" />
+                android:value=".view.UI.MainActivity" />
         </activity>
         <activity android:name=".view.chat.MyChatsActivity"></activity>
-        <activity android:name=".view.activities.MediaActivity"></activity>
+        <activity android:name=".view.UI.MediaActivity"></activity>
     </application>
 
 </manifest>

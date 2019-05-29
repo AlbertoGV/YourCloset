@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset.view.activities;
+package com.example.albertogv.yourcloset.view.UI;
 
 import android.content.Intent;
 import android.os.Handler;

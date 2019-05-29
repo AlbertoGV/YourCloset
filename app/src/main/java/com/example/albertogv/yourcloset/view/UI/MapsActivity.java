@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset.view.activities;
+package com.example.albertogv.yourcloset.view.UI;
 
 import android.content.Context;
 import android.content.pm.PackageManager;

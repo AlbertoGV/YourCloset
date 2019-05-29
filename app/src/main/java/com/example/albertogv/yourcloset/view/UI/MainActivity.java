@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset.view.activities;
+package com.example.albertogv.yourcloset.view.UI;
 
 import android.Manifest;
 import android.content.Context;
@@ -42,7 +42,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.albertogv.yourcloset.R;
-import com.example.albertogv.yourcloset.view.adapter.AnuncioViewHolder;
 import com.example.albertogv.yourcloset.view.chat.ChatActivity;
 import com.example.albertogv.yourcloset.view.chat.MyChatsActivity;
 import com.example.albertogv.yourcloset.model.Anuncio;
@@ -98,11 +97,10 @@ public class MainActivity extends AppCompatActivity
         mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
         toolbar = findViewById(R.id.toolbar);
         rvMain = findViewById(R.id.rvMain);
-
+        progressBar = findViewById(R.id.progressBar);
+        
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
-        progressBar = findViewById(R.id.progressBar);
-
         mShimmerViewContainer.startShimmerAnimation();
 
         setSupportActionBar(toolbar);
@@ -225,14 +223,14 @@ public class MainActivity extends AppCompatActivity
 
     void realizarConsulta(){
         if(query == null){
-            query = mReference.child("products/all-products").limitToFirst(100);
+            query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
         }
 
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Anuncio>()
                 .setIndexedQuery(query, mReference.child("products/data"), Anuncio.class)
                 .setLifecycleOwner(this)
                 .build();
-
+        mReference.orderByChild("time");
         rvMain.setAdapter(new FirebaseRecyclerAdapter<Anuncio, AnuncioViewHolder>(options){
 
             @Override
@@ -271,6 +269,7 @@ public class MainActivity extends AppCompatActivity
 
                             i.putExtra("MESSAGE_KEY",messageKey);
                             startActivity(i);
+
                         }
                     });
 
@@ -320,6 +319,8 @@ public class MainActivity extends AppCompatActivity
                         String fecha = anuncioViewHolder.time.getText().toString();
                         String imagenperfil = anuncio.getAuthorPhotoUrl();
                         String imagen = anuncio.mediaUrl;
+                        String productKey1=productKey;
+                        String messageKey1=messageKey;
 
                         intent.putExtra("nombre", autor);
                         intent.putExtra("fecha", fecha);
@@ -328,6 +329,8 @@ public class MainActivity extends AppCompatActivity
                         intent.putExtra("Titulo", titulo);
                         intent.putExtra("descripcion", descripcion);
                         intent.putExtra("imagen", imagen);
+                        intent.putExtra("PRODUCT_KEY",productKey1);
+                        intent.putExtra("MESSAGE_KEY",messageKey1);
                         startActivityForResult(intent, 1);
                     }
                 });
@@ -486,8 +489,8 @@ public class MainActivity extends AppCompatActivity
 
             // Handle the camera action
         } else if (id == R.id.nav_favorites) {
-            Intent intent = new Intent(this, TabbedActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(this, TabbedActivity.class);
+//            startActivity(intent);
 
         } else if (id == R.id.nav_cerrar) {
             AuthUI.getInstance()
@@ -508,17 +511,17 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.action_settings) {
             Toast.makeText(context, "parte de arriba", Toast.LENGTH_SHORT).show();
 
-            query = mReference.child("products/all-products").limitToFirst(100);
+            query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
 
 
             // Handle the camera action
         } else if (id == R.id.action_navigation) {
             Toast.makeText(context, "parte de abajo", Toast.LENGTH_SHORT).show();
-            query = mReference.child("products/all-products").limitToFirst(100);
+            query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
 
         }else if(id == R.id.action_as){
             Toast.makeText(context, "zpatos", Toast.LENGTH_SHORT).show();
-            query = mReference.child("products/all-products").limitToFirst(100);
+            query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
         }
 
         // TODO; comprobar que no estemos en el mismo (con el id)

@@ -1,5 +1,6 @@
-package com.example.albertogv.yourcloset.view.activities;
+package com.example.albertogv.yourcloset.view.UI;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +18,6 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.albertogv.yourcloset.GlideApp;
 import com.example.albertogv.yourcloset.R;
 import com.example.albertogv.yourcloset.model.Anuncio;
-import com.example.albertogv.yourcloset.view.adapter.AnuncioViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -137,6 +137,7 @@ public class ProfileActivity extends AppCompatActivity {
         Query query = reference.child("products/user-products")
                 .child("uid-"+mUser.getUid());
         query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("RestrictedApi")
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot singleSnapshot :  dataSnapshot.getChildren()){
