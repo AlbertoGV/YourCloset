@@ -223,13 +223,14 @@ public class MainActivity extends AppCompatActivity
     void realizarConsulta(){
         if(query == null){
             query = mReference.child("products/all-products").limitToLast(100).orderByValue();
-            mShimmerViewContainer.setVisibility(View.GONE);
+
         }
 
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Anuncio>()
                 .setIndexedQuery(query, mReference.child("products/data"), Anuncio.class)
                 .setLifecycleOwner(this)
                 .build();
+        mShimmerViewContainer.startShimmerAnimation();
         rvMain.setAdapter(new FirebaseRecyclerAdapter<Anuncio, AnuncioViewHolder>(options){
 
             @Override
@@ -327,7 +328,7 @@ public class MainActivity extends AppCompatActivity
                         }
                     });
 
-
+                    mShimmerViewContainer.setVisibility(View.GONE);
 
                 }
 
