@@ -149,7 +149,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
             tvNombre.setText(nombre);
             tvfecha.setText(fecha);
             collapsingToolbarLayout.setTitle(titulo);
-            collapsingToolbarLayout.setExpandedTitleColor(Color.DKGRAY);
+            collapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);
             collapsingToolbarLayout.setCollapsedTitleTextColor(Color.DKGRAY);
             tvdescripcion.setText(descripcion);
 

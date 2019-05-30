@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-142:12
-INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-142:12
-INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-142:12
-INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-142:12
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-131:12
+INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-131:12
+INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-131:12
+INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-131:12
 MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-4.3.1.aar\0e2d405c01a0d5ed74fb03bc354a093f\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:2:1-12:12
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-auth-4.3.1.aar\d53a783184a104ef38f35d3b8c3488a0\AndroidManifest.xml:2:1-109:12
@@ -78,20 +78,20 @@ MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\koema\.g
 MERGED from [com.android.support:print:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\e192576fb88346ff653fd2ddd2a78bba\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\ed4e5028ff813e761b07dd75d3c404ce\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\c8dfd7ffc695df5a1999486edf464c6f\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-142:12
-INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-142:12
-INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-142:12
+INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-131:12
+INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-131:12
+INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-131:12
 	package
 		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:3:5-47
 		INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-142:12
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-131:12
 		INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-142:12
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-131:12
 		INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:11-69
@@ -174,7 +174,7 @@ ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\Android
 	android:name
 		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:21:22-76
 application
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:23:5-140:19
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:23:5-129:19
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:10:5-20
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-auth-4.3.1.aar\d53a783184a104ef38f35d3b8c3488a0\AndroidManifest.xml:15:5-107:19
@@ -292,103 +292,97 @@ ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\Android
 	android:name
 		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:65:13-58
 activity#com.example.albertogv.yourcloset.view.UI.SubirAnuncioActivity
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:68:9-70:73
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:68:9-70:70
 	android:parentActivityName
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:70:13-70
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:70:13-67
 	android:name
 		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:69:13-57
-meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:72:9-74:55
-	android:value
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:74:13-52
-	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:73:13-59
-activity#com.example.albertogv.yourcloset.view.UI.TabbedActivity
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:76:9-83:20
+activity#com.example.albertogv.yourcloset.view.UI.SettingsActivity
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:72:9-79:20
 	android:parentActivityName
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:78:13-70
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:74:13-63
 	android:theme
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:79:13-56
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:75:13-56
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:77:13-51
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:73:13-53
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:76:13-78:57
+	android:value
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:78:17-54
+	android:name
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:77:17-63
 activity#com.example.albertogv.yourcloset.view.UI.MapsActivity
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:84:9-86:59
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:80:9-82:59
 	android:label
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:82:13-56
+	android:name
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:81:13-49
+activity#com.example.albertogv.yourcloset.view.UI.LoginActivity
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:83:9-86:59
+	android:screenOrientation
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:85:13-49
+	android:theme
 		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:86:13-56
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:85:13-49
-activity#com.example.albertogv.yourcloset.view.UI.LoginActivity
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:87:9-90:59
-	android:screenOrientation
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:89:13-49
-	android:theme
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:90:13-56
-	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:88:13-50
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:84:13-50
 activity#com.example.albertogv.yourcloset.view.UI.DetailActivity
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:91:9-97:20
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:87:9-93:20
 	android:parentActivityName
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:93:13-63
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:89:13-63
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:92:13-51
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:88:13-51
 activity#com.example.albertogv.yourcloset.view.chat.ChatActivity
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:98:9-104:20
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:94:9-100:20
 	android:parentActivityName
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:100:13-63
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:96:13-63
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:99:13-51
-activity#com.example.albertogv.yourcloset.view.UI.DetailActivityLists
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:105:9-111:20
-	android:parentActivityName
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:107:13-70
-	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:106:13-56
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:95:13-51
 provider#android.support.v4.content.FileProvider
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:113:9-122:20
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:102:9-111:20
 	android:readPermission
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:118:13-88
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:107:13-88
 	android:grantUriPermissions
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:117:13-47
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:106:13-47
 	android:authorities
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:115:13-80
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:104:13-80
 	android:exported
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:116:13-37
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:105:13-37
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:114:13-67
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:103:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:119:13-121:54
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:108:13-110:54
 	android:resource
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:121:17-51
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:110:17-51
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:120:17-67
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:109:17-67
 activity#com.example.albertogv.yourcloset.view.UI.MapsActivity2
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:124:9-126:60
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:113:9-115:60
 	android:label
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:126:13-57
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:115:13-57
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:125:13-50
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:114:13-50
 activity#com.example.albertogv.yourcloset.view.UI.InfoActivity
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:127:9-58
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:116:9-58
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:127:19-55
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:116:19-55
 uses-library#org.apache.http.legacy
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:129:9-131:40
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:118:9-120:40
 	android:required
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:131:13-37
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:120:13-37
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:130:13-50
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:119:13-50
 activity#com.example.albertogv.yourcloset.view.UI.ProfileActivity
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:133:9-137:20
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:122:9-126:20
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:133:19-58
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:122:19-58
 activity#com.example.albertogv.yourcloset.view.chat.MyChatsActivity
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:138:9-72
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:127:9-72
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:138:19-60
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:127:19-60
 activity#com.example.albertogv.yourcloset.view.UI.MediaActivity
-ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:139:9-68
+ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:128:9-68
 	android:name
-		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:139:19-56
+		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:128:19-56
 uses-sdk
 INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml

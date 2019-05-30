@@ -48,6 +48,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -86,6 +87,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     private static final int PHOTO_SEND = 1;
     static final int REQUEST_RECORD_AUDIO_PERMISSION = 1212;
     public RadioButton hombreRb;
+
     public RadioButton mujerRb;
     public RadioButton parteSuperior;
     public RadioButton parteInferior;
@@ -200,25 +202,25 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         Map<String, Object> postValues = anuncio.toMap();
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("products/data/" + productKey, postValues);
-        childUpdates.put("products/all-products/" + productKey, true);
+        childUpdates.put("products/all-products/" + productKey, ServerValue.TIMESTAMP);
 
-        childUpdates.put("products/user-products/" + uid + "/" + productKey, true);
+        childUpdates.put("products/user-products/" + uid + "/" + productKey, ServerValue.TIMESTAMP);
         if (hombreRb.isChecked() && parteSuperior.isChecked()){
-            childUpdates.put("products/hombresSup/" + productKey, true);
+            childUpdates.put("products/hombresSup/" + productKey, ServerValue.TIMESTAMP);
         }else if(hombreRb.isChecked() && parteInferior.isChecked()){
-            childUpdates.put("products/hombresInf/" + productKey, true);
+            childUpdates.put("products/hombresInf/" + productKey,   ServerValue.TIMESTAMP);
         }else if(hombreRb.isChecked() && parteCalzado.isChecked()){
-            childUpdates.put("products/hombresCalz/" + productKey, true);
+            childUpdates.put("products/hombresCalz/" + productKey,   ServerValue.TIMESTAMP);
         }else if (hombreRb.isChecked() && parteComplemento.isChecked()){
-            childUpdates.put("products/hombresCompl/" + productKey, true);
+            childUpdates.put("products/hombresCompl/" + productKey,   ServerValue.TIMESTAMP);
         }else if (mujerRb.isChecked() && parteSuperior.isChecked()){
-            childUpdates.put("products/mujeresSup/" + productKey, true);
+            childUpdates.put("products/mujeresSup/" + productKey,   ServerValue.TIMESTAMP);
         }else if(mujerRb.isChecked() && parteInferior.isChecked()){
-            childUpdates.put("products/mujeresInf/" + productKey, true);
+            childUpdates.put("products/mujeresInf/" + productKey,   ServerValue.TIMESTAMP);
         }else if(mujerRb.isChecked() && parteCalzado.isChecked()){
-            childUpdates.put("products/mujeresCalz/" + productKey, true);
+            childUpdates.put("products/mujeresCalz/" + productKey,  ServerValue.TIMESTAMP);
         }else if (mujerRb.isChecked() && parteComplemento.isChecked()){
-            childUpdates.put("products/mujeresCompl/" + productKey, true);
+            childUpdates.put("products/mujeresCompl/" + productKey,   ServerValue.TIMESTAMP);
         }
 
 

@@ -1310,15 +1310,8 @@ id ampliarmapa
 id ampliarmapa2
 id anonymous_button
 id anuncio
-id anuncioList
-id anuncio_author
-id anuncio_descripcion
-id anuncio_fecha
 id anuncio_fechatime
-id anuncio_precioList
-id anuncioautorlist
 id anuncioautormain
-id appbar
 id area_foto
 id area_fotos
 id area_nombre
@@ -1341,6 +1334,7 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id btnSend
 id btn_holder
+id buttonEliminar
 id buttonPanel
 id button_continue
 id button_create
@@ -1369,7 +1363,6 @@ id collapse
 id collapseActionView
 id confirmation_code
 id confirmation_code_layout
-id constraintLayout
 id container
 id contenedordetalle
 id content
@@ -1414,7 +1407,6 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fab
-id fab2
 id fabdetail
 id fill
 id fill_horizontal
@@ -1456,9 +1448,7 @@ id imageView5
 id imageView7
 id imageViewImagen
 id imageView_sesion
-id image_perfil
 id image_perfilpass
-id img_cliente
 id img_correo
 id img_fotos
 id img_fotos_cam
@@ -1487,7 +1477,6 @@ id linear
 id listMode
 id list_item
 id logo
-id main_content
 id main_tos_and_pp
 id map
 id map2
@@ -1587,7 +1576,6 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
-id section_label
 id select_dialog_listview
 id selected
 id send_code
@@ -1620,11 +1608,7 @@ id stretch
 id submenuarrow
 id submit_area
 id submit_confirmation_code
-id tabItem
-id tabItem2
-id tabItem3
 id tabMode
-id tabs
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -1761,8 +1745,8 @@ layout activity_maps2
 layout activity_media
 layout activity_my_chats
 layout activity_profile
+layout activity_settings
 layout activity_splash
-layout activity_tabbed
 layout app_bar_main
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -1783,8 +1767,6 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout fragment_anuncio_list
-layout fragment_tabbed
 layout fui_activity_invisible
 layout fui_activity_register_email
 layout fui_activity_register_phone
@@ -1809,7 +1791,6 @@ layout fui_welcome_back_email_link_prompt_layout
 layout fui_welcome_back_idp_prompt_layout
 layout fui_welcome_back_password_prompt_layout
 layout grid_rv
-layout item_anuncio
 layout item_profile_post
 layout message_viewholder
 layout message_viewholder2

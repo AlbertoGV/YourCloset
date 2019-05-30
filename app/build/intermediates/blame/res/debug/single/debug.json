@@ -96,10 +96,6 @@
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
-        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_anuncio_list.xml.flat",
-        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\layout\\fragment_anuncio_list.xml"
-    },
-    {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
@@ -1128,10 +1124,6 @@
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\a1f2496d024d0aca3be5a2f0b463b1b9\\res\\color\\mtrl_tabs_icon_color_selector.xml"
     },
     {
-        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_tabbed.xml.flat",
-        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\layout\\activity_tabbed.xml"
-    },
-    {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_bottom_navigation_item_background.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\a1f2496d024d0aca3be5a2f0b463b1b9\\res\\drawable\\design_bottom_navigation_item_background.xml"
     },
@@ -1896,10 +1888,6 @@
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\6e89565e93565b12ce78c3859bf96f0a\\res\\layout\\place_autocomplete_progress.xml"
     },
     {
-        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_tabbed.xml.flat",
-        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\layout\\fragment_tabbed.xml"
-    },
-    {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable-mdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
@@ -2290,10 +2278,6 @@
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_background_transition_holo_light.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_anuncio.xml.flat",
-        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\layout\\item_anuncio.xml"
     },
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_light.xml.flat",
@@ -2838,6 +2822,10 @@
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\layout_fui_email_link_trouble_signing_in_layout.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-ui-auth-4.3.1.aar\\d53a783184a104ef38f35d3b8c3488a0\\res\\layout\\fui_email_link_trouble_signing_in_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\layout\\activity_settings.xml"
     },
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_select_dialog_material.xml.flat",

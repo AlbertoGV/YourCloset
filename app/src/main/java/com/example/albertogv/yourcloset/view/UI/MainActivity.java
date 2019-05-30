@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity
         
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
-        mShimmerViewContainer.startShimmerAnimation();
+
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -223,14 +223,13 @@ public class MainActivity extends AppCompatActivity
 
     void realizarConsulta(){
         if(query == null){
-            query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
+            query = mReference.child("products/all-products").limitToLast(100).orderByValue();
         }
 
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Anuncio>()
                 .setIndexedQuery(query, mReference.child("products/data"), Anuncio.class)
                 .setLifecycleOwner(this)
                 .build();
-        mReference.orderByChild("time");
         rvMain.setAdapter(new FirebaseRecyclerAdapter<Anuncio, AnuncioViewHolder>(options){
 
             @Override
@@ -259,6 +258,32 @@ public class MainActivity extends AppCompatActivity
                             anuncioViewHolder.irChat.setVisibility(View.VISIBLE);
                             anuncioViewHolder.settings.setVisibility(View.INVISIBLE);
                         }
+                        anuncioViewHolder.settings.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent i = new Intent(MainActivity.this,SettingsActivity.class);
+                                String precio = anuncioViewHolder.tvPrecio.getText().toString();
+                                String titulo = anuncioViewHolder.tvnombreArticulo.getText().toString();
+                                String descripcion = anuncioViewHolder.tvdescArticulo.getText().toString();
+                                String autor = anuncio.displayName;
+                                String fecha = anuncioViewHolder.time.getText().toString();
+                                String imagenperfil = anuncio.getAuthorPhotoUrl();
+                                String imagen = anuncio.mediaUrl;
+                                String productKey1=productKey;
+                                String messageKey1=messageKey;
+
+                                i.putExtra("nombre", autor);
+                                i.putExtra("fecha", fecha);
+                                i.putExtra("imgperfil", imagenperfil);
+                                i.putExtra("precio", precio);
+                                i.putExtra("Titulo", titulo);
+                                i.putExtra("descripcion", descripcion);
+                                i.putExtra("imagen", imagen);
+                                i.putExtra("PRODUCT_KEY",productKey1);
+                                i.putExtra("MESSAGE_KEY",messageKey1);
+                                startActivityForResult(i, 1);
+                            }
+                        });
                     }
 
                     anuncioViewHolder.irChat.setOnClickListener(new View.OnClickListener() {
@@ -272,15 +297,15 @@ public class MainActivity extends AppCompatActivity
 
                         }
                     });
+                    if (anuncio!=null) {
+                        anuncioViewHolder.anunimagePerfil.setImageURI(Uri.parse(anuncio.getAuthorPhotoUrl()));
+                        anuncioViewHolder.time.setText(DateUtils.getRelativeTimeSpanString(anuncio.time,
+                                System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS));
+                        anuncioViewHolder.tvPrecio.setText(anuncio.getPrecioAnuncio() + " Euros");
 
-                    anuncioViewHolder.anunimagePerfil.setImageURI(Uri.parse(anuncio.getAuthorPhotoUrl()));
-                    anuncioViewHolder.time.setText(DateUtils.getRelativeTimeSpanString(anuncio.time,
-                            System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS));
-                    anuncioViewHolder.tvPrecio.setText(anuncio.getPrecioAnuncio()+" Euros");
-
-                    anuncioViewHolder.tvnombreArticulo.setText(anuncio.getTituloAnuncio());
-                    anuncioViewHolder.tvdescArticulo.setText(anuncio.description);
-
+                        anuncioViewHolder.tvnombreArticulo.setText(anuncio.getTituloAnuncio());
+                        anuncioViewHolder.tvdescArticulo.setText(anuncio.description);
+                    }
                     if(mUser!= null) {
 
                         if (anuncio.likes.containsKey(mUser.getUid())) {
@@ -302,7 +327,7 @@ public class MainActivity extends AppCompatActivity
                         }
                     });
 
-                    mShimmerViewContainer.setVisibility(View.GONE);
+
 
                 }
 
@@ -311,7 +336,6 @@ public class MainActivity extends AppCompatActivity
                     public void onClick(View v) {
 
                         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-
                         String precio = anuncioViewHolder.tvPrecio.getText().toString();
                         String titulo = anuncioViewHolder.tvnombreArticulo.getText().toString();
                         String descripcion = anuncioViewHolder.tvdescArticulo.getText().toString();
@@ -342,9 +366,7 @@ public class MainActivity extends AppCompatActivity
                     }
                 });
 
-
             }
-
 
             @NonNull
             @Override
@@ -355,7 +377,10 @@ public class MainActivity extends AppCompatActivity
             }
         });
     }
+    private void sendData() {
 
+
+    }
 
 
 
@@ -512,21 +537,26 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(context, "parte de arriba", Toast.LENGTH_SHORT).show();
 
             query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
+            mShimmerViewContainer.startShimmerAnimation();
 
 
             // Handle the camera action
         } else if (id == R.id.action_navigation) {
             Toast.makeText(context, "parte de abajo", Toast.LENGTH_SHORT).show();
+            mShimmerViewContainer.startShimmerAnimation();
             query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
+
 
         }else if(id == R.id.action_as){
             Toast.makeText(context, "zpatos", Toast.LENGTH_SHORT).show();
+            mShimmerViewContainer.startShimmerAnimation();
             query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
         }
 
+
         // TODO; comprobar que no estemos en el mismo (con el id)
         realizarConsulta();
-
+        mShimmerViewContainer.setVisibility(View.GONE);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

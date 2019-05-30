@@ -67,19 +67,15 @@
 
         <activity
             android:name=".view.UI.SubirAnuncioActivity"
-            android:parentActivityName=".view.UI.DetailActivityLists" />
-
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".view.UI.TabbedActivity" />
+            android:parentActivityName=".view.UI.SettingsActivity" />
 
         <activity
-            android:name=".view.UI.TabbedActivity"
-            android:parentActivityName=".view.UI.DetailActivityLists"
+            android:name=".view.UI.SettingsActivity"
+            android:parentActivityName=".view.UI.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.UI.DetailActivityLists" />
+                android:value=".view.UI.MainActivity" />
         </activity>
         <activity
             android:name=".view.UI.MapsActivity"
@@ -101,13 +97,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.UI.MainActivity" />
-        </activity>
-        <activity
-            android:name=".view.UI.DetailActivityLists"
-            android:parentActivityName=".view.UI.DetailActivityLists">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.UI.DetailActivityLists" />
         </activity>
 
         <provider

@@ -85,19 +85,14 @@
 
         <activity
             android:name="com.example.albertogv.yourcloset.view.UI.SubirAnuncioActivity"
-            android:parentActivityName="com.example.albertogv.yourcloset.view.UI.DetailActivityLists" />
-
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".view.UI.TabbedActivity" />
-
+            android:parentActivityName="com.example.albertogv.yourcloset.view.UI.SettingsActivity" />
         <activity
-            android:name="com.example.albertogv.yourcloset.view.UI.TabbedActivity"
-            android:parentActivityName="com.example.albertogv.yourcloset.view.UI.DetailActivityLists"
+            android:name="com.example.albertogv.yourcloset.view.UI.SettingsActivity"
+            android:parentActivityName="com.example.albertogv.yourcloset.view.UI.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.UI.DetailActivityLists" />
+                android:value=".view.UI.MainActivity" />
         </activity>
         <activity
             android:name="com.example.albertogv.yourcloset.view.UI.MapsActivity"
@@ -119,13 +114,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.UI.MainActivity" />
-        </activity>
-        <activity
-            android:name="com.example.albertogv.yourcloset.view.UI.DetailActivityLists"
-            android:parentActivityName="com.example.albertogv.yourcloset.view.UI.DetailActivityLists" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.UI.DetailActivityLists" />
         </activity>
 
         <provider
