@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity
     boolean click= false;
     ImageView imagegoogle;
     Context context;
-    Anuncio anuncio;
     private ShimmerFrameLayout mShimmerViewContainer;
     List<Anuncio> list;
     private GoogleApiClient googleApiClient;
@@ -224,6 +223,7 @@ public class MainActivity extends AppCompatActivity
     void realizarConsulta(){
         if(query == null){
             query = mReference.child("products/all-products").limitToLast(100).orderByValue();
+            mShimmerViewContainer.setVisibility(View.GONE);
         }
 
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Anuncio>()
@@ -365,6 +365,7 @@ public class MainActivity extends AppCompatActivity
                         return false;
                     }
                 });
+                mShimmerViewContainer.setVisibility(View.GONE);
 
             }
 
@@ -376,10 +377,6 @@ public class MainActivity extends AppCompatActivity
                 };
             }
         });
-    }
-    private void sendData() {
-
-
     }
 
 
@@ -535,28 +532,25 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.action_settings) {
             Toast.makeText(context, "parte de arriba", Toast.LENGTH_SHORT).show();
+            query = mReference.child("products/all-products").limitToLast(100).orderByValue();
 
-            query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
-            mShimmerViewContainer.startShimmerAnimation();
 
 
             // Handle the camera action
         } else if (id == R.id.action_navigation) {
             Toast.makeText(context, "parte de abajo", Toast.LENGTH_SHORT).show();
-            mShimmerViewContainer.startShimmerAnimation();
             query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
 
 
         }else if(id == R.id.action_as){
             Toast.makeText(context, "zpatos", Toast.LENGTH_SHORT).show();
-            mShimmerViewContainer.startShimmerAnimation();
             query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
         }
 
 
         // TODO; comprobar que no estemos en el mismo (con el id)
         realizarConsulta();
-        mShimmerViewContainer.setVisibility(View.GONE);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
