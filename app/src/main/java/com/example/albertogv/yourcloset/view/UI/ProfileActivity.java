@@ -2,11 +2,14 @@ package com.example.albertogv.yourcloset.view.UI;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,7 +84,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
             @Override
-            protected void onBindViewHolder(final AnuncioViewHolder anuncioviewHolder, final int position, final Anuncio anuncio) {
+            protected void onBindViewHolder(@NonNull final AnuncioViewHolder anuncioviewHolder, final int position, final Anuncio anuncio) {
                 final String postKey = getRef(position).getKey();
                     if(anuncio.mediaUrl!= null) {
                         GlideApp.with(ProfileActivity.this).load(anuncio.getMediaUrl()).apply(RequestOptions.centerCropTransform()).into(anuncioviewHolder.image);
@@ -89,22 +92,23 @@ public class ProfileActivity extends AppCompatActivity {
                         if (firebaseAuthListener == null) {
                             firebaseAuth = FirebaseAuth.getInstance();
                         }
+                       final String date= (String) DateUtils.getRelativeTimeSpanString(anuncio.time,
+                                System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS);
                     anuncioviewHolder.image.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                           Anuncio anuncio = new Anuncio();
-                            Intent intent = new Intent(ProfileActivity.this,DetailActivity.class);
+                            Intent intent = new Intent(ProfileActivity.this,SettingsActivity.class);
 
-                            String precio = anuncio.getPrecioAnuncio();
+                            String precio = anuncio.getPrecioAnuncio() +" Euros";
                             String titulo = anuncio.getTituloAnuncio();
                             String descripcion = anuncio.getDescripcion();
                             String autor = firebaseAuth.getCurrentUser().getDisplayName();
-                            String fecha = String.valueOf(anuncio.getTime());
+                            String fecha = date;
                             String imagenperfil = anuncio.getAuthorPhotoUrl();
                             String imagen = anuncio.getMediaUrl();
 
                             intent.putExtra("nombre", autor);
-                            intent.putExtra("fecha", fecha);
+                            intent.putExtra("fecha", date);
                             intent.putExtra("imgperfil", imagenperfil);
                             intent.putExtra("precio", precio);
                             intent.putExtra("Titulo", titulo);
@@ -113,7 +117,8 @@ public class ProfileActivity extends AppCompatActivity {
                             startActivityForResult(intent, 1);
                         }
                     });
-                        }
+
+                }
 
                     }
 
