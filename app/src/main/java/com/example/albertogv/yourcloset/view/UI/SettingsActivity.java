@@ -139,16 +139,7 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
             appCompatButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    eliminarAnuncio();
-                    database.getReference("products/data").child(productKey).setValue(null);
-                    database.getReference("products/all-products").child(productKey).setValue(null);
-                    database.getReference("products/user-products").child(uid).child(productKey).setValue(null);
-                    database.getReference("products/hombresCalz").child(productKey).setValue(null);
-                    database.getReference("products/hombresInf").child(productKey).setValue(null);
-                    database.getReference("products/hombresSup").child(productKey).setValue(null);
-                    database.getReference("products/mujeresCalz").child(productKey).setValue(null);
-                    database.getReference("products/mujeresInf").child(productKey).setValue(null);
-
+                    eliminarAnuncio(productKey);
 
 
 
@@ -198,7 +189,7 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
 
     }
 
-    public void eliminarAnuncio(){
+    public void eliminarAnuncio(final String productKey){
 
         final AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
         dialogo.setTitle("Vas a eliminar un anuncio");
@@ -206,6 +197,14 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
         dialogo.setMessage("¿Estas seguro?");
         dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogo1, int id) {
+                database.getReference("products/data").child(productKey).setValue(null);
+                database.getReference("products/all-products").child(productKey).setValue(null);
+                database.getReference("products/user-products").child(uid).child(productKey).setValue(null);
+                database.getReference("products/hombresCalz").child(productKey).setValue(null);
+                database.getReference("products/hombresInf").child(productKey).setValue(null);
+                database.getReference("products/hombresSup").child(productKey).setValue(null);
+                database.getReference("products/mujeresCalz").child(productKey).setValue(null);
+                database.getReference("products/mujeresInf").child(productKey).setValue(null);
                 Toast.makeText(context, "Anuncio Eliminado", Toast.LENGTH_SHORT).show();
                 finish();
             }
