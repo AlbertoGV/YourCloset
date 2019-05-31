@@ -95,29 +95,29 @@ public final class R {
         public static final int blocking = 0x7f080039;
         public static final int cancel_action = 0x7f080050;
         public static final int chronometer = 0x7f080059;
-        public static final int end_padder = 0x7f080085;
-        public static final int forever = 0x7f080093;
+        public static final int end_padder = 0x7f080084;
+        public static final int forever = 0x7f080092;
         public static final int icon = 0x7f0800a6;
         public static final int icon_group = 0x7f0800a7;
         public static final int info = 0x7f0800bc;
         public static final int italic = 0x7f0800bf;
-        public static final int line1 = 0x7f0800cd;
-        public static final int line3 = 0x7f0800ce;
+        public static final int line1 = 0x7f0800cc;
+        public static final int line3 = 0x7f0800cd;
         public static final int media_actions = 0x7f0800d7;
         public static final int normal = 0x7f0800ee;
         public static final int notification_background = 0x7f0800ef;
         public static final int notification_main_column = 0x7f0800f0;
         public static final int notification_main_column_container = 0x7f0800f1;
-        public static final int right_icon = 0x7f08011a;
-        public static final int right_side = 0x7f08011b;
+        public static final int right_icon = 0x7f080119;
+        public static final int right_side = 0x7f08011a;
         public static final int status_bar_latest_event_content = 0x7f080151;
         public static final int tag_transition_group = 0x7f080157;
         public static final int tag_unhandled_key_event_manager = 0x7f080158;
         public static final int tag_unhandled_key_listeners = 0x7f080159;
         public static final int text = 0x7f08015b;
         public static final int text2 = 0x7f08015c;
-        public static final int time = 0x7f080171;
-        public static final int title = 0x7f080172;
+        public static final int time = 0x7f08016d;
+        public static final int title = 0x7f08016e;
     }
     public static final class integer {
         private integer() {}

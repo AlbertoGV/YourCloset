@@ -15,8 +15,9 @@
         android:id="@+id/action_as"
         android:icon="@drawable/heart_off"
         android:title="" />
-   <item
+       <item
         android:id="@+id/action_as1"
         android:icon="@drawable/send"
         android:title="" />
+
 </menu>

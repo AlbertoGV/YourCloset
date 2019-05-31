@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
         bottomNavigationView.setItemBackground(null);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
 
@@ -534,9 +533,8 @@ public class MainActivity extends AppCompatActivity
             shutdown();
 
         }else if (id == R.id.action_search) {
-                Toast.makeText(context, "parte de arriba y hombre", Toast.LENGTH_SHORT).show();
-                query = mReference.child("products/all-products").orderByValue().limitToFirst(100);
-
+            Toast.makeText(context, "parte de arriba y hombre", Toast.LENGTH_SHORT).show();
+            query = mReference.child("products/all-products").orderByValue().limitToFirst(100);
         } else if (id == R.id.action_settings) {
             Toast.makeText(context, "parte de arriba", Toast.LENGTH_SHORT).show();
             query = mReference.child("products/hombresCalz").orderByValue().limitToFirst(100);
@@ -551,8 +549,8 @@ public class MainActivity extends AppCompatActivity
 
         // TODO; comprobar que no estemos en el mismo (con el id)
 
-        realizarConsulta();
-        
+            realizarConsulta();
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

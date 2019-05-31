@@ -40,11 +40,9 @@ public class ProfileActivity extends AppCompatActivity {
     private int mPostsCount = 0;
     private FirebaseAuth firebaseAuth;
     ImageView imageView;
+    TextView tvNameProfile;
     TextView tvPosts;
-    TextView tvEdit;
-    TextView tvProfileName;
-    TextView tvweb;
-    TextView tvbio;
+
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
     @Override
@@ -55,11 +53,8 @@ public class ProfileActivity extends AppCompatActivity {
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         tvPosts = findViewById(R.id.tvPosts);
-        tvEdit = findViewById(R.id.textEditProfile);
-        tvProfileName = findViewById(R.id.display_name);
-        tvweb = findViewById(R.id.tv_web);
-        tvbio = findViewById(R.id.tv_bio);
         imageView = findViewById(R.id.image3);
+        tvNameProfile = findViewById(R.id.name);
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -75,7 +70,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
-
+        tvNameProfile.setText(mUser.getDisplayName());
         recycler.setLayoutManager(new StaggeredGridLayoutManager(3,GridLayoutManager.VERTICAL));
         recycler.setAdapter(new FirebaseRecyclerAdapter<Anuncio, AnuncioViewHolder>(options) {
             @Override
