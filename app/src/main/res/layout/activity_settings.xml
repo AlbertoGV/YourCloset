@@ -74,30 +74,34 @@
                 android:orientation="vertical"
                 android:layout_height="match_parent">
                 <android.support.v7.widget.AppCompatButton
+                    android:layout_margin="8dp"
                     android:layout_width="match_parent"
-
                     android:theme="@style/FirebaseUI.Text.BodyText"
-                    android:background="@color/colorPrimaryDark"
                     android:textColor="@color/colorPrimary"
                     android:layout_height="wrap_content"
-                    android:text="Editrar Anuncio"/>
-            <android.support.v7.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:theme="@style/FirebaseUI.Text.BodyText"
-                android:background="@color/background"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_height="wrap_content"
-                android:text="Poner como vendido"/>
+                    android:text="Editar Anuncio"
+                    android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+                    android:background="@drawable/botonredondo"/>
+
                 <android.support.v7.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:theme="@style/FirebaseUI.Text.BodyText"
+                    android:outlineAmbientShadowColor="@color/background"
+                    android:background="@drawable/botonredondoblanco"
+                    android:layout_margin="8dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:text="¡VENDIDO!"/>
+
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_margin="8dp"
                     android:theme="@style/FirebaseUI.Text.BodyText"
                     android:layout_width="match_parent"
-                    android:background="#f50057"
                     android:id="@+id/buttonEliminar"
                     android:textColor="@color/colorPrimary"
                     android:layout_height="wrap_content"
-                    android:text="Eliminar anuncio"/>
+                    android:text="Eliminar anuncio"
+                    android:background="@drawable/botonredondorojo"/>
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"

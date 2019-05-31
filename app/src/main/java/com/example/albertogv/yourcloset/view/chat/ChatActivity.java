@@ -138,7 +138,7 @@ public class ChatActivity extends AppCompatActivity {
                             chat.buyerUid = uid;
                             chat.sellerUid = anuncio.uid;
                             chat.sellerDispalyName = anuncio.getDisplayName();
-                            chat.dateCreation = String.valueOf(Calendar.DATE);
+                            chat.dateCreation = rightNow.get(Calendar.DATE) + "/" + (rightNow.get(Calendar.MONTH) + 1 )  + "/" + rightNow.get(Calendar.YEAR);
 
                             mRef.child("products/product-chats").child(productKey).child(uid).setValue(chatKey);
                             mRef.child("chats/data").child(chatKey).setValue(chat);
