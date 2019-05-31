@@ -1161,6 +1161,8 @@ drawable background_messages
 drawable background_messages2
 drawable beutiful
 drawable botonredondo
+drawable botonredondoblanco
+drawable botonredondorojo
 drawable camara
 drawable chat
 drawable chat_good

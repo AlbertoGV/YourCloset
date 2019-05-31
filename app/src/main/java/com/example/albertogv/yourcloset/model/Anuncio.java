@@ -107,7 +107,7 @@ public class Anuncio {
         public Anuncio() {}
 
 
-        public Anuncio(String uid, String author, String authorPhotoUrl, String descripcion,String tituloAnuncio,String precioAnuncio,String mediaUrl, String mediaType,Map timestamp) {
+        public Anuncio(String uid, String author, String authorPhotoUrl, String descripcion,String tituloAnuncio,String precioAnuncio,String mediaUrl, String mediaType) {
                 this.uid = uid;
                 this.displayName = author;
                 this.authorPhotoUrl = authorPhotoUrl;

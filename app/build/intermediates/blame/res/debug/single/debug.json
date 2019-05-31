@@ -472,6 +472,10 @@
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
+        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_botonredondorojo.xml.flat",
+        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\drawable-v24\\botonredondorojo.xml"
+    },
+    {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_disabled.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\50daade63d436a09bdba29b4e3831f83\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
     },
@@ -2354,6 +2358,10 @@
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_search_api_material.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_botonredondoblanco.xml.flat",
+        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\drawable-v24\\botonredondoblanco.xml"
     },
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_longpressed_holo.9.png.flat",

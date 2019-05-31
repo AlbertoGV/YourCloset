@@ -138,8 +138,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setItemBackground(null);
 
         realizarConsulta();
-        
-        rvMain.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+//        staggeredGridLayoutManager.setReverseLayout(true);
+        rvMain.setLayoutManager(staggeredGridLayoutManager);
 
 
         View header = navigationView.getHeaderView(0);
@@ -531,27 +533,26 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
             shutdown();
 
+        }else if (id == R.id.action_search) {
+                Toast.makeText(context, "parte de arriba y hombre", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/all-products").orderByValue().limitToFirst(100);
+
         } else if (id == R.id.action_settings) {
             Toast.makeText(context, "parte de arriba", Toast.LENGTH_SHORT).show();
-            query = mReference.child("products/all-products").limitToLast(100).orderByValue();
-
-
-
-            // Handle the camera action
+            query = mReference.child("products/hombresCalz").orderByValue().limitToFirst(100);
         } else if (id == R.id.action_navigation) {
             Toast.makeText(context, "parte de abajo", Toast.LENGTH_SHORT).show();
-            query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
-
-
+            query = mReference.child("products/mujeresInf").orderByValue().limitToFirst(100);
         }else if(id == R.id.action_as){
             Toast.makeText(context, "zpatos", Toast.LENGTH_SHORT).show();
-            query = mReference.child("products/all-products").limitToFirst(100).orderByValue();
+            query = mReference.child("products/mujeresSup").orderByValue().limitToFirst(100);
         }
 
 
         // TODO; comprobar que no estemos en el mismo (con el id)
-        realizarConsulta();
 
+        realizarConsulta();
+        
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

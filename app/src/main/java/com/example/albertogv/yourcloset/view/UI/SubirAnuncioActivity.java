@@ -48,7 +48,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
-import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -143,6 +143,8 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             @Override
             public void onClick(View v) {
                 try {
+                    v.setEnabled(false);
+                    Toast.makeText(SubirAnuncioActivity.this, "Subiendo...espere por favor", Toast.LENGTH_SHORT).show();
                     submitPost();
                     progressLoading();
                 } catch (java.text.ParseException e) {
@@ -197,12 +199,13 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     public void writeNewPost(String description, String name, String price, String mediaUri) {
 
         String productKey = "product-" + mReference.push().getKey();
-        Anuncio anuncio = new Anuncio(uid, mUser.getDisplayName(), mUser.getPhotoUrl().toString(), description,name,price, mediaUri, mediaType, ServerValue.TIMESTAMP);
+        Anuncio anuncio = new Anuncio(uid, mUser.getDisplayName(), mUser.getPhotoUrl().toString(), description,name,price, mediaUri, mediaType);
 
+        long ts = -new Date().getTime();
         Map<String, Object> postValues = anuncio.toMap();
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("products/data/" + productKey, postValues);
-        childUpdates.put("products/all-products/" + productKey, ServerValue.TIMESTAMP);
+        childUpdates.put("products/all-products/" + productKey, ts);
 
         childUpdates.put("products/user-products/" + uid + "/" + productKey, ServerValue.TIMESTAMP);
         if (hombreRb.isChecked() && parteSuperior.isChecked()){

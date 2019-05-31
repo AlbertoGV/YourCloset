@@ -139,24 +139,8 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
             appCompatButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    database.getReference("products/data").child(productKey).addListenerForSingleValueEvent(
-                            new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    for (DataSnapshot child: dataSnapshot.getChildren()) {
-                                        eliminarAnuncio();
-                                        child.getRef().setValue(null);
-                                    }
-
-
-                                }
-
-
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-                                    Log.w("TodoApp", "getUser:onCancelled", databaseError.toException());
-                                }
-                            });
+                    database.getReference("products/data").child(productKey).setValue(null);
+                    database.getReference("products/all-products").child(productKey).setValue(null);
 
                 }
             });
