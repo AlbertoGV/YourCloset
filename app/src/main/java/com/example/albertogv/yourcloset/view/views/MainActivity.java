@@ -49,6 +49,7 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
@@ -73,6 +74,9 @@ public class MainActivity extends AppCompatActivity
     ProgressBar progressBar;
     Toolbar toolbar;
     boolean click= false;
+    FloatingActionMenu materialDesignFAM;
+    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3;
+
     ImageView imagegoogle;
     Context context;
     private ShimmerFrameLayout mShimmerViewContainer;
@@ -98,9 +102,9 @@ public class MainActivity extends AppCompatActivity
         progressBar = findViewById(R.id.progressBar);
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
-        bottomNavigationView.setItemBackground(null);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+//        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
+//        bottomNavigationView.setItemBackground(null);
+//        bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -126,7 +130,7 @@ public class MainActivity extends AppCompatActivity
         }
 
 
-        FloatingActionButton fab = configurarFAB();
+        FloatingActionMenu fab = configurarFAB();
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -161,8 +165,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     @NonNull
-    private FloatingActionButton configurarFAB() {
-        final FloatingActionButton fab = findViewById(R.id.fab);
+    private FloatingActionMenu configurarFAB() {
+        final FloatingActionMenu fab = findViewById(R.id.material_design_android_floating_action_menu);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -188,24 +192,25 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
-        fab.setRippleColor(Color.DKGRAY);
-        rvMain.setOnFlingListener(new RecyclerView.OnFlingListener() {
-            @Override
-            public boolean onFling(int velocityX, int velocityY) {
-                if (velocityY < 0)
-                    fab.show();
-                    //Code to hide the UI, I have  a custom one that slides down the nav  bar and the fab
-                else if (velocityY > 0)
-                    fab.hide();
-                //Code to show the UI
-
-                return false;
-            }
-        });
-
+//        fab.setRippleColor(Color.DKGRAY);
+//        rvMain.setOnFlingListener(new RecyclerView.OnFlingListener() {
+//            @Override
+//            public boolean onFling(int velocityX, int velocityY) {
+//                if (velocityY < 0)
+//                    fab.show();
+//                    //Code to hide the UI, I have  a custom one that slides down the nav  bar and the fab
+//                else if (velocityY > 0)
+//                    fab.hide();
+//                //Code to show the UI
+//
+//                return false;
+//            }
+//        });
+//
+//
+//    }
         return fab;
     }
-
     void realizarConsulta(){
         if(query == null){
             query = mReference.child("products/all-products").limitToLast(100).orderByValue();
@@ -540,17 +545,9 @@ public class MainActivity extends AppCompatActivity
         } else if(id == R.id.action_as){
             Toast.makeText(context, "zpatos", Toast.LENGTH_SHORT).show();
             query = mReference.child("products/mujeresSup").orderByValue().limitToFirst(100);
-
-        }else if (id == R.id.manOrWomanButton) {
-            Toast.makeText(context, "Ropa de Mujer", Toast.LENGTH_SHORT).show();
-            item.setIcon(R.drawable.ic_femenine);
-            Boolean modoHombre = true;
-
-            if (item.isChecked()) {
-                Toast.makeText(context, "Ropa de Hombre", Toast.LENGTH_SHORT).show();
-                item.setIcon(R.drawable.ic_masculine);
-                item.isChecked();
-            }
+        } else if (id == R.id.manOrWomanButton && !item.isChecked()) {
+                Toast.makeText(context, "Ropa de Mujer", Toast.LENGTH_SHORT).show();
+                item.setIcon(R.drawable.ic_femenine);
         }
 
         // TODO; comprobar que no estemos en el mismo (con el id)
@@ -587,11 +584,30 @@ public class MainActivity extends AppCompatActivity
             firebaseAuth.removeAuthStateListener(firebaseAuthListener);
 
         }
+        materialDesignFAM = (FloatingActionMenu) findViewById(R.id.material_design_android_floating_action_menu);
+        floatingActionButton1 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item1);
+        floatingActionButton2 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item2);
+        floatingActionButton3 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item3);
+
+        floatingActionButton1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu first item clicked
+
+            }
+        });
+        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu second item clicked
+
+            }
+        });
+        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+
+            }
+        });
     }
-
-
-
-
-
 }
+
 

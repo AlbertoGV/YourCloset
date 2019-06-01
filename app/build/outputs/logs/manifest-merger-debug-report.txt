@@ -24,6 +24,7 @@ MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\koema\.g
 MERGED from [com.google.firebase:firebase-core:16.0.7] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.7.aar\7a5d7b31f79bc84637f1eaeb7d23f72a\AndroidManifest.xml:2:1-9:12
 MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:2:1-17:12
 MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:17:1-30:12
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\89362e0f3ac2be20af79f46b008d9504\AndroidManifest.xml:2:1-14:12
 MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.android.gms:play-services-drive:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-drive-16.0.0.aar\08db87046b17e52d855827af225800d4\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\76dcf1962dec0b7fe4554d36c1d1cd5d\AndroidManifest.xml:17:1-39:12
@@ -195,6 +196,8 @@ MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms
 MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:11:5-15:19
 MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:22:5-28:19
 MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:22:5-28:19
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\89362e0f3ac2be20af79f46b008d9504\AndroidManifest.xml:12:5-20
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\89362e0f3ac2be20af79f46b008d9504\AndroidManifest.xml:12:5-20
 MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.android.gms:play-services-drive:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-drive-16.0.0.aar\08db87046b17e52d855827af225800d4\AndroidManifest.xml:22:5-20
@@ -427,6 +430,8 @@ MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms
 MERGED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:7:5-9:41
 MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\80ba14a24ccc826a9d2fa82d017e3e41\AndroidManifest.xml:20:5-44
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\89362e0f3ac2be20af79f46b008d9504\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\89362e0f3ac2be20af79f46b008d9504\AndroidManifest.xml:8:5-10:41
 MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:16.1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.1.0.aar\bd13b2dda2f6a5c7a876dd2eeca6744d\AndroidManifest.xml:21:5-44
 MERGED from [com.google.android.gms:play-services-drive:16.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\play-services-drive-16.0.0.aar\08db87046b17e52d855827af225800d4\AndroidManifest.xml:20:5-44

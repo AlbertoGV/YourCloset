@@ -17,7 +17,7 @@ public final class R {
         public static final int circle_start_color = 0x7f030089;
         public static final int dots_primary_color = 0x7f0300ca;
         public static final int dots_secondary_color = 0x7f0300cb;
-        public static final int liked = 0x7f030176;
+        public static final int liked = 0x7f03018a;
     }
     public static final class string {
         private string() {}
@@ -27,7 +27,7 @@ public final class R {
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] SmallBangView = { 0x7f03002b, 0x7f030088, 0x7f030089, 0x7f0300ca, 0x7f0300cb, 0x7f030176 };
+        public static final int[] SmallBangView = { 0x7f03002b, 0x7f030088, 0x7f030089, 0x7f0300ca, 0x7f0300cb, 0x7f03018a };
         public static final int SmallBangView_anim_scale_factor = 0;
         public static final int SmallBangView_circle_end_color = 1;
         public static final int SmallBangView_circle_start_color = 2;

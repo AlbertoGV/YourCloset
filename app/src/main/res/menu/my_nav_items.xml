@@ -26,6 +26,7 @@
         android:visible="true"
         android:checkable="true"
         android:title=""
+        
         android:icon="@drawable/ic_masculine"
         app:actionViewClass="android.widget.Button" />
 
