@@ -48,7 +48,6 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
 
     }
 
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -95,8 +94,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     }
 
 
-    public void captureScreen()
-    {
+    public void captureScreen() {
         GoogleMap.SnapshotReadyCallback callback = new GoogleMap.SnapshotReadyCallback()
         {
 

@@ -128,7 +128,6 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             }
         });
 
-
         imagePreview = findViewById(R.id.imagePreview);
         imagePreview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,7 +145,6 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
                     v.setEnabled(false);
                     Toast.makeText(SubirAnuncioActivity.this, "Subiendo...espere por favor", Toast.LENGTH_SHORT).show();
                     submitPost();
-                    progressLoading();
                 } catch (java.text.ParseException e) {
                     e.printStackTrace();
                 }
@@ -185,14 +183,13 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             etNombre.setError("Introduzca el nombre artículo ");
         } else if (postPrecio.isEmpty()) {
             etPrecio.setError("Introduzca el precio");
-        } if (mediaUri == null) {
+        } else if (mediaUri == null) {
             Toast.makeText(this, "Seleccione una imagen para continuar", Toast.LENGTH_SHORT).show();
             return;
         }
 
         uploadAndWriteNewPost(postText,postName,postPrecio);
 
-        buttonAceptar.setEnabled(false);
 
     }
 
@@ -234,11 +231,6 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             }
         });
     }
-    public void progressLoading(){
-        final ContentLoadingProgressBar pd = new ContentLoadingProgressBar(getApplicationContext());
-        pd.show();
-    }
-
 
     private void uploadAndWriteNewPost(final String postText, final String postName, final String postPrecio ) {
         if (mediaType != null) {
