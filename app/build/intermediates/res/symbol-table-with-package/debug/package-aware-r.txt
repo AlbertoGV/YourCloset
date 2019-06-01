@@ -1233,7 +1233,9 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_notifications_black_24dp
 drawable ic_star_rate_off
 drawable ic_star_rate_on
+drawable icons
 drawable icons8
+drawable iconsmensaje
 drawable imageredonda
 drawable imageredonda2
 drawable indexcam
@@ -1493,6 +1495,7 @@ id mujer
 id multiply
 id name
 id name_layout
+id nav_ayuda
 id nav_cerrar
 id nav_favorites
 id nav_send

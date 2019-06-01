@@ -1,4 +1,4 @@
-#Sat Jun 01 00:01:10 CEST 2019
+#Sat Jun 01 02:42:22 CEST 2019
 base.0=C\:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

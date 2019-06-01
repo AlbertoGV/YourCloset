@@ -4,30 +4,31 @@
 
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group>
         <item
             android:id="@+id/nav_subiranuncio"
-            
             android:icon="@mipmap/anyadir"
             android:title="@string/Subir_anuncio" />
         <item
-            android:id="@+id/nav_favorites"
+            android:id="@+id/nav_share"
             android:icon="@mipmap/listas"
-            android:title="@string/listas_de_anuncios" />
-
+            android:title="@string/mensajes" />
         <item
-            android:id="@+id/nav_cerrar"
-            android:icon="@drawable/icons8"
-            android:title="Cerrar sesión" />
+            android:id="@+id/nav_favorites"
+            android:icon="@mipmap/chat"
+            android:title="Mi perfil" />
     </group>
 
-    <item android:title="@string/communicate">
+    <item android:title="YourCloset">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@mipmap/chat"
-                android:title="@string/mensajes" />
-
+                android:id="@+id/nav_ayuda"
+                android:icon="@drawable/icons"
+                android:title="Nuestra App" />
+            <item
+                android:id="@+id/nav_cerrar"
+                android:icon="@drawable/icons8"
+                android:title="Cerrar sesión" />
 
             <item
                 android:id="@+id/nav_send"

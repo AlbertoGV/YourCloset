@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/beutiful"
     android:orientation="vertical"
-    tools:context=".view.UI.LoginActivity">
+    tools:context=".view.views.LoginActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
