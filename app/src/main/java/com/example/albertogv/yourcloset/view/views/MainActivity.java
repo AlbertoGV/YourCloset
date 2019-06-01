@@ -9,11 +9,11 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-
+import com.github.clans.fab.FloatingActionButton;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
@@ -61,6 +61,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
 import java.util.List;
 
@@ -73,9 +75,10 @@ public class MainActivity extends AppCompatActivity
     TextView tvdireccion;
     ProgressBar progressBar;
     Toolbar toolbar;
-    boolean click= false;
+    boolean click = false;
     FloatingActionMenu materialDesignFAM;
-    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3;
+    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3, floatingActionButton4, floatingActionButton5, floatingActionButton6,
+            floatingActionButton7, floatingActionButton8;
 
     ImageView imagegoogle;
     Context context;
@@ -93,7 +96,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
+
+        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
 
         context = this;
         mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
@@ -102,6 +106,17 @@ public class MainActivity extends AppCompatActivity
         progressBar = findViewById(R.id.progressBar);
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
+        materialDesignFAM = findViewById(R.id.material_design_android_floating_action_menu);
+        floatingActionButton1 = findViewById(R.id.material_design_floating_action_menu_item1);
+        floatingActionButton2 = findViewById(R.id.material_design_floating_action_menu_item2);
+        floatingActionButton3 = findViewById(R.id.material_design_floating_action_menu_item3);
+        floatingActionButton4 = findViewById(R.id.material_design_floating_action_menu_item4);
+        floatingActionButton5 = findViewById(R.id.material_design_floating_action_menu_item5);
+        floatingActionButton6 = findViewById(R.id.material_design_floating_action_menu_item6);
+        floatingActionButton7 = findViewById(R.id.material_design_floating_action_menu_item7);
+        floatingActionButton8 = findViewById(R.id.material_design_floating_action_menu_item8);
+
+
 //        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
 //        bottomNavigationView.setItemBackground(null);
 //        bottomNavigationView.setOnNavigationItemSelectedListener(this);
@@ -110,9 +125,9 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemBackground(null);
         View header = navigationView.getHeaderView(0);
-        tvnombre =   header.findViewById(R.id.tv_sesion_nombre);
-        tvdireccion= header.findViewById(R.id.tv_sesion_direccion);
-        imagegoogle= header.findViewById(R.id.imageView_sesion);
+        tvnombre = header.findViewById(R.id.tv_sesion_nombre);
+        tvdireccion = header.findViewById(R.id.tv_sesion_direccion);
+        imagegoogle = header.findViewById(R.id.imageView_sesion);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -130,7 +145,7 @@ public class MainActivity extends AppCompatActivity
         }
 
 
-        FloatingActionMenu fab = configurarFAB();
+//        FloatingActionMenu fab = configurarFAB();
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -143,8 +158,6 @@ public class MainActivity extends AppCompatActivity
 
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         rvMain.setLayoutManager(staggeredGridLayoutManager);
-
-
 
 
         if (firebaseAuthListener == null) {
@@ -164,55 +177,55 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @NonNull
-    private FloatingActionMenu configurarFAB() {
-        final FloatingActionMenu fab = findViewById(R.id.material_design_android_floating_action_menu);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                click = !click;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    Interpolator interpolador = AnimationUtils.loadInterpolator(getBaseContext(),
-                            android.R.interpolator.overshoot);
-
-                    view.animate()
-                            .rotation(click ? 90f : 0)
-                            .setInterpolator(interpolador)
-                            .start();
-                    Intent intent = new Intent(MainActivity.this, SubirAnuncioActivity.class);
-
-                    startActivity(intent);
-                    /*CustomIntent.customType(MainActivity.this, "bottom-to-up");*/
-                    /**left-to-right
-                     *right-to-left
-                     *bottom-to-up
-                     *up-to-bottom
-                     *fadein-to-fadeout
-                     *rotateout-to-rotatein*/
-                }
-            }
-        });
-//        fab.setRippleColor(Color.DKGRAY);
-//        rvMain.setOnFlingListener(new RecyclerView.OnFlingListener() {
+//    @NonNull
+//    private FloatingActionMenu configurarFAB() {
+//        final FloatingActionMenu fab = findViewById(R.id.material_design_android_floating_action_menu);
+//        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public boolean onFling(int velocityX, int velocityY) {
-//                if (velocityY < 0)
-//                    fab.show();
-//                    //Code to hide the UI, I have  a custom one that slides down the nav  bar and the fab
-//                else if (velocityY > 0)
-//                    fab.hide();
-//                //Code to show the UI
+//            public void onClick(View view) {
+//                click = !click;
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                    Interpolator interpolador = AnimationUtils.loadInterpolator(getBaseContext(),
+//                            android.R.interpolator.overshoot);
 //
-//                return false;
+//                    view.animate()
+//                            .rotation(click ? 90f : 0)
+//                            .setInterpolator(interpolador)
+//                            .start();
+//                    Intent intent = new Intent(MainActivity.this, SubirAnuncioActivity.class);
+//
+//                    startActivity(intent);
+//                    /*CustomIntent.customType(MainActivity.this, "bottom-to-up");*/
+//                    /**left-to-right
+//                     *right-to-left
+//                     *bottom-to-up
+//                     *up-to-bottom
+//                     *fadein-to-fadeout
+//                     *rotateout-to-rotatein*/
+//                }
 //            }
 //        });
-//
-//
-//    }
-        return fab;
-    }
-    void realizarConsulta(){
-        if(query == null){
+////        fab.setRippleColor(Color.DKGRAY);
+////        rvMain.setOnFlingListener(new RecyclerView.OnFlingListener() {
+////            @Override
+////            public boolean onFling(int velocityX, int velocityY) {
+////                if (velocityY < 0)
+////                    fab.show();
+////                    //Code to hide the UI, I have  a custom one that slides down the nav  bar and the fab
+////                else if (velocityY > 0)
+////                    fab.hide();
+////                //Code to show the UI
+////
+////                return false;
+////            }
+////        });
+////
+////
+////    }
+//        return fab;
+
+    void realizarConsulta() {
+        if (query == null) {
             query = mReference.child("products/all-products").limitToLast(100).orderByValue();
 
         }
@@ -222,7 +235,7 @@ public class MainActivity extends AppCompatActivity
                 .setLifecycleOwner(this)
                 .build();
         mShimmerViewContainer.startShimmerAnimation();
-        rvMain.setAdapter(new FirebaseRecyclerAdapter<Anuncio, AnuncioViewHolder>(options){
+        rvMain.setAdapter(new FirebaseRecyclerAdapter<Anuncio, AnuncioViewHolder>(options) {
 
             @Override
             protected void onBindViewHolder(@NonNull final AnuncioViewHolder anuncioViewHolder, int i, @NonNull final Anuncio anuncio) {
@@ -235,14 +248,14 @@ public class MainActivity extends AppCompatActivity
                         .fallback(R.drawable.ic_launcher_background)
                         .transform(new RoundedCorners(30));
 
-                if (anuncio.mediaUrl!= null) {
+                if (anuncio.mediaUrl != null) {
                     Glide.with(anuncioViewHolder.itemView.getContext())
                             .asBitmap()
                             .load(Uri.parse(anuncio.getMediaUrl()))
                             .apply(ro)
                             .into(anuncioViewHolder.ivphoto);
 
-                    if(mUser != null) {
+                    if (mUser != null) {
                         if (mUser.getDisplayName().equals(anuncio.displayName)) {
                             anuncioViewHolder.irChat.setVisibility(View.INVISIBLE);
                             anuncioViewHolder.settings.setVisibility(View.VISIBLE);
@@ -253,7 +266,7 @@ public class MainActivity extends AppCompatActivity
                         anuncioViewHolder.settings.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent i = new Intent(MainActivity.this,SettingsActivity.class);
+                                Intent i = new Intent(MainActivity.this, SettingsActivity.class);
                                 String precio = anuncioViewHolder.tvPrecio.getText().toString();
                                 String titulo = anuncioViewHolder.tvnombreArticulo.getText().toString();
                                 String descripcion = anuncioViewHolder.tvdescArticulo.getText().toString();
@@ -261,8 +274,8 @@ public class MainActivity extends AppCompatActivity
                                 String fecha = anuncioViewHolder.time.getText().toString();
                                 String imagenperfil = anuncio.getAuthorPhotoUrl();
                                 String imagen = anuncio.mediaUrl;
-                                String productKey1=productKey;
-                                String messageKey1=messageKey;
+                                String productKey1 = productKey;
+                                String messageKey1 = messageKey;
 
                                 i.putExtra("nombre", autor);
                                 i.putExtra("fecha", fecha);
@@ -271,8 +284,8 @@ public class MainActivity extends AppCompatActivity
                                 i.putExtra("Titulo", titulo);
                                 i.putExtra("descripcion", descripcion);
                                 i.putExtra("imagen", imagen);
-                                i.putExtra("PRODUCT_KEY",productKey1);
-                                i.putExtra("MESSAGE_KEY",messageKey1);
+                                i.putExtra("PRODUCT_KEY", productKey1);
+                                i.putExtra("MESSAGE_KEY", messageKey1);
                                 startActivityForResult(i, 1);
                             }
                         });
@@ -281,15 +294,15 @@ public class MainActivity extends AppCompatActivity
                     anuncioViewHolder.irChat.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent i = new Intent(MainActivity.this,ChatActivity.class);
+                            Intent i = new Intent(MainActivity.this, ChatActivity.class);
                             i.putExtra("PRODUCT_KEY", productKey);
 
-                            i.putExtra("MESSAGE_KEY",messageKey);
+                            i.putExtra("MESSAGE_KEY", messageKey);
                             startActivity(i);
 
                         }
                     });
-                    if (anuncio!=null) {
+                    if (anuncio != null) {
                         anuncioViewHolder.anunimagePerfil.setImageURI(Uri.parse(anuncio.getAuthorPhotoUrl()));
                         anuncioViewHolder.time.setText(DateUtils.getRelativeTimeSpanString(anuncio.time,
                                 System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS));
@@ -298,7 +311,7 @@ public class MainActivity extends AppCompatActivity
                         anuncioViewHolder.tvnombreArticulo.setText(anuncio.getTituloAnuncio());
                         anuncioViewHolder.tvdescArticulo.setText(anuncio.description);
                     }
-                    if(mUser!= null) {
+                    if (mUser != null) {
 
                         if (anuncio.likes.containsKey(mUser.getUid())) {
                             anuncioViewHolder.like.setImageResource(R.drawable.heart_on);
@@ -326,8 +339,8 @@ public class MainActivity extends AppCompatActivity
                 imagegoogle.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
-                        intent.putExtra("PRODUCT_KEY",productKey);
+                        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                        intent.putExtra("PRODUCT_KEY", productKey);
                         startActivity(intent);
                     }
                 });
@@ -345,8 +358,8 @@ public class MainActivity extends AppCompatActivity
                         String fecha = anuncioViewHolder.time.getText().toString();
                         String imagenperfil = anuncio.getAuthorPhotoUrl();
                         String imagen = anuncio.mediaUrl;
-                        String productKey1=productKey;
-                        String messageKey1=messageKey;
+                        String productKey1 = productKey;
+                        String messageKey1 = messageKey;
 
                         intent.putExtra("nombre", autor);
                         intent.putExtra("fecha", fecha);
@@ -355,8 +368,8 @@ public class MainActivity extends AppCompatActivity
                         intent.putExtra("Titulo", titulo);
                         intent.putExtra("descripcion", descripcion);
                         intent.putExtra("imagen", imagen);
-                        intent.putExtra("PRODUCT_KEY",productKey1);
-                        intent.putExtra("MESSAGE_KEY",messageKey1);
+                        intent.putExtra("PRODUCT_KEY", productKey1);
+                        intent.putExtra("MESSAGE_KEY", messageKey1);
                         startActivityForResult(intent, 1);
                     }
                 });
@@ -380,6 +393,67 @@ public class MainActivity extends AppCompatActivity
                 };
             }
         });
+
+
+
+        floatingActionButton1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu first item clicked
+                Toast.makeText(context, "parte de arriba y hombre", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/hombresSup").orderByValue().limitToFirst(100);
+                realizarConsulta();
+            }
+        });
+        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu second item clicked
+                Toast.makeText(context, "complementos hombre", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/hombresCalz").orderByValue().limitToFirst(100);
+                realizarConsulta();
+            }
+        });
+        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+                Toast.makeText(context, "parte de abajo hombre", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/mujeresInf").orderByValue().limitToFirst(100);
+                realizarConsulta();
+            }
+        });
+        floatingActionButton4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+                Toast.makeText(context, "parte de abajo mujer", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/mujeresSup").orderByValue().limitToFirst(100);
+                realizarConsulta();
+            }
+        });
+        floatingActionButton5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+
+            }
+        });
+        floatingActionButton6.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+
+            }
+        });
+        floatingActionButton7.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+
+            }
+        });
+        floatingActionButton8.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+
+            }
+
+        });
+
     }
 
 
@@ -393,14 +467,18 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+                // If request is cancelled, the result arrays are empty.
 
-    @Override public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) { switch (requestCode) { case 1: {
-        // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-        } return; } // add other cases for more permissions } }
-    }
+                }
+                return;
+            } // add other cases for more permissions } }
+        }
 
     }
 
@@ -454,8 +532,8 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
 
-        if (id == R.id.acercade){
-            Intent i =  new Intent(this,InfoActivity.class);
+        if (id == R.id.acercade) {
+            Intent i = new Intent(this, InfoActivity.class);
             startActivity(i);
             return true;
         }
@@ -463,7 +541,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void shutdown(){
+    public void shutdown() {
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
         dialogo.setTitle("Vas a salir de Yourcloset");
         dialogo.setMessage("¿Estas seguro?");
@@ -482,7 +560,7 @@ public class MainActivity extends AppCompatActivity
         dialogo.show();
     }
 
-    public void descartar(){
+    public void descartar() {
 
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
         dialogo.setTitle("Vas a descartar este Anuncio");
@@ -490,7 +568,7 @@ public class MainActivity extends AppCompatActivity
         dialogo.setMessage("¿Estas seguro?");
         dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogo1, int id) {
-                Toast.makeText(context,"Anuncio descartado",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Anuncio descartado", Toast.LENGTH_SHORT).show();
             }
         });
         dialogo.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -513,8 +591,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
             // Handle the camera action
         } else if (id == R.id.nav_favorites) {
-           Intent intent = new Intent(this, ProfileActivity.class);
-           startActivity(intent);
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_ayuda) {
             Intent intent = new Intent(this, InfoActivity.class);
             startActivity(intent);
@@ -534,25 +612,22 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
             shutdown();
         } else if (id == R.id.action_search) {
-            Toast.makeText(context, "parte de arriba y hombre", Toast.LENGTH_SHORT).show();
-            query = mReference.child("products/all-products").orderByValue().limitToFirst(100);
+
         } else if (id == R.id.action_settings) {
-            Toast.makeText(context, "parte de arriba", Toast.LENGTH_SHORT).show();
-            query = mReference.child("products/hombresCalz").orderByValue().limitToFirst(100);
+
         } else if (id == R.id.action_navigation) {
-            Toast.makeText(context, "parte de abajo", Toast.LENGTH_SHORT).show();
-            query = mReference.child("products/mujeresInf").orderByValue().limitToFirst(100);
-        } else if(id == R.id.action_as){
+
+        } else if (id == R.id.action_as) {
             Toast.makeText(context, "zpatos", Toast.LENGTH_SHORT).show();
             query = mReference.child("products/mujeresSup").orderByValue().limitToFirst(100);
         } else if (id == R.id.manOrWomanButton && !item.isChecked()) {
-                Toast.makeText(context, "Ropa de Mujer", Toast.LENGTH_SHORT).show();
-                item.setIcon(R.drawable.ic_femenine);
+            Toast.makeText(context, "Ropa de Mujer", Toast.LENGTH_SHORT).show();
+            item.setIcon(R.drawable.ic_femenine);
         }
 
         // TODO; comprobar que no estemos en el mismo (con el id)
 
-            realizarConsulta();
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -560,7 +635,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void goLogInScreen() {
-        Intent i = new Intent ( this, LoginActivity.class);
+        Intent i = new Intent(this, LoginActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }
@@ -570,6 +645,7 @@ public class MainActivity extends AppCompatActivity
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -580,33 +656,10 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onStop() {
         super.onStop();
-        if(firebaseAuthListener != null ){
+        if (firebaseAuthListener != null) {
             firebaseAuth.removeAuthStateListener(firebaseAuthListener);
-
         }
-        materialDesignFAM = (FloatingActionMenu) findViewById(R.id.material_design_android_floating_action_menu);
-        floatingActionButton1 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item1);
-        floatingActionButton2 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item2);
-        floatingActionButton3 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item3);
 
-        floatingActionButton1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu first item clicked
-
-            }
-        });
-        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu second item clicked
-
-            }
-        });
-        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu third item clicked
-
-            }
-        });
     }
 }
 
