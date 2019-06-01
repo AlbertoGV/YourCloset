@@ -74,7 +74,6 @@ public class ProfileActivity extends AppCompatActivity {
         imageView = findViewById(R.id.image3);
         tvNameProfile = findViewById(R.id.name);
         database = FirebaseDatabase.getInstance();
-        uid = "uid-" + mUser.getUid();
         firebaseStorage = FirebaseStorage.getInstance();
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -82,7 +81,7 @@ public class ProfileActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
         database = FirebaseDatabase.getInstance();
         RecyclerView recycler = findViewById(R.id.rvPosts1);
-
+        GlideApp.with(ProfileActivity.this).load(mUser.getPhotoUrl()).into(imageView);
         getProductCount();
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Anuncio>()
                 .setIndexedQuery(setQuery(), mReference.child("products/data"), Anuncio.class)
@@ -144,7 +143,6 @@ public class ProfileActivity extends AppCompatActivity {
                             startActivityForResult(intent, 1);
                         }
                     });
-                        GlideApp.with(ProfileActivity.this).load(anuncio.authorPhotoUrl).into(imageView);
 
                 }
                     }
@@ -217,8 +215,7 @@ public class ProfileActivity extends AppCompatActivity {
                         }
                     });
                     FirebaseDatabase  database = FirebaseDatabase.getInstance();
-                    DatabaseReference mDatabaseRef = database.getReference("Usuarios");
-                    mDatabaseRef.child(uid).setValue(u.toString());
+                    DatabaseReference mDatabaseRef = database.getReference();
                     Glide.with(ProfileActivity.this).load(u).into(imageView);
 
                 }

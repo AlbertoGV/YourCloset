@@ -1218,9 +1218,12 @@ drawable ic_attach_money_black
 drawable ic_border_color_black
 drawable ic_card_travel_black
 drawable ic_dashboard_black_24dp
+drawable ic_femenine
 drawable ic_home_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_mascfem
+drawable ic_masculine
 drawable ic_menu_camera
 drawable ic_menu_gallery
 drawable ic_menu_manage
@@ -1280,7 +1283,6 @@ id aceptarAnuncio
 id acercade
 id action0
 id action_as
-id action_as1
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1482,6 +1484,7 @@ id list_item
 id location
 id logo
 id main_tos_and_pp
+id manOrWomanButton
 id map
 id map2
 id masked

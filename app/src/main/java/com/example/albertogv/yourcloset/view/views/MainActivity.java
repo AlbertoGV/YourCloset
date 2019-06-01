@@ -318,6 +318,16 @@ public class MainActivity extends AppCompatActivity
 
                 }
 
+                imagegoogle.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+                        intent.putExtra("PRODUCT_KEY",productKey);
+                        startActivity(intent);
+                    }
+                });
+
+
                 anuncioViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -438,6 +448,7 @@ public class MainActivity extends AppCompatActivity
             shutdown();
             return true;
         }
+
         if (id == R.id.acercade){
             Intent i =  new Intent(this,InfoActivity.class);
             startActivity(i);
@@ -529,20 +540,18 @@ public class MainActivity extends AppCompatActivity
         } else if(id == R.id.action_as){
             Toast.makeText(context, "zpatos", Toast.LENGTH_SHORT).show();
             query = mReference.child("products/mujeresSup").orderByValue().limitToFirst(100);
-        }  else if (id == R.id.manOrWomanButton){
+
+        }else if (id == R.id.manOrWomanButton) {
             Toast.makeText(context, "Ropa de Mujer", Toast.LENGTH_SHORT).show();
             item.setIcon(R.drawable.ic_femenine);
             Boolean modoHombre = true;
 
-            if (item.isChecked()){
+            if (item.isChecked()) {
                 Toast.makeText(context, "Ropa de Hombre", Toast.LENGTH_SHORT).show();
                 item.setIcon(R.drawable.ic_masculine);
                 item.isChecked();
-
             }
         }
-
-
 
         // TODO; comprobar que no estemos en el mismo (con el id)
 

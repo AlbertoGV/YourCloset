@@ -476,6 +476,10 @@
         "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\drawable-v24\\botonredondorojo.xml"
     },
     {
+        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_mascfem.xml.flat",
+        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\drawable-v24\\ic_mascfem.xml"
+    },
+    {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_disabled.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\50daade63d436a09bdba29b4e3831f83\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
     },
@@ -634,6 +638,10 @@
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_masculine.xml.flat",
+        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\drawable-v24\\ic_masculine.xml"
     },
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -2266,6 +2274,10 @@
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_fui_idp_button_background_google.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-ui-auth-4.3.1.aar\\d53a783184a104ef38f35d3b8c3488a0\\res\\drawable-v21\\fui_idp_button_background_google.xml"
+    },
+    {
+        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_femenine.xml.flat",
+        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\drawable-v24\\ic_femenine.xml"
     },
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\layout_fui_provider_button_anonymous.xml.flat",
