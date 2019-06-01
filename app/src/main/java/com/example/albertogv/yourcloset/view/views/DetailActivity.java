@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.example.albertogv.yourcloset.GlideApp;
 import com.example.albertogv.yourcloset.R;
@@ -59,14 +61,13 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         TextView tvprecio = findViewById(R.id.textViewPrecio);
         ImageView ivimagen = findViewById(R.id.imageViewImagen);
         ImageView ivimagenperfil=findViewById(R.id.fotoPerfil);
+        ImageView ivwhatsapp = findViewById(R.id.whatsapp);
         TextView tvdescripcion = findViewById(R.id.textViewDEscripcion);
         tvRating = findViewById(R.id.tvrating);
         TextView tvfecha = findViewById(R.id.textViewFecha);
         TextView tvNombre = findViewById(R.id.nombre_user);
         FloatingActionButton fab= findViewById(R.id.fabdetail);
         database = FirebaseDatabase.getInstance();
-
-
         ratingBar = findViewById(R.id.ratingBar);
 
         testRatingBar();
@@ -135,6 +136,18 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
                     startActivity(i);
                 }
             });
+            ivwhatsapp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent sendIntent = new Intent();
+                    sendIntent.setAction(Intent.ACTION_SEND);
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, "Hola tengo un anuncio en YourCloset! Descarga la nueva app ya para verlo !");
+                    sendIntent.setType("text/plain");
+                    sendIntent.setPackage("com.whatsapp");
+                    startActivity(sendIntent);
+
+                }
+            });
 
 
             ivimagenperfil.setOnClickListener(new View.OnClickListener() {
@@ -158,13 +171,13 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
 
 
         }
+
         SupportMapFragment mapFragment2 = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_subiranuncio);
         mapFragment2.getMapAsync(this);
 
 
     }
     private void testRatingBar() {
-        Anuncio anuncio = new Anuncio();
         final DatabaseReference ref = database.getReference("user/rating").child("rating");
 
         ref.addValueEventListener(new ValueEventListener() {

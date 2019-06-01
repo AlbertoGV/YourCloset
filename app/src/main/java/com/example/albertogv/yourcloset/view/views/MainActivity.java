@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity
     ImageView imagegoogle;
     Context context;
     private ShimmerFrameLayout mShimmerViewContainer;
-    List<Anuncio> list;
     private GoogleApiClient googleApiClient;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
@@ -97,10 +96,19 @@ public class MainActivity extends AppCompatActivity
         toolbar = findViewById(R.id.toolbar);
         rvMain = findViewById(R.id.rvMain);
         progressBar = findViewById(R.id.progressBar);
-        
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
+        bottomNavigationView.setItemBackground(null);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemBackground(null);
+        View header = navigationView.getHeaderView(0);
+        tvnombre =   header.findViewById(R.id.tv_sesion_nombre);
+        tvdireccion= header.findViewById(R.id.tv_sesion_direccion);
+        imagegoogle= header.findViewById(R.id.imageView_sesion);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -127,26 +135,10 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
-        bottomNavigationView.setItemBackground(null);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
-
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setItemBackground(null);
-
         realizarConsulta();
 
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-//        staggeredGridLayoutManager.setReverseLayout(true);
         rvMain.setLayoutManager(staggeredGridLayoutManager);
-
-
-        View header = navigationView.getHeaderView(0);
-        tvnombre =   header.findViewById(R.id.tv_sesion_nombre);
-        tvdireccion= header.findViewById(R.id.tv_sesion_direccion);
-        imagegoogle= header.findViewById(R.id.imageView_sesion);
 
 
         imagegoogle.setOnClickListener(new View.OnClickListener() {
@@ -219,7 +211,6 @@ public class MainActivity extends AppCompatActivity
 
         return fab;
     }
-
 
     void realizarConsulta(){
         if(query == null){
@@ -381,8 +372,6 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-
-
     private void setUserData(FirebaseUser user) {
 
         if (user != null) {
@@ -480,7 +469,6 @@ public class MainActivity extends AppCompatActivity
         dialogo.show();
     }
 
-
     public void descartar(){
 
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
@@ -510,7 +498,6 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_subiranuncio) {
             Intent intent = new Intent(this, SubirAnuncioActivity.class);
             startActivity(intent);
-
             // Handle the camera action
         } else if (id == R.id.nav_favorites) {
            Intent intent = new Intent(this, ProfileActivity.class);
@@ -531,11 +518,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
             Intent intent = new Intent(this, MyChatsActivity.class);
             startActivity(intent);
-
         } else if (id == R.id.nav_send) {
             shutdown();
-
-        }else if (id == R.id.action_search) {
+        } else if (id == R.id.action_search) {
             Toast.makeText(context, "parte de arriba y hombre", Toast.LENGTH_SHORT).show();
             query = mReference.child("products/all-products").orderByValue().limitToFirst(100);
         } else if (id == R.id.action_settings) {
@@ -544,7 +529,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.action_navigation) {
             Toast.makeText(context, "parte de abajo", Toast.LENGTH_SHORT).show();
             query = mReference.child("products/mujeresInf").orderByValue().limitToFirst(100);
-        }else if(id == R.id.action_as){
+        } else if(id == R.id.action_as){
             Toast.makeText(context, "zpatos", Toast.LENGTH_SHORT).show();
             query = mReference.child("products/mujeresSup").orderByValue().limitToFirst(100);
         }

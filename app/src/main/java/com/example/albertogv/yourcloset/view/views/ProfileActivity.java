@@ -2,6 +2,7 @@ package com.example.albertogv.yourcloset.view.views;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -16,12 +17,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.albertogv.yourcloset.GlideApp;
 import com.example.albertogv.yourcloset.R;
 import com.example.albertogv.yourcloset.model.Anuncio;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,6 +36,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.annotations.Nullable;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.view.View.VISIBLE;
 import static com.firebase.ui.auth.AuthUI.TAG;
@@ -40,37 +52,52 @@ public class ProfileActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth mAuth;
     private int mPostsCount = 0;
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
+    private FirebaseStorage firebaseStorage;
+    private StorageReference storageReference;
     private FirebaseAuth firebaseAuth;
     ImageView imageView;
     TextView tvNameProfile;
     TextView tvPosts;
-
+    private  static  final  int PHOTO_PERFIL=2;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         tvPosts = findViewById(R.id.tvPosts);
         imageView = findViewById(R.id.image3);
         tvNameProfile = findViewById(R.id.name);
+        database = FirebaseDatabase.getInstance();
+        firebaseStorage = FirebaseStorage.getInstance();
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
+        database = FirebaseDatabase.getInstance();
         RecyclerView recycler = findViewById(R.id.rvPosts1);
         GlideApp.with(ProfileActivity.this).load(mUser.getPhotoUrl()).into(imageView);
-
         getProductCount();
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Anuncio>()
                 .setIndexedQuery(setQuery(), mReference.child("products/data"), Anuncio.class)
                 .setLifecycleOwner(this)
                 .build();
 
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/jpeg");
+                intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+                startActivityForResult(Intent.createChooser(intent, "Selecciona una foto"), PHOTO_PERFIL);
 
+
+            }
+        });
 
         tvNameProfile.setText(mUser.getDisplayName());
         recycler.setLayoutManager(new StaggeredGridLayoutManager(3,GridLayoutManager.VERTICAL));
@@ -91,9 +118,8 @@ public class ProfileActivity extends AppCompatActivity {
                         if (firebaseAuthListener == null) {
                             firebaseAuth = FirebaseAuth.getInstance();
                         }
-                       final String date= (String) DateUtils.getRelativeTimeSpanString(anuncio.time,
-                                System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS);
-                    anuncioviewHolder.image.setOnClickListener(new View.OnClickListener() {
+                       final String date= (String) DateUtils.getRelativeTimeSpanString(anuncio.time, System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS);
+                             anuncioviewHolder.image.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(ProfileActivity.this,SettingsActivity.class);
@@ -107,7 +133,7 @@ public class ProfileActivity extends AppCompatActivity {
                             String imagen = anuncio.getMediaUrl();
 
                             intent.putExtra("nombre", autor);
-                            intent.putExtra("fecha", date);
+                            intent.putExtra("fecha", fecha);
                             intent.putExtra("imgperfil", imagenperfil);
                             intent.putExtra("precio", precio);
                             intent.putExtra("Titulo", titulo);
@@ -118,13 +144,12 @@ public class ProfileActivity extends AppCompatActivity {
                     });
 
                 }
-
                     }
-
 
         });
 
     }
+
 
     Query setQuery () {
         return mReference.child("products/user-products").child("uid-"+mUser.getUid()).limitToFirst(100);
@@ -151,6 +176,51 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PHOTO_PERFIL && resultCode == RESULT_OK) {
+            final Uri u = data.getData();
+            storageReference = firebaseStorage.getReference("Imagenes perfil");//imagenes de perfil
+            final StorageReference fotoReferencia = storageReference.child(u.getLastPathSegment());
+            final UploadTask uploadTask = fotoReferencia.putFile(u);
+            fotoReferencia.putFile(u).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                        @Override
+                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                            if (!task.isSuccessful()) {
+                                throw task.getException();
+                            }
+
+                            // Continue with the task to get the download URL
+                            return fotoReferencia.getDownloadUrl();
+                        }
+                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            if (task.isSuccessful()) {
+                                Uri u = task.getResult();
+
+
+                            } else {
+                                // Handle failures
+                                // ...
+                            }
+                        }
+                    });
+                    FirebaseDatabase  database = FirebaseDatabase.getInstance();
+                    DatabaseReference mDatabaseRef = database.getReference();
+                    mDatabaseRef.child("products/data").child("authorPhotoUrl").setValue(u);
+                    Glide.with(ProfileActivity.this).load(u).into(imageView);
+
+                }
+
+            });
+        }
+    }
 }

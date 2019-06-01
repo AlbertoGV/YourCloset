@@ -15,11 +15,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|start"
         android:layout_margin="@dimen/fab_margin"
-        app:backgroundTintMode="multiply"
+        android:src="@drawable/iconsmensaje"
+        android:theme="@style/Widget.AppCompat.Button.Borderless"
         android:tint="@color/colorPrimary"
         app:backgroundTint="@color/colorAccent"
-        android:theme="@style/Widget.AppCompat.Button.Borderless"
-        android:src="@drawable/iconsmensaje"
+        app:backgroundTintMode="multiply"
         app:layout_anchor="@+id/contenedordetalle"
         app:layout_anchorGravity="top|end">
 
@@ -285,7 +285,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-
+                        android:id="@+id/whatsapp"
                         android:background="@mipmap/whats"/>
                     <ImageView
                         android:layout_width="wrap_content"

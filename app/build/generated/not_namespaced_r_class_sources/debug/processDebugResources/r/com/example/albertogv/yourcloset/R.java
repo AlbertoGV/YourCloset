@@ -6222,10 +6222,11 @@ public final class R {
     public static final int welcome_back_idp_button=0x7f080196;
     public static final int welcome_back_idp_prompt=0x7f080197;
     public static final int welcome_back_password_body=0x7f080198;
-    public static final int wide=0x7f080199;
-    public static final int withText=0x7f08019a;
-    public static final int wrap=0x7f08019b;
-    public static final int wrap_content=0x7f08019c;
+    public static final int whatsapp=0x7f080199;
+    public static final int wide=0x7f08019a;
+    public static final int withText=0x7f08019b;
+    public static final int wrap=0x7f08019c;
+    public static final int wrap_content=0x7f08019d;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f090000;

@@ -1679,6 +1679,7 @@ id welcome_back_email_link_body
 id welcome_back_idp_button
 id welcome_back_idp_prompt
 id welcome_back_password_body
+id whatsapp
 id wide
 id withText
 id wrap
