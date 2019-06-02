@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         materialDesignFAM = findViewById(R.id.material_design_android_floating_action_menu);
-        floatingActionButton1 = findViewById(R.id.material_design_floating_action_menu_item1);
+        floatingActionButton1 = findViewById(R.id.material_design_floating_action_menu_item1);//hola
         floatingActionButton2 = findViewById(R.id.material_design_floating_action_menu_item2);
         floatingActionButton3 = findViewById(R.id.material_design_floating_action_menu_item3);
         floatingActionButton4 = findViewById(R.id.material_design_floating_action_menu_item4);
