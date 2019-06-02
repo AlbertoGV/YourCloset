@@ -1288,6 +1288,11 @@ drawable ic_border_color_black
 drawable ic_card_travel_black
 drawable ic_dashboard_black_24dp
 drawable ic_femenine
+drawable ic_filter
+drawable ic_hombrecalzado
+drawable ic_hombrescomplementos
+drawable ic_hombresinferior
+drawable ic_hombresuperior
 drawable ic_home_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1302,6 +1307,10 @@ drawable ic_menu_slideshow
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_mujercalzado
+drawable ic_mujerescomplementos
+drawable ic_mujeresinferior
+drawable ic_mujersuperior
 drawable ic_notifications_black_24dp
 drawable ic_star_rate_off
 drawable ic_star_rate_on

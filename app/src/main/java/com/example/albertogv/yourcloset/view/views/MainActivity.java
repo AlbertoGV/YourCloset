@@ -116,6 +116,14 @@ public class MainActivity extends AppCompatActivity
         floatingActionButton7 = findViewById(R.id.material_design_floating_action_menu_item7);
         floatingActionButton8 = findViewById(R.id.material_design_floating_action_menu_item8);
 
+        floatingActionButton1.setImageResource(R.drawable.ic_hombresuperior);
+        floatingActionButton2.setImageResource(R.drawable.ic_hombresinferior);
+        floatingActionButton3.setImageResource(R.drawable.ic_hombrecalzado);
+        floatingActionButton4.setImageResource(R.drawable.ic_hombrescomplementos);
+        floatingActionButton5.setImageResource(R.drawable.ic_mujersuperior);
+        floatingActionButton6.setImageResource(R.drawable.ic_mujeresinferior);
+        floatingActionButton7.setImageResource(R.drawable.ic_mujercalzado);
+        floatingActionButton8.setImageResource(R.drawable.ic_mujerescomplementos);
 
 //        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
 //        bottomNavigationView.setItemBackground(null);
