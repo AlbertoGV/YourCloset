@@ -3,11 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    
+
     tools:context=".view.views.MainActivity"
     android:orientation="vertical">
 
@@ -34,6 +35,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="57dp">
+
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:background="#FFFF"
@@ -42,11 +44,13 @@
             />
 
     </android.support.v4.widget.NestedScrollView>
+
 </LinearLayout>
 
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/material_design_android_floating_action_menu"
@@ -151,5 +155,27 @@
             fab:srcCompat="@drawable/ic_mujerescomplementos"
             fab:fab_size="mini" />
     </com.github.clans.fab.FloatingActionMenu>
-    </RelativeLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ru.dimorinny.floatingtextbutton.FloatingTextButton
+            android:id="@+id/action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="32dp"
+            android:outlineSpotShadowColor="@color/colorPrimaryDark"
+            android:outlineAmbientShadowColor="@color/colorAccent"
+            app:floating_background_color="@color/colorAccent"
+            app:floating_right_icon="@mipmap/anyadir"
+            app:floating_title="@string/Subir_anuncio"
+            app:floating_title_color="@android:color/white" />
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</RelativeLayout>
+
+
 </android.support.design.widget.CoordinatorLayout>

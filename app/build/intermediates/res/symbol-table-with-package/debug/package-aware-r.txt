@@ -312,6 +312,11 @@ attr firstBaselineToTopHeight
 attr fixed_height
 attr fixed_width
 attr floatingActionButtonStyle
+attr floating_background_color
+attr floating_left_icon
+attr floating_right_icon
+attr floating_title
+attr floating_title_color
 attr font
 attr fontFamily
 attr fontProviderAuthority
@@ -1220,6 +1225,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable anyadir
 drawable arrow_bg1
 drawable arrow_bg2
 drawable avd_hide_password
@@ -1228,6 +1234,7 @@ drawable background_color
 drawable background_messages
 drawable background_messages2
 drawable beutiful
+drawable bg_fab
 drawable botonredondo
 drawable botonredondoblanco
 drawable botonredondorojo
@@ -1368,6 +1375,7 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
+id action_button
 id action_container
 id action_context_bar
 id action_divider
@@ -1551,6 +1559,10 @@ id ivProductPhoto
 id labeled
 id largeLabel
 id layout
+id layout_button_container
+id layout_button_image_left
+id layout_button_image_right
+id layout_button_text
 id left
 id light
 id like
@@ -1912,6 +1924,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout toolbar
+layout widget_floating_text_button
 menu activity_main_drawer
 menu main
 menu menu_tabbed
@@ -2792,6 +2805,7 @@ styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color dra
 styleable FloatingActionButton backgroundTint backgroundTintMode borderWidth elevation fabCustomSize fabSize fab_colorDisabled fab_colorNormal fab_colorPressed fab_colorRipple fab_elevationCompat fab_hideAnimation fab_label fab_progress fab_progress_backgroundColor fab_progress_color fab_progress_indeterminate fab_progress_max fab_progress_showBackground fab_shadowColor fab_shadowRadius fab_shadowXOffset fab_shadowYOffset fab_showAnimation fab_showShadow fab_size hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor showMotionSpec useCompatPadding
 styleable FloatingActionButton_Behavior_Layout behavior_autoHide
 styleable FloatingActionMenu menu_animationDelayPerItem menu_backgroundColor menu_buttonSpacing menu_buttonToggleAnimation menu_colorNormal menu_colorPressed menu_colorRipple menu_fab_hide_animation menu_fab_label menu_fab_show_animation menu_fab_size menu_icon menu_labels_colorNormal menu_labels_colorPressed menu_labels_colorRipple menu_labels_cornerRadius menu_labels_customFont menu_labels_ellipsize menu_labels_hideAnimation menu_labels_margin menu_labels_maxLines menu_labels_padding menu_labels_paddingBottom menu_labels_paddingLeft menu_labels_paddingRight menu_labels_paddingTop menu_labels_position menu_labels_showAnimation menu_labels_showShadow menu_labels_singleLine menu_labels_style menu_labels_textColor menu_labels_textSize menu_openDirection menu_shadowColor menu_shadowRadius menu_shadowXOffset menu_shadowYOffset menu_showShadow
+styleable FloatingTextButton floating_background_color floating_left_icon floating_right_icon floating_title floating_title_color
 styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex

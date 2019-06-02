@@ -6,6 +6,7 @@ INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\Andr
 INJECTED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:2:1-131:12
 MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-4.3.1.aar\0e2d405c01a0d5ed74fb03bc354a093f\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:2:1-12:12
+MERGED from [com.github.dimorinny:floating-text-button:0.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\floating-text-button-0.0.4.aar\fede42f878e12744855d579ba8005dae\AndroidManifest.xml:2:1-16:12
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-auth-4.3.1.aar\d53a783184a104ef38f35d3b8c3488a0\AndroidManifest.xml:2:1-109:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a1f2496d024d0aca3be5a2f0b463b1b9\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.hajiyevelnur92:intentanimation:1.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\intentanimation-1.0.aar\c99f30819f0e4cf7453188c0bcd541ad\AndroidManifest.xml:2:1-11:12
@@ -178,6 +179,8 @@ application
 ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:23:5-129:19
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:10:5-20
+MERGED from [com.github.dimorinny:floating-text-button:0.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\floating-text-button-0.0.4.aar\fede42f878e12744855d579ba8005dae\AndroidManifest.xml:11:5-14:38
+MERGED from [com.github.dimorinny:floating-text-button:0.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\floating-text-button-0.0.4.aar\fede42f878e12744855d579ba8005dae\AndroidManifest.xml:11:5-14:38
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-auth-4.3.1.aar\d53a783184a104ef38f35d3b8c3488a0\AndroidManifest.xml:15:5-107:19
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-auth-4.3.1.aar\d53a783184a104ef38f35d3b8c3488a0\AndroidManifest.xml:15:5-107:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a1f2496d024d0aca3be5a2f0b463b1b9\AndroidManifest.xml:22:5-20
@@ -245,7 +248,7 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\koema\.gra
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\aca90000eab51ab3834162e88cdccebc\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from [pub.hanks:smallbang:1.2.2] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\smallbang-1.2.2.aar\c3c23ad943209396d83fab16a2ec7cc5\AndroidManifest.xml:14:9-35
+		ADDED from [com.github.dimorinny:floating-text-button:0.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\floating-text-button-0.0.4.aar\fede42f878e12744855d579ba8005dae\AndroidManifest.xml:14:9-35
 	android:label
 		ADDED from C:\Users\koema\AndroidStudioProjects\YourClosetG\app\src\main\AndroidManifest.xml:27:9-41
 	android:exported
@@ -394,6 +397,8 @@ MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] C:\Users\koema\.gradle\ca
 MERGED from [com.firebaseui:firebase-ui-storage:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-4.3.1.aar\0e2d405c01a0d5ed74fb03bc354a093f\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\51a6b39966aadca39516f1e9c162faaf\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.dimorinny:floating-text-button:0.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\floating-text-button-0.0.4.aar\fede42f878e12744855d579ba8005dae\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.dimorinny:floating-text-button:0.0.4] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\floating-text-button-0.0.4.aar\fede42f878e12744855d579ba8005dae\AndroidManifest.xml:7:5-9:41
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-auth-4.3.1.aar\d53a783184a104ef38f35d3b8c3488a0\AndroidManifest.xml:8:5-10:41
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\firebase-ui-auth-4.3.1.aar\d53a783184a104ef38f35d3b8c3488a0\AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:design:28.0.0] C:\Users\koema\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a1f2496d024d0aca3be5a2f0b463b1b9\AndroidManifest.xml:20:5-44

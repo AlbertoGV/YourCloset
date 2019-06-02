@@ -55,6 +55,7 @@ dependencies {
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     annotationProcessor 'android.arch.lifecycle:compiler:1.1.1'
     implementation 'com.github.clans:fab:1.6.4'
+    implementation 'com.github.dimorinny:floating-text-button:0.0.4'
     implementation 'com.github.hajiyevelnur92:intentanimation:1.0'
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     annotationProcessor 'android.arch.lifecycle:compiler:1.1.1'
