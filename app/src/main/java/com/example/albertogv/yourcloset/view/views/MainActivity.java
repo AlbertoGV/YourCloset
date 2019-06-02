@@ -61,10 +61,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.github.clans.fab.FloatingActionButton;
-import com.github.clans.fab.FloatingActionMenu;
+
 
 import java.util.List;
+
+import maes.tech.intentanim.CustomIntent;
+import ru.dimorinny.floatingtextbutton.FloatingTextButton;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener, BottomNavigationView.OnNavigationItemSelectedListener {
@@ -153,7 +155,7 @@ public class MainActivity extends AppCompatActivity
         }
 
 
-//        FloatingActionMenu fab = configurarFAB();
+     FloatingTextButton fab = configurarFAB();
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -185,52 +187,43 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-//    @NonNull
-//    private FloatingActionMenu configurarFAB() {
-//        final FloatingActionMenu fab = findViewById(R.id.material_design_android_floating_action_menu);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                click = !click;
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//                    Interpolator interpolador = AnimationUtils.loadInterpolator(getBaseContext(),
-//                            android.R.interpolator.overshoot);
-//
-//                    view.animate()
-//                            .rotation(click ? 90f : 0)
-//                            .setInterpolator(interpolador)
-//                            .start();
-//                    Intent intent = new Intent(MainActivity.this, SubirAnuncioActivity.class);
-//
-//                    startActivity(intent);
-//                    /*CustomIntent.customType(MainActivity.this, "bottom-to-up");*/
-//                    /**left-to-right
-//                     *right-to-left
-//                     *bottom-to-up
-//                     *up-to-bottom
-//                     *fadein-to-fadeout
-//                     *rotateout-to-rotatein*/
-//                }
-//            }
-//        });
-////        fab.setRippleColor(Color.DKGRAY);
-////        rvMain.setOnFlingListener(new RecyclerView.OnFlingListener() {
-////            @Override
-////            public boolean onFling(int velocityX, int velocityY) {
-////                if (velocityY < 0)
-////                    fab.show();
-////                    //Code to hide the UI, I have  a custom one that slides down the nav  bar and the fab
-////                else if (velocityY > 0)
-////                    fab.hide();
-////                //Code to show the UI
-////
-////                return false;
-////            }
-////        });
-////
-////
-////    }
-//        return fab;
+    @NonNull
+    private FloatingTextButton configurarFAB() {
+        final FloatingTextButton fab = findViewById(R.id.action_button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                click = !click;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+                    Intent intent = new Intent(MainActivity.this, SubirAnuncioActivity.class);
+
+                    startActivity(intent);
+                    CustomIntent.customType(MainActivity.this, "bottom-to-up");
+                    /**left-to-right
+                     *right-to-left
+                     *bottom-to-up
+                     *up-to-bottom
+                     *fadein-to-fadeout
+                     *rotateout-to-rotatein*/
+                }
+            }
+        });
+        rvMain.setOnFlingListener(new RecyclerView.OnFlingListener() {
+            @Override
+            public boolean onFling(int velocityX, int velocityY) {
+                if (velocityY < 0)
+                    fab.bringToFront();
+                    //Code to hide the UI, I have  a custom one that slides down the nav  bar and the fab
+                else if (velocityY > 0)
+                    fab.setBottom(30);               //Code to show the UI
+
+                return false;
+            }
+        });
+
+        return fab;
+    }
 
     void realizarConsulta() {
         if (query == null) {
