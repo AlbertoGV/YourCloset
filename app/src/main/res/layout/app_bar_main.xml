@@ -166,10 +166,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="35dp"
-            android:outlineSpotShadowColor="@color/colorPrimaryDark"
             android:outlineAmbientShadowColor="@color/colorAccent"
+            android:outlineSpotShadowColor="@color/colorPrimaryDark"
             app:floating_background_color="@color/colorAccent"
-            app:floating_right_icon="@mipmap/anyadir"
+            app:floating_right_icon="@drawable/ic_boton_de_suma"
             app:floating_title="@string/Subir_anuncio"
             app:floating_title_color="@android:color/white" />
     </android.support.design.widget.CoordinatorLayout>

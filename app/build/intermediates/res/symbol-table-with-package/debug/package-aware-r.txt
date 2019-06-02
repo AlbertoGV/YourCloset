@@ -1292,6 +1292,7 @@ drawable heart_on
 drawable ic_attach_file_black
 drawable ic_attach_money_black
 drawable ic_border_color_black
+drawable ic_boton_de_suma
 drawable ic_card_travel_black
 drawable ic_dashboard_black_24dp
 drawable ic_femenine
