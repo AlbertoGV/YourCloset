@@ -392,13 +392,7 @@ public class MainActivity extends AppCompatActivity
                         startActivityForResult(intent, 1);
                     }
                 });
-                anuncioViewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        descartar();
-                        return false;
-                    }
-                });
+
                 mShimmerViewContainer.setVisibility(View.GONE);
 
             }

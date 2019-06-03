@@ -83,7 +83,7 @@ public class ProfileActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         RecyclerView recycler = findViewById(R.id.rvPosts1);
         GlideApp.with(ProfileActivity.this).load(mUser.getPhotoUrl()).into(imageView);
-        getProductCount();
+
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Anuncio>()
                 .setIndexedQuery(setQuery(), mReference.child("products/data"), Anuncio.class)
                 .setLifecycleOwner(this)
@@ -106,7 +106,7 @@ public class ProfileActivity extends AppCompatActivity {
         recycler.setAdapter(new FirebaseRecyclerAdapter<Anuncio, AnuncioViewHolder>(options) {
             @Override
             public AnuncioViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-                LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+                LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());getProductCount();
                 return new AnuncioViewHolder(inflater.inflate(R.layout.item_profile_post, viewGroup, false));
             }
 
@@ -147,6 +147,7 @@ public class ProfileActivity extends AppCompatActivity {
                         }
                     });
 
+
                 }
                     }
 
@@ -154,9 +155,20 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getProductCount();
+    }
+
 
     Query setQuery () {
         return mReference.child("products/user-products").child("uid-"+mUser.getUid()).limitToFirst(100);
+
     }
     private void getProductCount(){
         mPostsCount = 0;

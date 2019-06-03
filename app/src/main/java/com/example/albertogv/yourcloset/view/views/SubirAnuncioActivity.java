@@ -89,6 +89,9 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     public RadioButton hombreRb;
     public boolean vendido;
     boolean reservado;
+    String articulo;
+    String precio;
+    String nombre;
     public RadioButton mujerRb;
     public RadioButton parteSuperior;
     public RadioButton parteInferior;
@@ -115,12 +118,18 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         parteSuperior = findViewById(R.id.radioarriba);
         parteInferior = findViewById(R.id.radiobajo);
         parteCalzado = findViewById(R.id.calzado);
+        buttonAceptar = findViewById(R.id.aceptarAnuncio);
         parteComplemento = findViewById(R.id.radiocomplemento);
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         Button button = findViewById(R.id.ampliarmapa2);
+        nombre = etNombre.getText().toString();
+        articulo = etArticulo.getText().toString();
+        precio = etPrecio.getText().toString();
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,7 +148,6 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             }
         });
 
-        buttonAceptar = findViewById(R.id.aceptarAnuncio);
         buttonAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,13 +155,13 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
                     v.setEnabled(false);
                     Toast.makeText(SubirAnuncioActivity.this, "Subiendo...espere por favor", Toast.LENGTH_SHORT).show();
                     submitPost();
+
                 } catch (java.text.ParseException e) {
                     e.printStackTrace();
                 }
             }
 
         });
-
 
 
         if (firebaseAuthListener == null) {
@@ -169,7 +177,6 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             };
         }
 
-
         SupportMapFragment mapFragment2 = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_subiranuncio);
         mapFragment2.getMapAsync(this);
 
@@ -179,22 +186,28 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         final String postName = etNombre.getText().toString();
         final String postPrecio = etPrecio.getText().toString();
 
+        if (!postText.isEmpty() && !postName.isEmpty() && !postPrecio.isEmpty() && mediaUri != null){
+            Toast.makeText(SubirAnuncioActivity.this, "Subiendo...espere por favor", Toast.LENGTH_SHORT).show();
+            uploadAndWriteNewPost(postText,postName,postPrecio);
 
-        if (postText.isEmpty()) {
-            etArticulo.setError("Introduzca la descripcion");
-        } else if (postName.isEmpty()) {
-            etNombre.setError("Introduzca el nombre artículo ");
-        } else if (postPrecio.isEmpty()) {
-            etPrecio.setError("Introduzca el precio");
-        } else if (mediaUri == null) {
-            Toast.makeText(this, "Seleccione una imagen para continuar", Toast.LENGTH_SHORT).show();
-            return;
+        }else{
+            Toast.makeText(SubirAnuncioActivity.this, "Rellene todos los campos, por favor", Toast.LENGTH_SHORT).show();
+            if(postName.isEmpty()) {
+                etNombre.setError("Introduzca el nombre artículo");
+            }if (postText.isEmpty()) {
+                etArticulo.setError("Introduzca la descripcion");
+            }if (postPrecio.isEmpty()) {
+                etPrecio.setError("Introduzca el precio");
+            }if (mediaUri == null) {
+                Toast.makeText(this, "Seleccione una imagen para continuar", Toast.LENGTH_SHORT).show();
+            }
+
+            buttonAceptar.setEnabled(true);
         }
 
-        uploadAndWriteNewPost(postText,postName,postPrecio);
-
-
     }
+
+
 
     public void writeNewPost(String description, String name, String price, String mediaUri) {
 
@@ -343,35 +356,6 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         }
     }
 
-
-
-    void insertarAnuncio() {
-        String nombre = etNombre.getText().toString();
-        if (nombre.isEmpty()) {
-            etNombre.setError("Introduzca el nombre del artículo");
-            return;
-        }
-        String articulo = etArticulo.getText().toString();
-        if (articulo.isEmpty()) {
-            etArticulo.setError("Introduzca la descripcion");
-            return;
-        }
-        String precio = etPrecio.getText().toString();
-        if (precio.isEmpty()) {
-            etPrecio.setError("Introduzca el precio");
-            return;
-        }
-
-
-        if (mediaUri == null) {
-            Toast.makeText(this, "Seleccione una imagen para continuar", Toast.LENGTH_SHORT).show();
-
-            return;
-        }
-
-
-        // Assume thisActivity is the current activity
-        }
 
 
 

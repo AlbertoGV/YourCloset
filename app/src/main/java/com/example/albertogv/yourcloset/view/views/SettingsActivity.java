@@ -54,7 +54,7 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
     String uid;
     LinearLayout linearcomparte;
     AppCompatButton buttonvendido;
-
+    TextView estadoProducto;
     AlertDialog.Builder dialogo;
 
     @Override
@@ -71,6 +71,7 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
         intent.getExtras();
         buttonvendido = findViewById(R.id.buttonvendido);
         linearcomparte = findViewById(R.id.linearCompartir);
+        estadoProducto = findViewById(R.id.estadoproducto);
         TextView tvprecio = findViewById(R.id.textViewPrecio);
         ImageView ivimagen = findViewById(R.id.imageViewImagen);
         ImageView ivimagenperfil=findViewById(R.id.fotoPerfil);
@@ -151,18 +152,21 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
                  @Override
                  public void onClick(View v) {
                      ponerReservado(productKey);
+                     estadoProducto.setText("El producto está ahora Reservado");
                  }
              });
              buttonnoreservado.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View v) {
                      quitarReservado(productKey);
+                     estadoProducto.setText("El producto está ahora en Venta");
                  }
              });
             buttonnovendido.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     quitarVendido(productKey);
+                    estadoProducto.setText("El producto está ahora en Venta");
 
                 }
             });
@@ -171,6 +175,7 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
                 public void onClick(View v) {
                    ponerVendido(productKey);
 
+                    estadoProducto.setText("El producto está ahora en estado vendido");
                 }
             });
 
@@ -238,8 +243,12 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
                 database.getReference("products/hombresCalz").child(productKey).setValue(null);
                 database.getReference("products/hombresInf").child(productKey).setValue(null);
                 database.getReference("products/hombresSup").child(productKey).setValue(null);
+                database.getReference("products/hombresCompl").child(productKey).setValue(null);
                 database.getReference("products/mujeresCalz").child(productKey).setValue(null);
                 database.getReference("products/mujeresInf").child(productKey).setValue(null);
+                database.getReference("products/mujeresSup").child(productKey).setValue(null);
+                database.getReference("products/mujeresCompl").child(productKey).setValue(null);
+
                 Toast.makeText(context, "Anuncio Eliminado", Toast.LENGTH_SHORT).show();
                 finish();
             }
