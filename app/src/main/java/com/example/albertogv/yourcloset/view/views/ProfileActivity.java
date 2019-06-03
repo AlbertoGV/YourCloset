@@ -75,6 +75,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvNameProfile = findViewById(R.id.name);
         database = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
+        Intent intent = getIntent();
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -87,7 +88,7 @@ public class ProfileActivity extends AppCompatActivity {
                 .setIndexedQuery(setQuery(), mReference.child("products/data"), Anuncio.class)
                 .setLifecycleOwner(this)
                 .build();
-
+        final String productKey = intent.getStringExtra("PRODUCT_KEY");
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,6 +133,7 @@ public class ProfileActivity extends AppCompatActivity {
                             String fecha = date;
                             String imagenperfil = anuncio.getAuthorPhotoUrl();
                             String imagen = anuncio.getMediaUrl();
+                            String productKey1 = productKey;
 
                             intent.putExtra("nombre", autor);
                             intent.putExtra("fecha", fecha);
@@ -140,6 +142,7 @@ public class ProfileActivity extends AppCompatActivity {
                             intent.putExtra("Titulo", titulo);
                             intent.putExtra("descripcion", descripcion);
                             intent.putExtra("imagen", imagen);
+                            intent.putExtra("PRODUCT_KEY", productKey1);
                             startActivityForResult(intent, 1);
                         }
                     });

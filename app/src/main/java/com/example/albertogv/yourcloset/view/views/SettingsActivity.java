@@ -18,6 +18,7 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import maes.tech.intentanim.CustomIntent;
@@ -50,7 +52,9 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
     RatingBar ratingBar;
     TextView tvRating;
     String uid;
+    LinearLayout linearcomparte;
     AppCompatButton buttonvendido;
+
     AlertDialog.Builder dialogo;
 
     @Override
@@ -66,12 +70,16 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         intent.getExtras();
         buttonvendido = findViewById(R.id.buttonvendido);
+        linearcomparte = findViewById(R.id.linearCompartir);
         TextView tvprecio = findViewById(R.id.textViewPrecio);
         ImageView ivimagen = findViewById(R.id.imageViewImagen);
         ImageView ivimagenperfil=findViewById(R.id.fotoPerfil);
         TextView tvdescripcion = findViewById(R.id.textViewDEscripcion);
         tvRating = findViewById(R.id.tvrating);
         AppCompatButton appCompatButton = findViewById(R.id.buttonEliminar);
+        AppCompatButton buttonnovendido = findViewById(R.id.buttonnovendido);
+        AppCompatButton buttonresreservado= findViewById(R.id.buttonreservado);
+        AppCompatButton buttonnoreservado = findViewById(R.id.buttonnoreservado);
         TextView tvfecha = findViewById(R.id.textViewFecha);
         TextView tvNombre = findViewById(R.id.nombre_user);
         database = FirebaseDatabase.getInstance();
@@ -127,6 +135,37 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
 //                    startActivity(i);
 //                }
 //            }
+
+             linearcomparte.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     Intent sendIntent = new Intent();
+                     sendIntent.setAction(Intent.ACTION_SEND);
+                     sendIntent.putExtra(Intent.EXTRA_TEXT, "Hola tengo un anuncio en YourCloset! Descarga la nueva app ya para verlo !");
+                     sendIntent.setType("text/plain");
+                     sendIntent.setPackage("com.whatsapp");
+                     startActivity(sendIntent);
+                 }
+             });
+             buttonresreservado.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     ponerReservado(productKey);
+                 }
+             });
+             buttonnoreservado.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     quitarReservado(productKey);
+                 }
+             });
+            buttonnovendido.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    quitarVendido(productKey);
+
+                }
+            });
             buttonvendido.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -220,8 +259,26 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
 
     }
     public void ponerVendido(final String productKey){
-        Toast.makeText(context, "El anuncio se ha puesto como vendido", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "El producto se ha puesto como vendido", Toast.LENGTH_SHORT).show();
         database.getReference("products/data").child(productKey).child("vendido").setValue(true);
+        database.getReference("products/data").child(productKey).child("reservado").setValue(false);
+
+    }
+    public void quitarVendido(final String productKey){
+        Toast.makeText(context, "El producto se ha retirado como vendido", Toast.LENGTH_SHORT).show();
+        database.getReference("products/data").child(productKey).child("vendido").setValue(false);
+
+    }
+    public void ponerReservado(final String productKey){
+        Toast.makeText(context, "El producto se ha puesto como reservado", Toast.LENGTH_SHORT).show();
+        database.getReference("products/data").child(productKey).child("reservado").setValue(true);
+        database.getReference("products/data").child(productKey).child("vendido").setValue(false);
+
+    }
+    public void quitarReservado(final String productKey){
+        Toast.makeText(context, "El producto se ha retirado como reservado", Toast.LENGTH_SHORT).show();
+        database.getReference("products/data").child(productKey).child("reservado").setValue(false);
+
     }
 
 

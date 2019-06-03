@@ -88,6 +88,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     static final int REQUEST_RECORD_AUDIO_PERMISSION = 1212;
     public RadioButton hombreRb;
     public boolean vendido;
+    boolean reservado;
     public RadioButton mujerRb;
     public RadioButton parteSuperior;
     public RadioButton parteInferior;
@@ -102,6 +103,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         etNombre = findViewById(R.id.campo_nombre);
         etArticulo = findViewById(R.id.campo_articulo);
         etPrecio = findViewById(R.id.campo_precio);
+
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_RECORD_AUDIO_PERMISSION);
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         imagePreview = findViewById(R.id.imagePreview);
@@ -197,10 +199,11 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     public void writeNewPost(String description, String name, String price, String mediaUri) {
 
         String productKey = "product-" + mReference.push().getKey();
-        Anuncio anuncio = new Anuncio(uid, mUser.getDisplayName(), mUser.getPhotoUrl().toString(), description,name,price, mediaUri, mediaType,vendido);
+        Anuncio anuncio = new Anuncio(uid, mUser.getDisplayName(), mUser.getPhotoUrl().toString(), description,name,price, mediaUri, mediaType,vendido,reservado);
 
         long ts = -new Date().getTime();
         vendido= false;
+        reservado = false;
         Map<String, Object> postValues = anuncio.toMap();
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("products/data/" + productKey, postValues);

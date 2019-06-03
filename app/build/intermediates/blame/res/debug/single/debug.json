@@ -516,6 +516,10 @@
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\a1f2496d024d0aca3be5a2f0b463b1b9\\res\\color\\mtrl_tabs_icon_color_selector_colored.xml"
     },
     {
+        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_allclothes.xml.flat",
+        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\drawable-v24\\ic_allclothes.xml"
+    },
+    {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\layout_place_autocomplete_fragment.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\6e89565e93565b12ce78c3859bf96f0a\\res\\layout\\place_autocomplete_fragment.xml"
     },
@@ -1504,6 +1508,10 @@
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\50daade63d436a09bdba29b4e3831f83\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
+        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_reserved.xml.flat",
+        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\drawable-v24\\ic_reserved.xml"
+    },
+    {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\cc9b8f8856cc029368e9b6b721134bd4\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_16dp.png"
     },
@@ -1514,6 +1522,10 @@
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\layout_fui_provider_button_email.xml.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-ui-auth-4.3.1.aar\\d53a783184a104ef38f35d3b8c3488a0\\res\\layout\\fui_provider_button_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_armario.xml.flat",
+        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\drawable-v24\\ic_armario.xml"
     },
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -2866,6 +2878,10 @@
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "C:\\Users\\koema\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\50daade63d436a09bdba29b4e3831f83\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_sold.xml.flat",
+        "source": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\src\\main\\res\\drawable-v24\\ic_sold.xml"
     },
     {
         "merged": "C:\\Users\\koema\\AndroidStudioProjects\\YourClosetG\\app\\build\\intermediates\\res\\merged\\debug\\layout_fui_provider_button_phone.xml.flat",

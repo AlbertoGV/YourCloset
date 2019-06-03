@@ -14,7 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,22 +33,35 @@
             android:adjustViewBounds="true"
             android:src="@mipmap/ic_launcher">
 
-
-
         </ImageView>
 
-        <TextView
-
+        <ImageView
             android:id="@+id/ivVendido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="5dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="8dp"
+            android:textSize="10dp"
+            app:srcCompat="@drawable/ic_sold"
             android:text="Vendido!"
-            android:visibility="gone"
-            android:gravity="center"
-            android:src="@mipmap/ic_launcher">
+            android:visibility="gone">
+        </ImageView>
+        <ImageView
+            android:id="@+id/ivReservado"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_gravity="bottom|right"
+            android:textSize="10dp"
+            android:text="Reservado!"
+            app:srcCompat="@drawable/ic_reserved"
+            android:visibility="gone">
 
-        </TextView>
+        </ImageView>
+    </FrameLayout>
         <RelativeLayout
             android:id="@+id/like_layout"
             android:layout_width="wrap_content"

@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity
     public FirebaseUser mUser;
     RecyclerView rvMain;
     TextView tvnombre;
-    TextView ivVendido;
+
     TextView tvdireccion;
     ProgressBar progressBar;
     Toolbar toolbar;
@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
     private Query query;
+    ImageView reservado;
+    ImageView vendido;
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -103,15 +105,17 @@ public class MainActivity extends AppCompatActivity
         ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
 
         context = this;
-        ivVendido = findViewById(R.id.ivVendido);
+
         mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
         toolbar = findViewById(R.id.toolbar);
         rvMain = findViewById(R.id.rvMain);
         progressBar = findViewById(R.id.progressBar);
+        reservado = findViewById(R.id.ivReservado);
+        vendido = findViewById(R.id.ivVendido);
         mReference = FirebaseDatabase.getInstance().getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         materialDesignFAM = findViewById(R.id.material_design_android_floating_action_menu);
-        floatingActionButton1 = findViewById(R.id.material_design_floating_action_menu_item1);//hola
+        floatingActionButton1 = findViewById(R.id.material_design_floating_action_menu_item1);
         floatingActionButton2 = findViewById(R.id.material_design_floating_action_menu_item2);
         floatingActionButton3 = findViewById(R.id.material_design_floating_action_menu_item3);
         floatingActionButton4 = findViewById(R.id.material_design_floating_action_menu_item4);
@@ -128,12 +132,7 @@ public class MainActivity extends AppCompatActivity
         floatingActionButton6.setImageResource(R.drawable.ic_mujeresinferior);
         floatingActionButton7.setImageResource(R.drawable.ic_mujercalzado);
         floatingActionButton8.setImageResource(R.drawable.ic_mujerescomplementos);
-        floatingActionButtonHome.setImageResource(R.drawable.ic_allproducts);
-
-
-//        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
-//        bottomNavigationView.setItemBackground(null);
-//        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        floatingActionButtonHome.setImageResource(R.drawable.ic_allclothes);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -260,8 +259,17 @@ public class MainActivity extends AppCompatActivity
                             .apply(ro)
                             .into(anuncioViewHolder.ivphoto);
 
+                    if(anuncio.reservado) {
+                        anuncioViewHolder.tvReservado.setVisibility(View.VISIBLE);
+                        anuncioViewHolder.tvVendido.setVisibility(View.INVISIBLE);
+                    }else {
+                        anuncioViewHolder.tvReservado.setVisibility(View.INVISIBLE);
+
+                    }
+
                     if (anuncio.vendido) {
                         anuncioViewHolder.tvVendido.setVisibility(View.VISIBLE);
+                        anuncioViewHolder.tvReservado.setVisibility(View.INVISIBLE);
                     } else {
                         anuncioViewHolder.tvVendido.setVisibility(View.INVISIBLE);
                     }
@@ -313,6 +321,7 @@ public class MainActivity extends AppCompatActivity
 
                         }
                     });
+
                     if (anuncio != null) {
                         anuncioViewHolder.anunimagePerfil.setImageURI(Uri.parse(anuncio.getAuthorPhotoUrl()));
                         anuncioViewHolder.time.setText(DateUtils.getRelativeTimeSpanString(anuncio.time,
@@ -346,7 +355,6 @@ public class MainActivity extends AppCompatActivity
                     mShimmerViewContainer.setVisibility(View.GONE);
 
                 }
-
                 imagegoogle.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

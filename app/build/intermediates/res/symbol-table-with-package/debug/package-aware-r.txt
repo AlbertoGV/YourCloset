@@ -1289,7 +1289,9 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable heart_off
 drawable heart_on
+drawable ic_allclothes
 drawable ic_allproducts
+drawable ic_armario
 drawable ic_attach_file_black
 drawable ic_attach_money_black
 drawable ic_border_color_black
@@ -1321,6 +1323,8 @@ drawable ic_mujerescomplementos
 drawable ic_mujeresinferior
 drawable ic_mujersuperior
 drawable ic_notifications_black_24dp
+drawable ic_reserved
+drawable ic_sold
 drawable ic_star_rate_off
 drawable ic_star_rate_on
 drawable icons
@@ -1436,6 +1440,9 @@ id button_done
 id button_next
 id button_resend_email
 id button_sign_in
+id buttonnoreservado
+id buttonnovendido
+id buttonreservado
 id buttonvendido
 id calzado
 id campo_articulo
@@ -1559,6 +1566,7 @@ id ivMainImage
 id ivPhoto
 id ivPhotoUserChat
 id ivProductPhoto
+id ivReservado
 id ivVendido
 id labeled
 id largeLabel
@@ -1574,6 +1582,7 @@ id like_layout
 id line1
 id line3
 id linear
+id linearCompartir
 id listMode
 id list_item
 id location

@@ -100,6 +100,7 @@ public class Anuncio {
         public String precioAnuncio;
         public String mediaType;
         public boolean vendido;
+        public boolean reservado;
         public long time;
 
 
@@ -108,13 +109,14 @@ public class Anuncio {
         public Anuncio() {}
 
 
-        public Anuncio(String uid, String author, String authorPhotoUrl, String descripcion,String tituloAnuncio,String precioAnuncio,String mediaUrl, String mediaType,boolean vendido) {
+        public Anuncio(String uid, String author, String authorPhotoUrl, String descripcion,String tituloAnuncio,String precioAnuncio,String mediaUrl, String mediaType,boolean vendido, boolean reservado) {
                 this.uid = uid;
                 this.displayName = author;
                 this.authorPhotoUrl = authorPhotoUrl;
                 this.description = descripcion;
                 this.mediaUrl = mediaUrl;
                 this.vendido = vendido;
+                this.reservado = reservado;
                 this.precioAnuncio = precioAnuncio;
                 this.tituloAnuncio = tituloAnuncio;
                 this.mediaType = mediaType;
@@ -126,6 +128,7 @@ public class Anuncio {
                 HashMap<String, Object> result = new HashMap<>();
                 result.put("uid", uid);
                 result.put("vendido",vendido);
+                result.put("reservado",reservado);
                 result.put("displayName", displayName);
                 result.put("authorPhotoUrl", authorPhotoUrl);
                 result.put("descripcion", description);

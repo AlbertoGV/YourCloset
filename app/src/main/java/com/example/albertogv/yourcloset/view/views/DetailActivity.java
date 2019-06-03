@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,7 +62,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         TextView tvprecio = findViewById(R.id.textViewPrecio);
         ImageView ivimagen = findViewById(R.id.imageViewImagen);
         ImageView ivimagenperfil=findViewById(R.id.fotoPerfil);
-        ImageView ivwhatsapp = findViewById(R.id.whatsapp);
+        LinearLayout ivwhatsapp = findViewById(R.id.whatsapp);
         TextView tvdescripcion = findViewById(R.id.textViewDEscripcion);
         tvRating = findViewById(R.id.tvrating);
         TextView tvfecha = findViewById(R.id.textViewFecha);

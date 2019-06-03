@@ -77,10 +77,15 @@
                     android:text="Editar Anuncio"
                     android:outlineAmbientShadowColor="@color/colorPrimaryDark"
                     android:background="@drawable/botonredondo"/>
-
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
                 <android.support.v7.widget.AppCompatButton
                     android:layout_width="match_parent"
                     android:id="@+id/buttonvendido"
+                    android:layout_weight="1"
                     android:theme="@style/FirebaseUI.Text.BodyText"
                     android:outlineAmbientShadowColor="@color/background"
                     android:background="@drawable/botonredondoblanco"
@@ -88,6 +93,46 @@
                     android:textColor="@color/colorPrimary"
                     android:layout_height="wrap_content"
                     android:text="¡VENDIDO!"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:id="@+id/buttonnovendido"
+                    android:layout_weight="1"
+                    android:theme="@style/FirebaseUI.Text.BodyText"
+                    android:outlineAmbientShadowColor="@color/background"
+                    android:background="@drawable/botonredondoblanco"
+                    android:layout_margin="8dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:text="¡Quitar vendido!"/>
+</LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+                    <android.support.v7.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:id="@+id/buttonreservado"
+                        android:layout_weight="2"
+                        android:theme="@style/FirebaseUI.Text.BodyText"
+                        android:outlineAmbientShadowColor="@color/background"
+                        android:background="@drawable/botonredondoblanco"
+                        android:layout_margin="8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_height="wrap_content"
+                        android:text="¡Reservado!"/>
+                    <android.support.v7.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:id="@+id/buttonnoreservado"
+                        android:layout_weight="2"
+                        android:theme="@style/FirebaseUI.Text.BodyText"
+                        android:outlineAmbientShadowColor="@color/background"
+                        android:background="@drawable/botonredondoblanco"
+                        android:layout_margin="8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_height="wrap_content"
+                        android:text="¡Quitar reserva!"/>
+                </LinearLayout>
 
                 <android.support.v7.widget.AppCompatButton
                     android:layout_margin="8dp"
@@ -293,6 +338,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/linearCompartir"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
                     android:layout_marginBottom="16dp"

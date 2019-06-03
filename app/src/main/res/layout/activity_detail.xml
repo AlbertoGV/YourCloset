@@ -280,12 +280,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
+                    android:id="@+id/whatsapp"
                     android:layout_marginBottom="16dp"
                     android:layout_marginTop="16dp">
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:id="@+id/whatsapp"
                         android:background="@mipmap/whats"/>
                     <ImageView
                         android:layout_width="wrap_content"
