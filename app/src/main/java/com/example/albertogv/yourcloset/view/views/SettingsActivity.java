@@ -152,7 +152,7 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
                  @Override
                  public void onClick(View v) {
                      ponerReservado(productKey);
-                     estadoProducto.setText("El producto está ahora Reservado");
+                     estadoProducto.setText("El producto está ahora en estado Reservado");
                  }
              });
              buttonnoreservado.setOnClickListener(new View.OnClickListener() {
@@ -174,7 +174,6 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
                 @Override
                 public void onClick(View v) {
                    ponerVendido(productKey);
-
                     estadoProducto.setText("El producto está ahora en estado vendido");
                 }
             });

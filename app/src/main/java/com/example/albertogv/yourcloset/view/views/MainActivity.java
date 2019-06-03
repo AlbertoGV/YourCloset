@@ -359,7 +359,8 @@ public class MainActivity extends AppCompatActivity
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                        intent.putExtra("PRODUCT_KEY", productKey);
+                            intent.putExtra("PRODUCT_KEY", productKey);
+
                         startActivity(intent);
                     }
                 });

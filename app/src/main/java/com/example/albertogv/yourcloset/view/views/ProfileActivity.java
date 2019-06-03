@@ -106,7 +106,7 @@ public class ProfileActivity extends AppCompatActivity {
         recycler.setAdapter(new FirebaseRecyclerAdapter<Anuncio, AnuncioViewHolder>(options) {
             @Override
             public AnuncioViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-                LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());getProductCount();
+                LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
                 return new AnuncioViewHolder(inflater.inflate(R.layout.item_profile_post, viewGroup, false));
             }
 
@@ -147,22 +147,18 @@ public class ProfileActivity extends AppCompatActivity {
                         }
                     });
 
-
                 }
                     }
-
         });
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
+
     @Override
     protected void onResume() {
         super.onResume();
         getProductCount();
+
     }
 
 
