@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.albertogv.yourcloset.GlideApp;
@@ -59,7 +60,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     static final int RC_IMAGE_PICK = 9000;
     static final int RC_IMAGE_TAKE = 8000;
     static final int RC_VIDEO_TAKE = 8001;
-
+    private  static  final  int PHOTO_PERFIL=2;
     static final int RC_VIDEO_PICK = 9001;
     static final int RC_AUDIO_PICK = 9002;
     private static final int SECOND_MILLIS = 1000;
@@ -69,7 +70,9 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     private Button buttonAceptar;
     private Button buttonCancelar;
     Uri mFileUri;
+    Uri mFileUri1;
     Uri mediaUri;
+    Uri mediaUri1;
     String mediaType;
     DatabaseReference mReference;
 
@@ -81,6 +84,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     private MediaRecorder mRecorder = null;
     EditText etNombre, etArticulo, etPrecio;
     ImageView imagePreview;
+    ImageView imagePreviewGal;
     private GoogleApiClient googleApiClient;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
@@ -91,6 +95,8 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     boolean reservado;
     String articulo;
     String precio;
+    public RadioGroup radioGenero;
+    public RadioGroup radioTipoPrenda;
     String nombre;
     public RadioButton mujerRb;
     public RadioButton parteSuperior;
@@ -106,7 +112,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         etNombre = findViewById(R.id.campo_nombre);
         etArticulo = findViewById(R.id.campo_articulo);
         etPrecio = findViewById(R.id.campo_precio);
-
+        imagePreviewGal = findViewById(R.id.imageViewgaleria);
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_RECORD_AUDIO_PERMISSION);
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         imagePreview = findViewById(R.id.imagePreview);
@@ -128,7 +134,8 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         nombre = etNombre.getText().toString();
         articulo = etArticulo.getText().toString();
         precio = etPrecio.getText().toString();
-
+        radioGenero = findViewById(R.id.radioGroupGenero);
+        radioTipoPrenda = findViewById(R.id.radioGroupTipoPrenda);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,6 +146,13 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             }
         });
 
+        imagePreviewGal = findViewById(R.id.imageViewgaleria);
+        imagePreviewGal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI), RC_IMAGE_PICK);
+            }
+        });
         imagePreview = findViewById(R.id.imagePreview);
         imagePreview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,10 +200,10 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         final String postName = etNombre.getText().toString();
         final String postPrecio = etPrecio.getText().toString();
 
-        if (!postText.isEmpty() && !postName.isEmpty() && !postPrecio.isEmpty() && mediaUri != null){
+        if (!postText.isEmpty() && !postName.isEmpty() && !postPrecio.isEmpty() && mediaUri != null && radioGenero.getCheckedRadioButtonId() != -1 && radioTipoPrenda.getCheckedRadioButtonId() != -1){
             Toast.makeText(SubirAnuncioActivity.this, "Subiendo...espere por favor", Toast.LENGTH_SHORT).show();
+            buttonAceptar.setVisibility(View.INVISIBLE);
             uploadAndWriteNewPost(postText,postName,postPrecio);
-
         }else{
             Toast.makeText(SubirAnuncioActivity.this, "Rellene todos los campos, por favor", Toast.LENGTH_SHORT).show();
             if(postName.isEmpty()) {
@@ -201,7 +215,11 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             }if (mediaUri == null) {
                 Toast.makeText(this, "Seleccione una imagen para continuar", Toast.LENGTH_SHORT).show();
             }
-
+            if (radioGenero.getCheckedRadioButtonId() ==  -1){
+                Toast.makeText(this, "Selecciona un género para continuar", Toast.LENGTH_SHORT).show();
+            }if (radioTipoPrenda.getCheckedRadioButtonId() == -1){
+                Toast.makeText(this, "Selecciona un tipo de prenda para continuar", Toast.LENGTH_SHORT).show();
+            }
             buttonAceptar.setEnabled(true);
         }
 
@@ -280,7 +298,13 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             mediaType = "image";
             GlideApp.with(this).load(mediaUri).into(imagePreview);
 
-              }
+        } else if(data != null) {
+                if (requestCode == RC_IMAGE_PICK) {
+                    mediaUri = data.getData();
+                    mediaType = "image";
+                    GlideApp.with(this).load(mediaUri).into(imagePreviewGal);
+                }
+        }
 
           }
 
@@ -301,61 +325,27 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
             startActivityForResult(intent, RC_IMAGE_TAKE);
         }
+
+
     }
-
-    private void dispatchTakeVideoIntent() {
-
-        Uri fileUri = null;
-        try {
-            fileUri = MediaFiles.createFile(this, MediaFiles.Type.VIDEO).uri;
-        } catch (IOException ex) {
-            // No se pudo crear el fichero
-        }
-
-        if (fileUri != null) {
-            mFileUri = fileUri;
-
-            Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-            startActivityForResult(intent, RC_VIDEO_TAKE);
-        }
-    }
-
-    void startRecording(){
-        MediaFiles.UriPathFile file = null;
-        try {
-            file = MediaFiles.createFile(this, MediaFiles.Type.AUDIO);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        if(file != null) {
-            mRecorder = new MediaRecorder();
-            mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-            mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-            mRecorder.setOutputFile(file.path);
-            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-
-            try {
-                mRecorder.prepare();
-            } catch (IOException e) {
-
-            }
-
-            mediaType = "audio";
-            mediaUri = file.uri;
-            mRecorder.start();
-        }
-    }
-
-    void stopRecording(){
-        if(mRecorder != null) {
-            mRecorder.stop();
-            mRecorder.release();
-            mRecorder = null;
-        }
-    }
-
+//    private void dispatchGaleryPictureIntent() {
+//
+//        Uri fileUri1 = null;
+//        try {
+//            fileUri1 = MediaFiles.createFile(this, MediaFiles.Type.IMAGE).uri;
+//        } catch (IOException ex) {
+//            // No se pudo crear el fichero
+//        }
+//
+//        if (fileUri != null) {
+//            mFileUri = fileUri;
+//
+//            Intent intent = new Intent(MediaStore.INTENT_ACTION_VIDEO_CAMERA);
+//            intent.setType("image/jpeg");
+//            intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+//            startActivityForResult(intent ,RC_IMAGE_PICK);
+//        }
+//    }
 
 
 

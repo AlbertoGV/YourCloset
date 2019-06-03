@@ -1300,13 +1300,13 @@ drawable ic_card_travel_black
 drawable ic_dashboard_black_24dp
 drawable ic_femenine
 drawable ic_filter
+drawable ic_galeria
 drawable ic_hombrecalzado
 drawable ic_hombrescomplementos
 drawable ic_hombresinferior
 drawable ic_hombresuperior
 drawable ic_home_black_24dp
 drawable ic_launcher_background
-drawable ic_launcher_foreground
 drawable ic_mascfem
 drawable ic_masculine
 drawable ic_menu_camera
@@ -1552,6 +1552,7 @@ id imageView5
 id imageView7
 id imageViewImagen
 id imageView_sesion
+id imageViewgaleria
 id image_perfilpass
 id img_correo
 id img_fotos
@@ -1660,6 +1661,8 @@ id progress_circular
 id progress_horizontal
 id radial
 id radio
+id radioGroupGenero
+id radioGroupTipoPrenda
 id radioarriba
 id radiobajo
 id radiocomplemento

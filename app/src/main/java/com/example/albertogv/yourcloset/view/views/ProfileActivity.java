@@ -89,17 +89,7 @@ public class ProfileActivity extends AppCompatActivity {
                 .setLifecycleOwner(this)
                 .build();
         final String productKey = intent.getStringExtra("PRODUCT_KEY");
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/jpeg");
-                intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-                startActivityForResult(Intent.createChooser(intent, "Selecciona una foto"), PHOTO_PERFIL);
 
-
-            }
-        });
 
         tvNameProfile.setText(mUser.getDisplayName());
         recycler.setLayoutManager(new StaggeredGridLayoutManager(3,GridLayoutManager.VERTICAL));
@@ -112,8 +102,8 @@ public class ProfileActivity extends AppCompatActivity {
 
 
             @Override
-            protected void onBindViewHolder(@NonNull final AnuncioViewHolder anuncioviewHolder, final int position, final Anuncio anuncio) {
-                final String postKey = getRef(position).getKey();
+            protected void onBindViewHolder(@NonNull final AnuncioViewHolder anuncioviewHolder, final int i, final Anuncio anuncio) {
+                final String productKey = getRef(i).getKey();
                     if(anuncio.mediaUrl!= null) {
                         GlideApp.with(ProfileActivity.this).load(anuncio.getMediaUrl()).apply(RequestOptions.centerCropTransform()).into(anuncioviewHolder.image);
                         anuncioviewHolder.image.setVisibility(VISIBLE);
@@ -191,47 +181,4 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PHOTO_PERFIL && resultCode == RESULT_OK) {
-            final Uri u = data.getData();
-            storageReference = firebaseStorage.getReference("Imagenes perfil");//imagenes de perfil
-            final StorageReference fotoReferencia = storageReference.child(u.getLastPathSegment());
-            final UploadTask uploadTask = fotoReferencia.putFile(u);
-            fotoReferencia.putFile(u).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                        @Override
-                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                            if (!task.isSuccessful()) {
-                                throw task.getException();
-                            }
-
-                            // Continue with the task to get the download URL
-                            return fotoReferencia.getDownloadUrl();
-                        }
-                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Uri> task) {
-                            if (task.isSuccessful()) {
-                                Uri u = task.getResult();
-
-
-                            } else {
-                                // Handle failures
-                                // ...
-                            }
-                        }
-                    });
-                    FirebaseDatabase  database = FirebaseDatabase.getInstance();
-                    DatabaseReference mDatabaseRef = database.getReference();
-                    Glide.with(ProfileActivity.this).load(u).into(imageView);
-
-                }
-
-            });
-        }
-    }
 }
