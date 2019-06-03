@@ -177,13 +177,13 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/radioarriba"
-                                    android:text="Parte de arriba">
+                                    android:text="Parte Superior">
                                 </RadioButton>
                                 <RadioButton
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/radiobajo"
-                                    android:text="Parte de abajo">
+                                    android:text="Parte Inferior">
                                 </RadioButton>
                                 <RadioButton
                                     android:layout_width="match_parent"
@@ -210,6 +210,8 @@
                             <RadioGroup
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
                                 android:id="@+id/radioGroupGenero">
                                 <RadioButton
                                     android:layout_width="match_parent"

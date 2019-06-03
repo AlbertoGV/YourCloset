@@ -88,7 +88,6 @@ public class ProfileActivity extends AppCompatActivity {
                 .setIndexedQuery(setQuery(), mReference.child("products/data"), Anuncio.class)
                 .setLifecycleOwner(this)
                 .build();
-        final String productKey = intent.getStringExtra("PRODUCT_KEY");
 
 
         tvNameProfile.setText(mUser.getDisplayName());
