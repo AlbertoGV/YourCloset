@@ -15,7 +15,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.widget.ContentLoadingProgressBar;
+
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -87,7 +87,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     private static final int PHOTO_SEND = 1;
     static final int REQUEST_RECORD_AUDIO_PERMISSION = 1212;
     public RadioButton hombreRb;
-
+    public boolean vendido;
     public RadioButton mujerRb;
     public RadioButton parteSuperior;
     public RadioButton parteInferior;
@@ -177,6 +177,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         final String postName = etNombre.getText().toString();
         final String postPrecio = etPrecio.getText().toString();
 
+
         if (postText.isEmpty()) {
             etArticulo.setError("Introduzca la descripcion");
         } else if (postName.isEmpty()) {
@@ -196,9 +197,10 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     public void writeNewPost(String description, String name, String price, String mediaUri) {
 
         String productKey = "product-" + mReference.push().getKey();
-        Anuncio anuncio = new Anuncio(uid, mUser.getDisplayName(), mUser.getPhotoUrl().toString(), description,name,price, mediaUri, mediaType);
+        Anuncio anuncio = new Anuncio(uid, mUser.getDisplayName(), mUser.getPhotoUrl().toString(), description,name,price, mediaUri, mediaType,vendido);
 
         long ts = -new Date().getTime();
+        vendido= false;
         Map<String, Object> postValues = anuncio.toMap();
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("products/data/" + productKey, postValues);

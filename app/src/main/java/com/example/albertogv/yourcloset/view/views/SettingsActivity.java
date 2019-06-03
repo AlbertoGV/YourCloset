@@ -11,7 +11,6 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -51,6 +50,7 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
     RatingBar ratingBar;
     TextView tvRating;
     String uid;
+    AppCompatButton buttonvendido;
     AlertDialog.Builder dialogo;
 
     @Override
@@ -65,6 +65,7 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
         final Intent intent = getIntent();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         intent.getExtras();
+        buttonvendido = findViewById(R.id.buttonvendido);
         TextView tvprecio = findViewById(R.id.textViewPrecio);
         ImageView ivimagen = findViewById(R.id.imageViewImagen);
         ImageView ivimagenperfil=findViewById(R.id.fotoPerfil);
@@ -125,14 +126,19 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
 //                    i.putExtra("MESSAGE_KEY",messageKey);
 //                    startActivity(i);
 //                }
-//            });
+//            }
+            buttonvendido.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   ponerVendido(productKey);
+
+                }
+            });
 
             appCompatButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     eliminarAnuncio(productKey);
-
-
 
                 }
 
@@ -211,7 +217,14 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
 
 
 
+
     }
+    public void ponerVendido(final String productKey){
+        Toast.makeText(context, "El anuncio se ha puesto como vendido", Toast.LENGTH_SHORT).show();
+        database.getReference("products/data").child(productKey).child("vendido").setValue(true);
+    }
+
+
 
     private void testRatingBar() {
         final DatabaseReference ref = database.getReference("user/rating").child("rating");

@@ -1289,6 +1289,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable heart_off
 drawable heart_on
+drawable ic_allproducts
 drawable ic_attach_file_black
 drawable ic_attach_money_black
 drawable ic_border_color_black
@@ -1435,6 +1436,7 @@ id button_done
 id button_next
 id button_resend_email
 id button_sign_in
+id buttonvendido
 id calzado
 id campo_articulo
 id campo_nombre
@@ -1557,6 +1559,7 @@ id ivMainImage
 id ivPhoto
 id ivPhotoUserChat
 id ivProductPhoto
+id ivVendido
 id labeled
 id largeLabel
 id layout
@@ -1590,6 +1593,7 @@ id material_design_floating_action_menu_item5
 id material_design_floating_action_menu_item6
 id material_design_floating_action_menu_item7
 id material_design_floating_action_menu_item8
+id material_design_floating_action_menu_itemHome
 id media_actions
 id message
 id middle

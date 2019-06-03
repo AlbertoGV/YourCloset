@@ -74,13 +74,14 @@ public class MainActivity extends AppCompatActivity
     public FirebaseUser mUser;
     RecyclerView rvMain;
     TextView tvnombre;
+    TextView ivVendido;
     TextView tvdireccion;
     ProgressBar progressBar;
     Toolbar toolbar;
     boolean click = false;
     FloatingActionMenu materialDesignFAM;
     FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3, floatingActionButton4, floatingActionButton5, floatingActionButton6,
-            floatingActionButton7, floatingActionButton8;
+            floatingActionButton7, floatingActionButton8,floatingActionButtonHome;
 
     ImageView imagegoogle;
     Context context;
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity
         ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
 
         context = this;
+        ivVendido = findViewById(R.id.ivVendido);
         mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
         toolbar = findViewById(R.id.toolbar);
         rvMain = findViewById(R.id.rvMain);
@@ -117,7 +119,7 @@ public class MainActivity extends AppCompatActivity
         floatingActionButton6 = findViewById(R.id.material_design_floating_action_menu_item6);
         floatingActionButton7 = findViewById(R.id.material_design_floating_action_menu_item7);
         floatingActionButton8 = findViewById(R.id.material_design_floating_action_menu_item8);
-
+        floatingActionButtonHome = findViewById(R.id.material_design_floating_action_menu_itemHome);
         floatingActionButton1.setImageResource(R.drawable.ic_hombresuperior);
         floatingActionButton2.setImageResource(R.drawable.ic_hombresinferior);
         floatingActionButton3.setImageResource(R.drawable.ic_hombrecalzado);
@@ -126,6 +128,8 @@ public class MainActivity extends AppCompatActivity
         floatingActionButton6.setImageResource(R.drawable.ic_mujeresinferior);
         floatingActionButton7.setImageResource(R.drawable.ic_mujercalzado);
         floatingActionButton8.setImageResource(R.drawable.ic_mujerescomplementos);
+        floatingActionButtonHome.setImageResource(R.drawable.ic_allproducts);
+
 
 //        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
 //        bottomNavigationView.setItemBackground(null);
@@ -256,6 +260,11 @@ public class MainActivity extends AppCompatActivity
                             .apply(ro)
                             .into(anuncioViewHolder.ivphoto);
 
+                    if (anuncio.vendido) {
+                        anuncioViewHolder.tvVendido.setVisibility(View.VISIBLE);
+                    } else {
+                        anuncioViewHolder.tvVendido.setVisibility(View.INVISIBLE);
+                    }
                     if (mUser != null) {
                         if (mUser.getDisplayName().equals(anuncio.displayName)) {
                             anuncioViewHolder.irChat.setVisibility(View.INVISIBLE);
@@ -291,6 +300,7 @@ public class MainActivity extends AppCompatActivity
                             }
                         });
                     }
+
 
                     anuncioViewHolder.irChat.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -396,11 +406,10 @@ public class MainActivity extends AppCompatActivity
         });
 
 
-
         floatingActionButton1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu first item clicked
-                Toast.makeText(context, "parte de arriba y hombre", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Parte Superior Hombre", Toast.LENGTH_SHORT).show();
                 query = mReference.child("products/hombresSup").orderByValue().limitToFirst(100);
                 realizarConsulta();
             }
@@ -408,53 +417,73 @@ public class MainActivity extends AppCompatActivity
         floatingActionButton2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu second item clicked
-                Toast.makeText(context, "complementos hombre", Toast.LENGTH_SHORT).show();
-                query = mReference.child("products/hombresCalz").orderByValue().limitToFirst(100);
+                Toast.makeText(context, "Parte Inferior Hombre", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/hombresInf").orderByValue().limitToFirst(100);
                 realizarConsulta();
             }
         });
         floatingActionButton3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu third item clicked
-                Toast.makeText(context, "parte de abajo hombre", Toast.LENGTH_SHORT).show();
-                query = mReference.child("products/mujeresInf").orderByValue().limitToFirst(100);
+                Toast.makeText(context, "Calzado Hombre", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/hombresCalz").orderByValue().limitToFirst(100);
                 realizarConsulta();
             }
         });
         floatingActionButton4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu third item clicked
-                Toast.makeText(context, "parte de abajo mujer", Toast.LENGTH_SHORT).show();
-                query = mReference.child("products/mujeresSup").orderByValue().limitToFirst(100);
+                Toast.makeText(context, "Complementos Hombre", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/hombresCompl").orderByValue().limitToFirst(100);
                 realizarConsulta();
             }
         });
         floatingActionButton5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu third item clicked
+                Toast.makeText(context, "Parte Superior Mujer", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/mujeresSup").orderByValue().limitToFirst(100);
+                realizarConsulta();
 
             }
         });
         floatingActionButton6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu third item clicked
+                Toast.makeText(context, "Parte Inferior Mujer", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/mujeresInf").orderByValue().limitToFirst(100);
+                realizarConsulta();
 
             }
         });
         floatingActionButton7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu third item clicked
+                Toast.makeText(context, "Calzado Mujer", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/mujeresCalz").orderByValue().limitToFirst(100);
+                realizarConsulta();
 
             }
         });
         floatingActionButton8.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu third item clicked
+                Toast.makeText(context, "Complementos Mujer", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/mujeresCompl").orderByValue().limitToFirst(100);
+                realizarConsulta();
 
             }
-
         });
 
+        floatingActionButtonHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Todos los Anuncios", Toast.LENGTH_SHORT).show();
+                query = mReference.child("products/all-products").orderByValue().limitToFirst(100);
+                realizarConsulta();
+
+            }
+        });
     }
 
 

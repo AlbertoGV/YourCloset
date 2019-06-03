@@ -22,6 +22,7 @@ public class AnuncioViewHolder extends RecyclerView.ViewHolder {
     public ImageView settings;
     public TextView tvdescArticulo;
     public RelativeLayout likeLayout;
+    public TextView tvVendido;
 
     public AnuncioViewHolder(View itemView) {
         super(itemView);
@@ -31,6 +32,7 @@ public class AnuncioViewHolder extends RecyclerView.ViewHolder {
         like = itemView.findViewById(R.id.like);
         image = itemView.findViewById(R.id.image);
         irChat = itemView.findViewById(R.id.chat);
+        tvVendido = itemView.findViewById(R.id.ivVendido);
         likeLayout = itemView.findViewById(R.id.like_layout);
         tvdescArticulo = itemView.findViewById(R.id.tvDescriptionArt);
         tvnombreArticulo= itemView.findViewById(R.id.tvArticulo);
