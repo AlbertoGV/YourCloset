@@ -151,13 +151,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
             });
 
 
-            ivimagenperfil.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(DetailActivity.this, ProfileActivity.class);
-                    startActivity(i);
-                }
-            });
+
             tvprecio.setText(precio);
             tvNombre.setText(nombre);
             tvfecha.setText(fecha);
