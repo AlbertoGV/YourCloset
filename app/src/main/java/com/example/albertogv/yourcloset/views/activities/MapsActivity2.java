@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset.view.views;
+package com.example.albertogv.yourcloset.views.activities;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -28,26 +28,25 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,GoogleApiClient.OnConnectionFailedListener {
+public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallback,GoogleApiClient.OnConnectionFailedListener {
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.activity_maps2);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(R.id.map2);
         mapFragment.getMapAsync(this);
+
 
 
 
         // TODO: Start using the Places API.
 
     }
-
-
 
     /**
      * Manipulates the map once available.
@@ -59,18 +58,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * installed Google Play services and returned to the app.
      */
 
-GoogleMap gMap;
+    GoogleMap gMap;
     @Override
     public void onMapReady(GoogleMap googleMap) {
         gMap = googleMap;
 
 
 
-        if (ActivityCompat.checkSelfPermission(MapsActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MapsActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(MapsActivity.this,new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        if (ActivityCompat.checkSelfPermission(MapsActivity2.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MapsActivity2.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(MapsActivity2.this,new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         }else{
             if(!gMap.isMyLocationEnabled())
                 gMap.setMyLocationEnabled(true);
+
 
             LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
             Location myLocation = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
@@ -94,8 +94,7 @@ GoogleMap gMap;
     }
 
 
-    public void captureScreen()
-    {
+    public void captureScreen() {
         GoogleMap.SnapshotReadyCallback callback = new GoogleMap.SnapshotReadyCallback()
         {
 

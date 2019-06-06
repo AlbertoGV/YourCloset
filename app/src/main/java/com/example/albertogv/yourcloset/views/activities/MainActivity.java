@@ -1,11 +1,10 @@
-package com.example.albertogv.yourcloset.view.views;
+package com.example.albertogv.yourcloset.views.activities;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -30,8 +29,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
-import android.view.animation.Interpolator;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -42,8 +39,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.albertogv.yourcloset.R;
-import com.example.albertogv.yourcloset.view.chat.ChatActivity;
-import com.example.albertogv.yourcloset.view.chat.MyChatsActivity;
+import com.example.albertogv.yourcloset.views.chat.ChatActivity;
+import com.example.albertogv.yourcloset.views.chat.MyChatsActivity;
 import com.example.albertogv.yourcloset.model.Anuncio;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.firebase.ui.auth.AuthUI;
@@ -62,8 +59,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
-
-import java.util.List;
 
 import maes.tech.intentanim.CustomIntent;
 import ru.dimorinny.floatingtextbutton.FloatingTextButton;
@@ -92,6 +87,7 @@ public class MainActivity extends AppCompatActivity
     private Query query;
     ImageView reservado;
     ImageView vendido;
+    String productKey;
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -358,7 +354,7 @@ public class MainActivity extends AppCompatActivity
                 imagegoogle.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                        Intent intent = new Intent(MainActivity.this, ProfileTabbedActivity.class);
                             intent.putExtra("PRODUCT_KEY", productKey);
 
                         startActivity(intent);
@@ -624,7 +620,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
             // Handle the camera action
         } else if (id == R.id.nav_favorites) {
-            Intent intent = new Intent(this, ProfileActivity.class);
+            Intent intent = new Intent(this, ProfileTabbedActivity.class);
+            intent.putExtra("PRODUCT_KEY", productKey);
             startActivity(intent);
         } else if (id == R.id.nav_ayuda) {
             Intent intent = new Intent(this, InfoActivity.class);

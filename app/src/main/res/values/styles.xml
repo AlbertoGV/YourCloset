@@ -9,10 +9,19 @@
 
 
     </style>
+
     <style name="AppTheme.WhiteAccent">
         <item name="colorAccent">#FFFF</item> <!-- Whatever color you want-->
     </style>
-    <style    name="AppTheme.NoActionBar">
+
+    <style name="AppTheme.NoActionBar.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowActionBarOverlay">true</item>
         <!--<item name="android:statusBarColor">@color/black</item>-->
@@ -22,6 +31,7 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="Divider">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">2dp</item>

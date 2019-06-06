@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset.view.views;
+package com.example.albertogv.yourcloset.views.activities;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -18,13 +18,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.albertogv.yourcloset.GlideApp;
 import com.example.albertogv.yourcloset.R;
-import com.example.albertogv.yourcloset.view.chat.ChatActivity;
-import com.example.albertogv.yourcloset.model.Anuncio;
+import com.example.albertogv.yourcloset.views.chat.ChatActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

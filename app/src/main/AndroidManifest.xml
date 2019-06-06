@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.albertogv.yourcloset">
-
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -12,7 +11,7 @@
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the 'MyLocation' functionality. 
+         location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.apps.photos.permission.GOOGLE_PHOTOS" />
@@ -28,7 +27,16 @@
         android:roundIcon="@mipmap/youricon"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".view.views.SplashActivity"
+            android:name=".views.activities.ProfileTabbedActivity"
+            android:label="@string/title_activity_profile_tabbed"
+            android:parentActivityName=".views.activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.albertogv.yourcloset.views.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".views.activities.SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -39,7 +47,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.views.MainActivity"
+            android:name=".views.activities.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.NoActionBar">
@@ -52,51 +60,49 @@
             </intent-filter>
             -->
         </activity>
-
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
              Note that the API key is linked to the encryption key used to sign the APK.
              You need a different API key for each encryption key, including the release key that is used to
              sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".view.views.SubirAnuncioActivity"
-            android:parentActivityName=".view.views.SettingsActivity" />
-
+            android:name=".views.activities.SubirAnuncioActivity"
+            android:parentActivityName=".views.activities.SettingsActivity" />
         <activity
-            android:name=".view.views.SettingsActivity"
-            android:parentActivityName=".view.views.MainActivity"
+            android:name=".views.activities.SettingsActivity"
+            android:parentActivityName=".views.activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.views.MainActivity" />
+                android:value=".views.activities.MainActivity" />
         </activity>
         <activity
-            android:name=".view.views.MapsActivity"
+            android:name=".views.activities.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".view.views.LoginActivity"
+            android:name=".views.activities.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".view.views.DetailActivity"
-            android:parentActivityName=".view.views.MainActivity">
+            android:name=".views.activities.DetailActivity"
+            android:parentActivityName=".views.activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.views.MainActivity" />
+                android:value=".views.activities.MainActivity" />
         </activity>
         <activity
-            android:name=".view.chat.ChatActivity"
-            android:parentActivityName=".view.views.MainActivity">
+            android:name=".views.chat.ChatActivity"
+            android:parentActivityName=".views.activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.views.MainActivity" />
+                android:value=".views.activities.MainActivity" />
         </activity>
 
         <provider
@@ -111,21 +117,21 @@
         </provider>
 
         <activity
-            android:name=".view.views.MapsActivity2"
+            android:name=".views.activities.MapsActivity2"
             android:label="@string/title_activity_maps2" />
-        <activity android:name=".view.views.InfoActivity" />
+        <activity android:name=".views.activities.InfoActivity" />
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".view.views.ProfileActivity">
+        <activity android:name=".views.activities.ProfileActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.views.MainActivity" />
+                android:value=".views.activities.MainActivity" />
         </activity>
-        <activity android:name=".view.chat.MyChatsActivity"></activity>
-        <activity android:name=".view.views.MediaActivity"></activity>
+        <activity android:name=".views.chat.MyChatsActivity" />
+        <activity android:name=".views.activities.MediaActivity" />
     </application>
 
 </manifest>

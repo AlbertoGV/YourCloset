@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset.view.views;
+package com.example.albertogv.yourcloset.views.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

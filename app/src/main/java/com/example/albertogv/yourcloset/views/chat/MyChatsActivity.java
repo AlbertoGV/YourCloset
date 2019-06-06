@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset.view.chat;
+package com.example.albertogv.yourcloset.views.chat;
 
 import android.content.Intent;
 import android.os.Bundle;

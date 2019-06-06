@@ -963,6 +963,7 @@ dimen abc_text_size_title_material_toolbar
 dimen activityPadding
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
+dimen appbar_padding
 dimen appbar_padding_top
 dimen browser_actions_context_menu_max_width
 dimen browser_actions_context_menu_min_padding
@@ -1465,6 +1466,7 @@ id collapse
 id collapseActionView
 id confirmation_code
 id confirmation_code_layout
+id constraintLayout
 id container
 id contenedordetalle
 id content
@@ -1678,6 +1680,7 @@ id right_icon
 id right_side
 id root
 id rowView
+id rvAnuncios
 id rvMain
 id rvMessages
 id rvMyChats
@@ -1703,6 +1706,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id section_label
 id select_dialog_listview
 id selected
 id send_code
@@ -1736,6 +1740,7 @@ id submenuarrow
 id submit_area
 id submit_confirmation_code
 id tabMode
+id tabs
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -1783,6 +1788,7 @@ id tvMessage
 id tvPosts
 id tvPrecio
 id tvProductName
+id tvProducts
 id tvPs
 id tvTimeMessage
 id tvUserName
@@ -1796,6 +1802,7 @@ id unlabeled
 id up
 id useLogo
 id view_offset_helper
+id view_pager
 id visible
 id welcome_back_email_link_body
 id welcome_back_idp_button
@@ -1866,6 +1873,7 @@ layout activity_maps2
 layout activity_media
 layout activity_my_chats
 layout activity_profile
+layout activity_profile_tabbed
 layout activity_settings
 layout activity_splash
 layout app_bar_main
@@ -1888,6 +1896,9 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_anuncios
+layout fragment_favoritos
+layout fragment_profile_tabbed
 layout fui_activity_invisible
 layout fui_activity_register_email
 layout fui_activity_register_phone
@@ -2168,6 +2179,7 @@ string google_crash_reporting_api_key
 string google_maps_key
 string google_storage_bucket
 string habla_con_los_dem_s
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string hint_campo_1_articulo_anuncio
 string hint_campo_2_descripcion_anuncio
@@ -2215,6 +2227,7 @@ string title_activity_favorites
 string title_activity_login
 string title_activity_maps
 string title_activity_maps2
+string title_activity_profile_tabbed
 string title_activity_tabbed
 string title_anun_fav
 string title_home
@@ -2233,6 +2246,7 @@ style Animation_Design_BottomSheetDialog
 style AppTheme
 style AppTheme_AppBarOverlay
 style AppTheme_NoActionBar
+style AppTheme_NoActionBar_NoActionBar
 style AppTheme_PopupOverlay
 style AppTheme_WhiteAccent
 style Base_AlertDialog_AppCompat

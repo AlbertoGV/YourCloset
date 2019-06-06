@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset.view.views;
+package com.example.albertogv.yourcloset.views.activities;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

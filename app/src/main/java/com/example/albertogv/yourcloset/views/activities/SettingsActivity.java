@@ -1,4 +1,4 @@
-package com.example.albertogv.yourcloset.view.views;
+package com.example.albertogv.yourcloset.views.activities;
 
 import android.Manifest;
 import android.content.Context;
@@ -39,7 +39,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import maes.tech.intentanim.CustomIntent;
@@ -200,14 +199,14 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
                 }
             });
 
-
-            ivimagenperfil.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(SettingsActivity.this, ProfileActivity.class);
-                    startActivity(i);
-                }
-            });
+//
+//            ivimagenperfil.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent i = new Intent(SettingsActivity.this, ProfileActivity.class);
+//                    startActivity(i);
+//                }
+//            });
             tvprecio.setText(precio);
             tvNombre.setText(nombre);
             tvfecha.setText(fecha);
