@@ -1681,6 +1681,7 @@ id right_side
 id root
 id rowView
 id rvAnuncios
+id rvAnunciosFav
 id rvMain
 id rvMessages
 id rvMyChats
@@ -1796,7 +1797,11 @@ id tv_imag
 id tv_imagen
 id tv_sesion_direccion
 id tv_sesion_nombre
+id tvfavo
+id tvfavrites
 id tvrating
+id tvsold
+id tvvedido
 id uniform
 id unlabeled
 id up

@@ -38,7 +38,9 @@ import static com.firebase.ui.auth.AuthUI.TAG;
 
 public class ProfileTabbedActivity extends AppCompatActivity {
     private int mPostsCount = 0;
+    private int mFavsCount = 0;
     TextView tvPosts;
+    TextView tvFavs;
     FirebaseStorage firebaseStorage;
     FirebaseUser mUser;
     private FirebaseDatabase database;
@@ -57,6 +59,7 @@ public class ProfileTabbedActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         firebaseStorage = FirebaseStorage.getInstance();
         tvPosts = findViewById(R.id.tvProducts);
+        tvFavs = findViewById(R.id.tvfavo);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         TextView tvname = findViewById(R.id.name);
@@ -71,6 +74,7 @@ public class ProfileTabbedActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         getPostsCount();
+        getFavsCount();
     }
 
     private void getPostsCount(){
@@ -87,6 +91,29 @@ public class ProfileTabbedActivity extends AppCompatActivity {
                     mPostsCount++;
                 }
                 tvPosts.setText(String.valueOf(mPostsCount));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+    private void getFavsCount(){
+        mFavsCount = 0;
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        Query query = reference.child("products/user-likes")
+                .child(mUser.getUid());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("RestrictedApi")
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot singleSnapshot :  dataSnapshot.getChildren()){
+                    Log.d(TAG, "onDataChange: found favs:" + singleSnapshot.getValue());
+                    mFavsCount++;
+                }
+                tvFavs.setText(String.valueOf(mFavsCount));
             }
 
             @Override

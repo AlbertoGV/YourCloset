@@ -237,6 +237,7 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
             public void onClick(DialogInterface dialogo1, int id) {
                 database.getReference("products/data").child(productKey).setValue(null);
                 database.getReference("products/all-products").child(productKey).setValue(null);
+                database.getReference("products/user-likes").child(mUser.getUid()).child(productKey).setValue(null);
                 database.getReference("products/user-products").child(uid).child(productKey).setValue(null);
                 database.getReference("products/hombresCalz").child(productKey).setValue(null);
                 database.getReference("products/hombresInf").child(productKey).setValue(null);

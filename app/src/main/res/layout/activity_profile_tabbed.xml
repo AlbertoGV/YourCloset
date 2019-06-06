@@ -25,18 +25,18 @@
         <ImageView
             android:id="@+id/header_cover_image"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="110dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="centerCrop"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
 
             android:id="@+id/image3"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_below="@+id/header_cover_image"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="-130dp"
+            android:layout_marginTop="-100dp"
             android:clickable="true"
             android:elevation="5dp"
             android:padding="20dp"
@@ -47,7 +47,7 @@
         <RelativeLayout
             android:id="@+id/profile_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="200dp"
             android:layout_below="@+id/header_cover_image"
             android:background="@drawable/background_color"
             android:elevation="4dp"
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="50dp"
                 android:text="Alberto "
                 android:textColor="#fff"
                 android:textSize="24sp"
@@ -81,10 +81,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/location"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="1"
                 android:textColor="#fff"
-                android:textSize="21sp" />
+                android:textSize="19sp" />
             <TextView
                 android:id="@+id/tvPs"
                 android:layout_width="wrap_content"
@@ -92,9 +92,55 @@
                 android:layout_below="@+id/tvProducts"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="4dp"
-                android:text="Anuncios"
+                android:text="En Venta"
                 android:textColor="#fff"
-                android:textSize="18sp" />
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tvfavo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/location"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/tvProducts"
+                android:layout_marginLeft="52dp"
+                android:text="1"
+                android:textColor="#fff"
+                android:textSize="19sp" />
+            <TextView
+                android:id="@+id/tvfavrites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvfavo"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_toLeftOf="@id/tvPs"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:text="Vendidos"
+                android:textColor="#fff"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tvvedido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/location"
+                android:layout_marginTop="8dp"
+                android:layout_toLeftOf="@id/tvProducts"
+                android:layout_marginRight="52dp"
+                android:text="1"
+                android:textColor="#fff"
+                android:textSize="19sp" />
+            <TextView
+                android:id="@+id/tvsold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvfavo"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_toRightOf="@id/tvPs"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:text="@string/Favoritos"
+                android:textColor="#fff"
+                android:textSize="12sp" />
         </RelativeLayout>
         </RelativeLayout>
 
