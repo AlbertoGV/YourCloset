@@ -10,6 +10,47 @@ import java.util.Map;
 
 public class Anuncio {
 
+        public String uid;
+        public String displayName;
+        public String authorPhotoUrl;
+        public String description;
+        public String mediaUrl;
+        public String tituloAnuncio;
+        public String precioAnuncio;
+        public String mediaType;
+
+        public String getLongitude() {
+                return longitude;
+        }
+
+        public void setLongitude(String longitude) {
+                this.longitude = longitude;
+        }
+
+        public String getLatitude() {
+                return latitude;
+        }
+
+        public void setLatitude(String latitude) {
+                this.latitude = latitude;
+        }
+
+        public String longitude;
+        public String latitude;
+
+        public String getUbicacion() {
+                return ubicacion;
+        }
+
+        public void setUbicacion(String ubicacion) {
+                this.ubicacion = ubicacion;
+        }
+
+        public String ubicacion;
+        public boolean vendido;
+        public boolean reservado;
+        public long time;
+
 
         public String getUid() {
                 return uid;
@@ -91,17 +132,7 @@ public class Anuncio {
                 this.likes = likes;
         }
 
-        public String uid;
-        public String displayName;
-        public String authorPhotoUrl;
-        public String description;
-        public String mediaUrl;
-        public String tituloAnuncio;
-        public String precioAnuncio;
-        public String mediaType;
-        public boolean vendido;
-        public boolean reservado;
-        public long time;
+
 
 
         public Map<String, Boolean> likes = new HashMap<>();
@@ -109,13 +140,14 @@ public class Anuncio {
         public Anuncio() {}
 
 
-        public Anuncio(String uid, String author, String authorPhotoUrl, String descripcion,String tituloAnuncio,String precioAnuncio,String mediaUrl, String mediaType,boolean vendido, boolean reservado) {
+        public Anuncio(String uid, String author, String authorPhotoUrl, String descripcion,String tituloAnuncio,String precioAnuncio,String mediaUrl, String mediaType,boolean vendido, boolean reservado, String ubicacion) {
                 this.uid = uid;
                 this.displayName = author;
                 this.authorPhotoUrl = authorPhotoUrl;
                 this.description = descripcion;
                 this.mediaUrl = mediaUrl;
                 this.vendido = vendido;
+                this.ubicacion = ubicacion;
                 this.reservado = reservado;
                 this.precioAnuncio = precioAnuncio;
                 this.tituloAnuncio = tituloAnuncio;
@@ -138,6 +170,7 @@ public class Anuncio {
                 result.put("mediaType", mediaType);
                 result.put("time", time);
                 result.put("likes", likes);
+                result.put("ubicacion",ubicacion);
 
                 return result;
         }

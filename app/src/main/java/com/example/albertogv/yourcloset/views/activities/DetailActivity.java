@@ -139,6 +139,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
                 @Override
                 public void onClick(View v) {
                     Intent sendIntent = new Intent();
+                    if(sendIntent!= null)
                     sendIntent.setAction(Intent.ACTION_SEND);
                     sendIntent.putExtra(Intent.EXTRA_TEXT, "Hola tengo un anuncio en YourCloset! Descarga la nueva app ya para verlo !");
                     sendIntent.setType("text/plain");
@@ -220,6 +221,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
                 criteria.setAccuracy(Criteria.ACCURACY_COARSE);
                 String provider = lm.getBestProvider(criteria, true);
                 myLocation = lm.getLastKnownLocation(provider);
+
             }
 
             if (myLocation != null) {

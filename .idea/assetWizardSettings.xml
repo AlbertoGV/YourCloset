@@ -129,8 +129,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_boton_de_suma" />
-                            <entry key="sourceFile" value="C:\Users\koema\Downloads\boton-de-suma.svg" />
+                            <entry key="outputName" value="ic_pin" />
+                            <entry key="sourceFile" value="C:\Users\koema\Desktop\pin.svg" />
                           </map>
                         </option>
                       </PersistentState>

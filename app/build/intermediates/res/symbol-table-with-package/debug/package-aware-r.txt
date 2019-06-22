@@ -1324,6 +1324,7 @@ drawable ic_mujerescomplementos
 drawable ic_mujeresinferior
 drawable ic_mujersuperior
 drawable ic_notifications_black_24dp
+drawable ic_pin
 drawable ic_reserved
 drawable ic_sold
 drawable ic_star_rate_off
@@ -1423,7 +1424,6 @@ id auto
 id barrier
 id beginning
 id blocking
-id boton_ubicacion
 id bottom
 id bottom_bar
 id browser_actions_header_text
@@ -1464,6 +1464,7 @@ id clip_horizontal
 id clip_vertical
 id collapse
 id collapseActionView
+id collapsing_toolbar
 id confirmation_code
 id confirmation_code_layout
 id constraintLayout
@@ -1669,7 +1670,6 @@ id radioarriba
 id radiobajo
 id radiocomplemento
 id ratingBar
-id relLayout3
 id relative
 id resend_barrier
 id resend_code
@@ -1685,7 +1685,6 @@ id rvAnunciosFav
 id rvMain
 id rvMessages
 id rvMyChats
-id rvPosts1
 id satellite
 id save_image_matrix
 id save_non_transition_alpha
@@ -1695,7 +1694,6 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
-id scrollView2
 id scrollable
 id search_badge
 id search_bar
@@ -1786,7 +1784,6 @@ id tvDescriptionArt
 id tvFechaChats
 id tvLastMessage
 id tvMessage
-id tvPosts
 id tvPrecio
 id tvProductName
 id tvProducts
@@ -1797,6 +1794,7 @@ id tv_imag
 id tv_imagen
 id tv_sesion_direccion
 id tv_sesion_nombre
+id tv_ubicacion
 id tvfavo
 id tvfavrites
 id tvrating
@@ -1877,7 +1875,6 @@ layout activity_maps
 layout activity_maps2
 layout activity_media
 layout activity_my_chats
-layout activity_profile
 layout activity_profile_tabbed
 layout activity_settings
 layout activity_splash

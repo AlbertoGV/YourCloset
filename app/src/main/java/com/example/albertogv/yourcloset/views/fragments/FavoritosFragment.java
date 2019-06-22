@@ -82,7 +82,7 @@ public class FavoritosFragment extends Fragment {
                             String precio = anuncio.getPrecioAnuncio() +" Euros";
                             String titulo = anuncio.getTituloAnuncio();
                             String descripcion = anuncio.getDescripcion();
-                            String autor = firebaseAuth.getCurrentUser().getDisplayName();
+                            String autor = anuncio.getDisplayName();
                             String fecha = date;
                             String imagenperfil = anuncio.getAuthorPhotoUrl();
                             String imagen = anuncio.getMediaUrl();

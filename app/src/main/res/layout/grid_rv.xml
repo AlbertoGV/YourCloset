@@ -96,10 +96,7 @@
                 android:layout_height="30dp"
                 android:layout_alignParentTop="true"
                 android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="1dp"
-                android:visibility="gone"
-                android:layout_toRightOf="@id/like"
+                android:layout_marginLeft="4dp"
                 app:srcCompat="@drawable/settings_good" />
 
         </RelativeLayout>
@@ -109,15 +106,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/tvPrecio"
-            android:padding="4dp"
-            android:layout_marginLeft="@dimen/appbar_padding_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/appbar_padding_top"
+            android:padding="4dp"
             android:text="8 Euros"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
             <TextView
                 android:id="@+id/tvArticulo"
                 android:padding="4dp"

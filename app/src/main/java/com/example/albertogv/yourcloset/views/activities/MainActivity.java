@@ -272,9 +272,11 @@ public class MainActivity extends AppCompatActivity
                     if (mUser != null) {
                         if (mUser.getDisplayName().equals(anuncio.displayName)) {
                             anuncioViewHolder.irChat.setVisibility(View.INVISIBLE);
+                            anuncioViewHolder.like.setVisibility(View.INVISIBLE);
                             anuncioViewHolder.settings.setVisibility(View.VISIBLE);
                         } else {
                             anuncioViewHolder.irChat.setVisibility(View.VISIBLE);
+                            anuncioViewHolder.like.setVisibility(View.VISIBLE);
                             anuncioViewHolder.settings.setVisibility(View.INVISIBLE);
                         }
                         anuncioViewHolder.settings.setOnClickListener(new View.OnClickListener() {
@@ -336,6 +338,7 @@ public class MainActivity extends AppCompatActivity
                         }
                     }
                     anuncioViewHolder.likeLayout.setOnClickListener(new View.OnClickListener() {
+
                         @Override
                         public void onClick(View view) {
                             if (anuncio.likes.containsKey(mUser.getUid())) {

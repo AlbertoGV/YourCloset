@@ -20,7 +20,7 @@ import com.example.albertogv.yourcloset.GlideApp;
 import com.example.albertogv.yourcloset.R;
 import com.example.albertogv.yourcloset.model.Anuncio;
 import com.example.albertogv.yourcloset.views.activities.AnuncioViewHolder;
-import com.example.albertogv.yourcloset.views.activities.ProfileActivity;
+
 import com.example.albertogv.yourcloset.views.activities.SettingsActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -92,7 +92,7 @@ public class AnunciosFragment extends Fragment {
                             String precio = anuncio.getPrecioAnuncio() +" Euros";
                             String titulo = anuncio.getTituloAnuncio();
                             String descripcion = anuncio.getDescripcion();
-                            String autor = firebaseAuth.getCurrentUser().getDisplayName();
+                            String autor = anuncio.getDisplayName();
                             String fecha = date;
                             String imagenperfil = anuncio.getAuthorPhotoUrl();
                             String imagen = anuncio.getMediaUrl();

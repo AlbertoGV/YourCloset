@@ -281,9 +281,7 @@
                             android:id="@+id/imagePreview"
                             android:layout_width="match_parent"
                             android:layout_height="111dp"
-
                             android:layout_marginBottom="8dp"
-
                             android:background="@drawable/imageredonda"
                             android:scaleType="centerInside"
                             android:src="@mipmap/aadir" />
@@ -315,8 +313,7 @@
 
                     </LinearLayout>
 
-
-                    <LinearLayout
+                        <LinearLayout
                         android:id="@+id/area_ubicacion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -325,28 +322,20 @@
                         android:orientation="horizontal">
 
 
-                        <ImageView
-                            android:id="@+id/img_ubicacion"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            app:srcCompat="@mipmap/ic_room_black_36dp" />
-
                         <!--//imagen de este imageview no me dejaba reproducir en menos de 8.0 WTF-->
-                        <TextView
-                            android:id="@+id/boton_ubicacion"
+                            <ImageView
+                                android:id="@+id/img_ubicacion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                app:srcCompat="@drawable/ic_pin" />
+
+                            <TextView
+                            android:id="@+id/tv_ubicacion"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
-                            android:text="@string/ubicacion"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="20dp"
-                            android:textStyle="bold" />
-
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:text="address" />
 
 
                     </LinearLayout>

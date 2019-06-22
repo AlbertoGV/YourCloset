@@ -247,7 +247,6 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
                 database.getReference("products/mujeresInf").child(productKey).setValue(null);
                 database.getReference("products/mujeresSup").child(productKey).setValue(null);
                 database.getReference("products/mujeresCompl").child(productKey).setValue(null);
-
                 Toast.makeText(context, "Anuncio Eliminado", Toast.LENGTH_SHORT).show();
                 finish();
             }
@@ -288,8 +287,6 @@ public class SettingsActivity extends AppCompatActivity implements OnMapReadyCal
         database.getReference("products/data").child(productKey).child("reservado").setValue(false);
 
     }
-
-
 
     private void testRatingBar() {
         final DatabaseReference ref = database.getReference("user/rating").child("rating");

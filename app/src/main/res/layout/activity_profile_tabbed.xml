@@ -10,6 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.NoActionBar">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="15dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
         <RelativeLayout
             android:id="@+id/layout"
             android:layout_width="match_parent"
@@ -82,7 +91,7 @@
                 android:layout_below="@+id/location"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8dp"
-                android:text="1"
+                android:text="0"
                 android:textColor="#fff"
                 android:textSize="19sp" />
             <TextView
@@ -103,7 +112,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_toRightOf="@id/tvProducts"
                 android:layout_marginLeft="52dp"
-                android:text="1"
+                android:text="0"
                 android:textColor="#fff"
                 android:textSize="19sp" />
             <TextView
@@ -126,7 +135,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_toLeftOf="@id/tvProducts"
                 android:layout_marginRight="52dp"
-                android:text="1"
+                android:text="0"
                 android:textColor="#fff"
                 android:textSize="19sp" />
             <TextView
@@ -143,7 +152,7 @@
                 android:textSize="12sp" />
         </RelativeLayout>
         </RelativeLayout>
-
+        </android.support.design.widget.CollapsingToolbarLayout>
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
@@ -151,11 +160,13 @@
             android:background="?attr/colorPrimary" />
     </android.support.design.widget.AppBarLayout>
 
+
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
 
 
 </android.support.design.widget.CoordinatorLayout>

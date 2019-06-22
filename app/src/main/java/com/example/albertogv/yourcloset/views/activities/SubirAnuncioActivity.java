@@ -6,7 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Address;
 import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.media.MediaRecorder;
@@ -23,6 +25,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.albertogv.yourcloset.GlideApp;
@@ -51,6 +54,8 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 
@@ -78,7 +83,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
 
     FirebaseUser mUser;
     String uid;
-
+    String fullAddress;
     boolean recording = false;
 
     private MediaRecorder mRecorder = null;
@@ -95,6 +100,8 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     boolean reservado;
     String articulo;
     String precio;
+
+    TextView tvaddress;
     public RadioGroup radioGenero;
     public RadioGroup radioTipoPrenda;
     String nombre;
@@ -121,6 +128,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         uid = "uid-" + mUser.getUid();
         hombreRb = findViewById(R.id.hombre);
         mujerRb = findViewById(R.id.mujer);
+        tvaddress = findViewById(R.id.tv_ubicacion);
         parteSuperior = findViewById(R.id.radioarriba);
         parteInferior = findViewById(R.id.radiobajo);
         parteCalzado = findViewById(R.id.calzado);
@@ -230,7 +238,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     public void writeNewPost(String description, String name, String price, String mediaUri) {
 
         String productKey = "product-" + mReference.push().getKey();
-        Anuncio anuncio = new Anuncio(uid, mUser.getDisplayName(), mUser.getPhotoUrl().toString(), description,name,price, mediaUri, mediaType,vendido,reservado);
+        Anuncio anuncio = new Anuncio(uid, mUser.getDisplayName(), mUser.getPhotoUrl().toString(), description,name,price, mediaUri, mediaType,vendido,reservado,fullAddress);
 
         long ts = -new Date().getTime();
         vendido= false;
@@ -352,8 +360,13 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         GoogleMap gMap;
         @Override
         public void onMapReady (GoogleMap googleMap){
-
+            Geocoder geocoder;
+            List<Address> addresses;
             gMap = googleMap;
+
+
+            geocoder = new Geocoder(this, Locale.getDefault());
+
 
             if (ActivityCompat.checkSelfPermission(SubirAnuncioActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SubirAnuncioActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(SubirAnuncioActivity.this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
@@ -379,6 +392,23 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
                             .radius(4000)
                             .strokeColor(Color.TRANSPARENT)
                             .fillColor(0x220000FF));
+                    try {
+                        addresses = geocoder.getFromLocation(myLocation.getLatitude(),myLocation.getLongitude(),1);
+
+                        String address = addresses.get(0).getAddressLine(0);
+                        String area = addresses.get(0).getLocality();
+                        String city = addresses.get(0).getAdminArea();
+                        String country = addresses.get(0).getCountryName();
+                        String postalcode= addresses.get(0).getPostalCode();
+
+                        fullAddress = area + ","+" " + postalcode;
+
+                        tvaddress.setText(fullAddress);
+
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
 
                 }
