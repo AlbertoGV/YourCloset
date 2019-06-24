@@ -1418,6 +1418,7 @@ id area_nombre
 id area_precio
 id area_selector
 id area_telefono
+id area_ubi
 id area_ubicacion
 id async
 id auto
@@ -1441,6 +1442,8 @@ id button_done
 id button_next
 id button_resend_email
 id button_sign_in
+id buttonfoto
+id buttongaleria
 id buttonnoreservado
 id buttonnovendido
 id buttonreservado
@@ -1555,12 +1558,12 @@ id imageView5
 id imageView7
 id imageViewImagen
 id imageView_sesion
-id imageViewgaleria
 id image_perfilpass
 id img_correo
 id img_fotos
 id img_fotos_cam
 id img_telefono
+id img_ubi
 id img_ubicacion
 id info
 id invisible
@@ -1794,6 +1797,7 @@ id tv_imag
 id tv_imagen
 id tv_sesion_direccion
 id tv_sesion_nombre
+id tv_ubi
 id tv_ubicacion
 id tvfavo
 id tvfavrites
@@ -1898,6 +1902,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout dialog_picks_images
 layout fragment_anuncios
 layout fragment_favoritos
 layout fragment_profile_tabbed
@@ -1930,6 +1935,7 @@ layout message_viewholder
 layout message_viewholder2
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
+layout my_dialog
 layout nav_header_main
 layout notification_action
 layout notification_action_tombstone

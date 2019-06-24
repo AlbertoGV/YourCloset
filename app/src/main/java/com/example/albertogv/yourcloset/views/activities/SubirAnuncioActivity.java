@@ -2,7 +2,10 @@ package com.example.albertogv.yourcloset.views.activities;
 
 
 import android.Manifest;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -17,7 +20,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -62,22 +64,12 @@ import java.util.UUID;
 import maes.tech.intentanim.CustomIntent;
 
 public class SubirAnuncioActivity extends AppCompatActivity implements OnMapReadyCallback {
-    static final int RC_IMAGE_PICK = 9000;
-    static final int RC_IMAGE_TAKE = 8000;
-    static final int RC_VIDEO_TAKE = 8001;
-    private  static  final  int PHOTO_PERFIL=2;
-    static final int RC_VIDEO_PICK = 9001;
-    static final int RC_AUDIO_PICK = 9002;
-    private static final int SECOND_MILLIS = 1000;
-    private static final int MINUTE_MILLIS = 60 * SECOND_MILLIS;
-    private static final int HOUR_MILLIS = 60 * MINUTE_MILLIS;
-    private static final int DAY_MILLIS = 24 * HOUR_MILLIS;
+
+    private static final int GALLERY_REQUEST_CODE = 1;
+    private static final int CAMERA_REQUEST_CODE = 2;
+
     private Button buttonAceptar;
-    private Button buttonCancelar;
-    Uri mFileUri;
-    Uri mFileUri1;
     Uri mediaUri;
-    Uri mediaUri1;
     String mediaType;
     DatabaseReference mReference;
 
@@ -95,22 +87,28 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
     private static final int PHOTO_SEND = 1;
     static final int REQUEST_RECORD_AUDIO_PERMISSION = 1212;
+    static final int REQUEST_RECORD_FILE_PERMISSION = 1213;
     public RadioButton hombreRb;
     public boolean vendido;
     boolean reservado;
     String articulo;
     String precio;
-
     TextView tvaddress;
     public RadioGroup radioGenero;
     public RadioGroup radioTipoPrenda;
     String nombre;
     public RadioButton mujerRb;
+    Uri mFileUri;
+    Location myLocation;
+    LocationManager lm;
+    double latitude;
+    double longitude;
     public RadioButton parteSuperior;
     public RadioButton parteInferior;
     public RadioButton parteCalzado;
     public RadioButton parteComplemento;
     boolean hombrePrenda;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,8 +117,17 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
         etNombre = findViewById(R.id.campo_nombre);
         etArticulo = findViewById(R.id.campo_articulo);
         etPrecio = findViewById(R.id.campo_precio);
-        imagePreviewGal = findViewById(R.id.imageViewgaleria);
+
+        lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+         myLocation = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+        latitude = myLocation.getLatitude();
+        longitude = myLocation.getLongitude();
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_RECORD_AUDIO_PERMISSION);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},REQUEST_RECORD_FILE_PERMISSION);
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         imagePreview = findViewById(R.id.imagePreview);
         mReference = FirebaseDatabase.getInstance().getReference();
@@ -154,18 +161,11 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
             }
         });
 
-        imagePreviewGal = findViewById(R.id.imageViewgaleria);
-        imagePreviewGal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI), RC_IMAGE_PICK);
-            }
-        });
         imagePreview = findViewById(R.id.imagePreview);
         imagePreview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dispatchTakePictureIntent();
+                dialogChooseCamera();
 
             }
         });
@@ -238,7 +238,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     public void writeNewPost(String description, String name, String price, String mediaUri) {
 
         String productKey = "product-" + mReference.push().getKey();
-        Anuncio anuncio = new Anuncio(uid, mUser.getDisplayName(), mUser.getPhotoUrl().toString(), description,name,price, mediaUri, mediaType,vendido,reservado,fullAddress);
+        Anuncio anuncio = new Anuncio(uid, mUser.getDisplayName(), mUser.getPhotoUrl().toString(), description,name,price, mediaUri, mediaType,vendido,reservado,fullAddress,latitude,longitude);
 
         long ts = -new Date().getTime();
         vendido= false;
@@ -301,21 +301,54 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == RC_IMAGE_TAKE && resultCode == RESULT_OK) {
-            mediaUri = mFileUri;
-            mediaType = "image";
-            GlideApp.with(this).load(mediaUri).into(imagePreview);
+        if (resultCode == Activity.RESULT_OK)
+            switch (requestCode) {
+                case GALLERY_REQUEST_CODE:
+                        mFileUri= data.getData();
+                        mediaType = "image";
+                        GlideApp.with(this).load(mFileUri).into(imagePreview);
 
-        } else if(data != null) {
-                if (requestCode == RC_IMAGE_PICK) {
-                    mediaUri = data.getData();
+
+                case CAMERA_REQUEST_CODE:
+                    mediaUri = mFileUri;
                     mediaType = "image";
-                    GlideApp.with(this).load(mediaUri).into(imagePreviewGal);
+                        GlideApp.with(this).load(mFileUri).into(imagePreview);
+
+                        break;
+
                 }
-        }
+            }
 
-          }
 
+    public void dialogChooseCamera() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(SubirAnuncioActivity.this);
+        builder.setTitle("Escoja fuente de imagen");
+        builder.setItems(new CharSequence[] {"Galería", "Tomar Foto"},
+                new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case 0:
+                                dispatchGaleryPictureIntent();
+                                break;
+                            case 1:
+                               dispatchTakePictureIntent();
+                            default:
+                                break;
+                        }
+                    }
+                });
+
+        builder.show();
+    }
+    private void dispatchGaleryPictureIntent() {
+        Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        pickPhoto.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        startActivityForResult(pickPhoto,GALLERY_REQUEST_CODE);
+
+
+    }
 
     private void dispatchTakePictureIntent() {
 
@@ -331,31 +364,11 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
 
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-            startActivityForResult(intent, RC_IMAGE_TAKE);
+            startActivityForResult(intent, CAMERA_REQUEST_CODE);
         }
 
 
     }
-//    private void dispatchGaleryPictureIntent() {
-//
-//        Uri fileUri1 = null;
-//        try {
-//            fileUri1 = MediaFiles.createFile(this, MediaFiles.Type.IMAGE).uri;
-//        } catch (IOException ex) {
-//            // No se pudo crear el fichero
-//        }
-//
-//        if (fileUri != null) {
-//            mFileUri = fileUri;
-//
-//            Intent intent = new Intent(MediaStore.INTENT_ACTION_VIDEO_CAMERA);
-//            intent.setType("image/jpeg");
-//            intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-//            startActivityForResult(intent ,RC_IMAGE_PICK);
-//        }
-//    }
-
-
 
         GoogleMap gMap;
         @Override
@@ -374,8 +387,6 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
                 if (!gMap.isMyLocationEnabled())
                     gMap.setMyLocationEnabled(true);
 
-                LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                Location myLocation = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
                 if (myLocation == null) {
                     Criteria criteria = new Criteria();
@@ -414,9 +425,7 @@ public class SubirAnuncioActivity extends AppCompatActivity implements OnMapRead
                 }
             }
 
-
         }
-
 
     @Override
     protected void onStop() {

@@ -18,25 +18,26 @@ public class Anuncio {
         public String tituloAnuncio;
         public String precioAnuncio;
         public String mediaType;
+        private double longitude;
 
-        public String getLongitude() {
+        public double getLongitude() {
                 return longitude;
         }
 
-        public void setLongitude(String longitude) {
+        public void setLongitude(double longitude) {
                 this.longitude = longitude;
         }
 
-        public String getLatitude() {
+        public double getLatitude() {
                 return latitude;
         }
 
-        public void setLatitude(String latitude) {
+        public void setLatitude(double latitude) {
                 this.latitude = latitude;
         }
 
-        public String longitude;
-        public String latitude;
+        private double latitude;
+
 
         public String getUbicacion() {
                 return ubicacion;
@@ -140,12 +141,14 @@ public class Anuncio {
         public Anuncio() {}
 
 
-        public Anuncio(String uid, String author, String authorPhotoUrl, String descripcion,String tituloAnuncio,String precioAnuncio,String mediaUrl, String mediaType,boolean vendido, boolean reservado, String ubicacion) {
+        public Anuncio(String uid, String author, String authorPhotoUrl, String descripcion,String tituloAnuncio,String precioAnuncio,String mediaUrl, String mediaType,boolean vendido, boolean reservado, String ubicacion,double longitude,double latitude) {
                 this.uid = uid;
                 this.displayName = author;
                 this.authorPhotoUrl = authorPhotoUrl;
                 this.description = descripcion;
                 this.mediaUrl = mediaUrl;
+                this.longitude = longitude;
+                this.latitude = latitude;
                 this.vendido = vendido;
                 this.ubicacion = ubicacion;
                 this.reservado = reservado;
@@ -164,6 +167,8 @@ public class Anuncio {
                 result.put("displayName", displayName);
                 result.put("authorPhotoUrl", authorPhotoUrl);
                 result.put("descripcion", description);
+                result.put("latitude",latitude);
+                result.put("longitude",longitude);
                 result.put("mediaUrl", mediaUrl);
                 result.put("precioAnuncio",precioAnuncio);
                 result.put("tituloAnuncio",tituloAnuncio);

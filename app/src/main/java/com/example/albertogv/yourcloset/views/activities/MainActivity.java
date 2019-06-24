@@ -292,7 +292,11 @@ public class MainActivity extends AppCompatActivity
                                 String imagen = anuncio.mediaUrl;
                                 String productKey1 = productKey;
                                 String messageKey1 = messageKey;
+                                double latitude = anuncio.getLatitude();
+                                double longitude = anuncio.getLongitude();
 
+                                i.putExtra("latitude",latitude);
+                                i.putExtra("longitude",longitude);
                                 i.putExtra("nombre", autor);
                                 i.putExtra("fecha", fecha);
                                 i.putExtra("imgperfil", imagenperfil);
@@ -379,7 +383,11 @@ public class MainActivity extends AppCompatActivity
                         String imagen = anuncio.mediaUrl;
                         String productKey1 = productKey;
                         String messageKey1 = messageKey;
+                        double latitude = anuncio.getLatitude();
+                        double longitude = anuncio.getLongitude();
 
+                        intent.putExtra("latitude",latitude);
+                        intent.putExtra("longitude",longitude);
                         intent.putExtra("nombre", autor);
                         intent.putExtra("fecha", fecha);
                         intent.putExtra("imgperfil", imagenperfil);
@@ -592,25 +600,6 @@ public class MainActivity extends AppCompatActivity
         dialogo.show();
     }
 
-    public void descartar() {
-
-        AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
-        dialogo.setTitle("Vas a descartar este Anuncio");
-        dialogo.setMessage("Este anuncio no te volverá a aparecer en tu tablón de anuncios");
-        dialogo.setMessage("¿Estas seguro?");
-        dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialogo1, int id) {
-                Toast.makeText(context, "Anuncio descartado", Toast.LENGTH_SHORT).show();
-            }
-        });
-        dialogo.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialogo1, int id) {
-
-            }
-        });
-        dialogo.show();
-
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

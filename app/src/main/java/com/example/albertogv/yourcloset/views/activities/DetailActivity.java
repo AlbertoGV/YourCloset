@@ -47,6 +47,8 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
     Context context;
     RatingBar ratingBar;
     TextView tvRating;
+    double latitude;
+    double longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +112,11 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
             final String messageKey = bundle.getString("MESSAGE_KEY");
 
             final String imagen = intent.getStringExtra("imagen");
+
+            latitude = bundle.getDouble("latitude");
+
+            longitude = bundle.getDouble("longitude");
+
 
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -211,7 +218,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
             ActivityCompat.requestPermissions(DetailActivity.this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         } else {
             if (!gMap.isMyLocationEnabled())
-                gMap.setMyLocationEnabled(true);
+                gMap.setMyLocationEnabled(false);
 
             LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             Location myLocation = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
@@ -225,10 +232,10 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
             }
 
             if (myLocation != null) {
-                LatLng userLocation = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
+                LatLng userLocation = new LatLng(longitude, latitude);
                 gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 11), 1500, null);
                 Circle circle = gMap.addCircle(new CircleOptions()
-                        .center(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()))
+                        .center(new LatLng(longitude, latitude))
                         .radius(4000)
                         .strokeColor(Color.TRANSPARENT)
                         .fillColor(0x220000FF));

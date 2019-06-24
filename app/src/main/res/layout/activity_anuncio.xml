@@ -260,18 +260,6 @@
 
 
                     </LinearLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_gravity="center"
-                        android:textColor="@color/black"
-                        android:text="Selecciona SóLO una opción por favor"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Selecciona imagen haciendo una foto"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -289,26 +277,34 @@
 
 
                     </LinearLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Selecciona imagen desde la galería"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_horizontal">
 
+
+                    <LinearLayout
+                        android:id="@+id/area_ubi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageViewgaleria"
-                            android:layout_width="match_parent"
-                            android:layout_height="111dp"
-                            android:layout_marginBottom="8dp"
-                            android:background="@drawable/imageredonda"
-                            android:scaleType="centerInside"
-                            app:srcCompat="@drawable/ic_galeria" />
+                            android:id="@+id/img_ubi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            app:srcCompat="@mipmap/ubicacion" />
 
-
+                        <TextView
+                            android:id="@+id/tv_ubi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_weight="1"
+                            android:text="@string/ubicacion"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
 
 
                     </LinearLayout>
@@ -317,8 +313,8 @@
                         android:id="@+id/area_ubicacion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
                         android:orientation="horizontal">
 
 
@@ -327,7 +323,7 @@
                                 android:id="@+id/img_ubicacion"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
+
                                 app:srcCompat="@drawable/ic_pin" />
 
                             <TextView

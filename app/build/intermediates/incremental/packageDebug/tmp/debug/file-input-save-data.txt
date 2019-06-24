@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Jun 05 21:52:05 CEST 2019
+#Mon Jun 24 09:59:14 CEST 2019
 4.path=classes.dex
 8.set=DEX
 6.path=crashlytics-build.properties
